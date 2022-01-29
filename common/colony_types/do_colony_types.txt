@@ -1,0 +1,74 @@
+# Asteroid
+col_asteroid = {
+	icon = 12
+
+	potential = {
+		is_planet_class = pc_habitable_asteroid
+	}
+
+	weight_modifier = {
+		base = 500
+	}
+}
+
+col_home_planet = {
+	icon = 10
+
+	potential = {
+		has_modifier = dd_home_planet
+	}
+	
+	planet_modifier = {
+		planet_stability_add = 5
+		planet_amenities_add = 10
+		pop_government_ethic_attraction = 1
+	}
+
+	weight_modifier = {
+		base = 2000
+	}
+}
+
+col_home_planet_evolved = {
+	icon = 10
+
+	potential = {
+		OR = {
+			has_modifier = dd_home_evolved_regular
+			has_modifier = dd_home_evolved_hive
+			has_modifier = dd_home_evolved_machine
+		}
+	}
+	
+	planet_modifier = {
+		planet_stability_add = 15
+		planet_amenities_add = 20
+		pop_government_ethic_attraction = 2
+	}
+
+	weight_modifier = {
+		base = 2000
+	}
+}
+
+col_home_planet_ascended = {
+	icon = 10
+
+	potential = {
+		OR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_ascended_machine
+		}
+	}
+	
+	planet_modifier = {
+		planet_stability_add = 50
+		planet_amenities_add = 50
+		pop_government_ethic_attraction = 3
+	}
+
+	weight_modifier = {
+		base = 2000
+	}
+}

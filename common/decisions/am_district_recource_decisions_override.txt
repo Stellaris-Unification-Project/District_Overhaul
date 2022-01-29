@@ -1,0 +1,607 @@
+decision_generator_privatisation = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_resources
+
+	resources = {
+		category = decisions
+		cost = {
+		}			
+	}
+	
+	potential = {
+		owner = { 
+			is_regular_empire = yes
+			or = {
+				is_ai = yes
+				and = {
+					is_ai = no
+					not = { has_policy_flag = alp_private_businesses_prohibited }
+					not = { has_policy_flag = alp_private_businesses_restricted }
+					or = {
+						has_authority = auth_corporate
+						has_ethic = ethic_pacifist
+						has_ethic = ethic_fanatic_pacifist
+						has_ethic = ethic_egalitarian
+						has_ethic = ethic_fanatic_egalitarian
+					}
+				}
+			}
+		}
+		not = { has_planet_flag = pf_privatise_generators }
+		num_districts = { type = district_generator value > 0 }
+		not = { has_planet_flag = pf_filter_vanilla }
+		### DistrictOverhaul
+		has_district_generator = yes
+		### Check AlphaMod enabled
+		has_global_flag = gf_alphamod_activated
+	}
+	
+	effect = {
+		set_planet_flag = pf_privatise_generators
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 50
+			or = {
+				num_districts = { type = district_generator value > 1 }
+				owner = { 
+					has_monthly_income = {
+						resource = sr_wealth
+						value < 25
+					}			
+				}
+			}
+		}
+	}
+}
+
+decision_end_generator_privatisation = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_resources
+
+	resources = {
+		category = decisions
+		cost = {
+			sr_wealth = 200
+		}			
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		has_planet_flag = pf_privatise_generators
+	}
+	
+	effect = {
+		remove_planet_flag = pf_privatise_generators
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_auto_generators = {
+	owned_planets_only = yes
+
+	enactment_time = 30
+	resources = {
+		category = decisions
+		cost = {
+			minerals = 500
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		habitable_structure = no
+		not = { has_planet_flag = auto_generators }
+		owner = { is_machine_empire = no }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		NOT = { is_planet_class = pc_city }	
+		### DistrictOverhaul
+		has_district_generator = yes
+		### Check AlphaMod enabled
+		has_global_flag = gf_alphamod_activated
+	}
+	
+	allow = {
+		num_districts = { type = district_generator value > 0 }
+	}
+	
+	effect = {
+		custom_tooltip = decision_auto_generators_custom
+		set_planet_flag = auto_generators
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 5
+			num_pops > 25
+			num_pops < 80
+			count_owned_pops = { 
+				limit = { 
+					OR = { 
+						is_unemployed = yes 
+						has_job = servant 
+					}
+				}
+				count < 1
+			}			
+		}
+	}
+}
+
+decision_end_auto_generators = {
+	owned_planets_only = yes
+	enactment_time = 30
+	resources = {
+		category = decisions
+		cost = {
+			minerals = 200
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		has_planet_flag = auto_generators
+	}
+	
+	effect = {
+		custom_tooltip = end_decision_auto_generators_custom
+		remove_planet_flag = auto_generators
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 5
+			num_pops > 80
+			count_owned_pops = { 
+				limit = { 
+					OR = { 
+						is_unemployed = yes 
+						has_job = servant 
+					}
+				}
+				count > 1
+			}			
+		}
+	}
+}
+
+decision_nuclear_generators = {
+	owned_planets_only = yes
+	enactment_time = 360
+	resources = {
+		category = decisions
+		cost = {
+			minerals = 250
+			sr_actinides = 10
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		habitable_structure = no
+		not = { has_planet_flag = gone_nuclear }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		NOT = { is_planet_class = pc_city }	
+		### DistrictOverhaul
+		has_district_generator = yes
+		### Check AlphaMod enabled
+		has_global_flag = gf_alphamod_activated
+	}
+	
+	allow = {
+		num_districts = { type = district_generator value > 0 }
+	}
+	
+	effect = {
+		custom_tooltip = decision_nuclear_generators_custom
+		set_planet_flag = gone_nuclear
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			num_districts = { type = district_generator value > 2 }
+			num_districts = { type = district_generator value < 5 }
+			num_pops > 25
+			count_owned_pops = { 
+				limit = { 
+					OR = { 
+						is_unemployed = yes 
+						has_job = servant 
+					}
+				}
+				count > 0
+			}
+			owner = {
+				has_monthly_income = {
+					resource = sr_actinides
+					value > 8
+				}			
+			}			
+		}
+	}
+}
+
+decision_end_nuclear_generators = {
+	owned_planets_only = yes
+	enactment_time = 360
+	resources = {
+		category = decisions
+		cost = {
+			energy = 250
+			influence = 50
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		has_planet_flag = gone_nuclear
+	}
+	
+	effect = {
+		custom_tooltip = end_decision_nuclear_generators_custom
+		remove_planet_flag = gone_nuclear
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 5
+			owner = {
+				has_monthly_income = {
+					resource = sr_actinides
+					value < 1
+				}			
+			}
+		}
+	}
+}
+
+decision_preserving_fuels = {
+	owned_planets_only = yes
+	resources = {
+		category = decisions
+		cost = {
+			sr_natural_fuels = 500
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		habitable_structure = no
+		not = { has_planet_flag = preserving_fuels }
+		exists = owner
+		owner = { 
+			is_gestalt = no
+		}
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_barren_habitable }
+		NOT = { is_planet_class = pc_molten_habitable }
+		NOT = { is_planet_class = pc_toxic_habitable }
+		NOT = { is_planet_class = pc_frozen_habitable }
+		### DistrictOverhaul
+		OR = {
+			has_district_mining = yes
+			has_planet_flag = heavy_industries
+		}
+		### Check AlphaMod enabled
+		has_global_flag = gf_alphamod_activated
+	}
+	
+	allow = {
+		or = {
+			num_districts = { type = district_mining value > 0 }
+			num_districts = { type = district_industrialised value > 0 }
+		}
+	}
+	
+	effect = {
+		custom_tooltip = decision_preserving_fuels_custom
+		set_planet_flag = preserving_fuels
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 5
+			owner = {
+				has_monthly_income = {
+					resource = sr_natural_fuels
+					value > 25
+				}			
+			}
+		}
+	}
+}
+
+decision_end_preserving_fuels = {
+	owned_planets_only = yes
+	resources = {
+		category = decisions
+		cost = {
+			energy = 250
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		has_planet_flag = preserving_fuels
+	}
+	
+	effect = {
+		custom_tooltip = end_decision_preserving_fuels_custom
+		remove_planet_flag = preserving_fuels
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 5
+			owner = {
+				has_monthly_income = {
+					resource = sr_natural_fuels
+					value < 2
+				}			
+			}
+		}
+	}
+}
+
+decision_intensive_irrigation = {
+	owned_planets_only = yes
+	resources = {
+		category = decisions
+		cost = {
+			sr_ice = 100
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		habitable_structure = no
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		NOT = { is_planet_class = pc_city }
+		not = { has_planet_flag = intensive_irrigation }
+		NOT = { is_planet_class = pc_barren_habitable }
+		NOT = { is_planet_class = pc_molten_habitable }
+		NOT = { is_planet_class = pc_toxic_habitable }
+		NOT = { is_planet_class = pc_frozen_habitable }
+		owner = { is_machine_empire = no }
+		### DistrictOverhaul
+		OR = {
+			has_district_farming = yes
+			has_planet_flag = biomass_cultivation
+			has_planet_flag = nature_reserves
+		}
+		### Check AlphaMod enabled
+		has_global_flag = gf_alphamod_activated
+	}
+	
+	allow = {
+		num_districts = { type = district_farming value > 0 }
+	}
+	
+	effect = {
+		custom_tooltip = decision_intensive_irrigation_custom
+		set_planet_flag = intensive_irrigation
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 5
+			owner = {
+				has_monthly_income = {
+					resource = sr_ice
+					value > 25
+				}			
+			}
+		}
+	}
+}
+
+decision_end_intensive_irrigation = {
+	owned_planets_only = yes
+	resources = {
+		category = decisions
+		cost = {
+			energy = 200
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		has_planet_flag = intensive_irrigation
+	}
+	
+	effect = {
+		custom_tooltip = decision_end_intensive_irrigation_custom
+		remove_planet_flag = intensive_irrigation
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 5
+			owner = {
+				has_monthly_income = {
+					resource = sr_ice
+					value < 1
+				}			
+			}
+		}
+	}
+}
+
+decision_preserving_biomass = {
+	owned_planets_only = yes
+	resources = {
+		category = decisions
+		cost = {
+			sr_biomass = 500
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		habitable_structure = no
+		not = { has_planet_flag = preserving_biomass }
+		not = { has_planet_flag = recycling_biomass }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_barren_habitable }
+		NOT = { is_planet_class = pc_molten_habitable }
+		NOT = { is_planet_class = pc_toxic_habitable }
+		NOT = { is_planet_class = pc_frozen_habitable }
+		owner = { is_machine_empire = no }
+		### DistrictOverhaul
+		OR = {
+			has_district_farming = yes
+			has_planet_flag = biomass_cultivation
+			has_planet_flag = nature_reserves
+		}
+		### Check AlphaMod enabled
+		has_global_flag = gf_alphamod_activated
+	}
+	
+	allow = {
+		num_districts = { type = district_farming value > 0 }
+	}
+	
+	effect = {
+		custom_tooltip = decision_preserving_biomass_custom
+		set_planet_flag = preserving_biomass
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_end_preserving_biomass = {
+	owned_planets_only = yes
+	resources = {
+		category = decisions
+		cost = {
+			energy = 250
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		has_planet_flag = preserving_biomass
+	}
+	
+	effect = {
+		custom_tooltip = end_decision_preserving_biomass_custom
+		remove_planet_flag = preserving_biomass
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_recycling_biomass = {
+	owned_planets_only = yes
+	resources = {
+		category = decisions
+		cost = {
+			sr_biomass = 250
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		habitable_structure = no
+		not = { has_planet_flag = preserving_biomass }
+		not = { has_planet_flag = recycling_biomass }
+		owner = { is_machine_empire = no }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_barren_habitable }
+		NOT = { is_planet_class = pc_molten_habitable }
+		NOT = { is_planet_class = pc_toxic_habitable }
+		NOT = { is_planet_class = pc_frozen_habitable }
+		### DistrictOverhaul
+		OR = {
+			has_district_farming = yes
+			has_planet_flag = biomass_cultivation
+			has_planet_flag = nature_reserves
+		}
+		### Check AlphaMod enabled
+		has_global_flag = gf_alphamod_activated
+	}
+	
+	allow = {
+		num_districts = { type = district_farming value > 0 }
+	}
+	
+	effect = {
+		custom_tooltip = decision_recycling_biomass_custom
+		set_planet_flag = recycling_biomass
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 5
+			owner = {
+				has_monthly_income = {
+					resource = sr_biomass
+					value > 50
+				}			
+			}
+		}
+	}
+}
+
+decision_end_recycling_biomass = {
+	owned_planets_only = yes
+	resources = {
+		category = decisions
+		cost = {
+			energy = 200
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		has_planet_flag = recycling_biomass
+	}
+	
+	effect = {
+		custom_tooltip = end_decision_recycling_biomass_custom
+		remove_planet_flag = recycling_biomass
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 5
+			owner = {
+				has_monthly_income = {
+					resource = sr_biomass
+					value < 1
+				}			
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+### DistrictOverhaul
+
+has_district_machine_production_line =
+{
+		OR = {	
+			is_planet_class = pc_machine
+			is_planet_class = pc_ecocity
+			is_plaent_class = pc_planetary_ringworld_machine
+			has_modifier = dd_home_ascended_machine
+			has_modifier = dd_home_evolved_machine
+			AND = {
+				from = { is_machine_empire = yes }
+				has_limiting_modifier = no
+				is_home_planet = yes
+			}
+		}
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_planet 
+				NOT = { from = { is_machine_empire = yes } }
+				NOT = { has_limiting_modifier = no }
+				NOT = { is_home_planet = yes }
+			}
+		}
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_ascended_hive }
+}

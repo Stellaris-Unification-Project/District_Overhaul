@@ -1,0 +1,132 @@
+### NO LOLCALISATION
+### NO GRAPHICS
+
+ap_extreme_productivity = {
+	on_enabled = {
+		add_research_option = tech_extreme_productivity
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_3"
+			num_ascension_perks > 2
+		}
+	}
+	ai_weight = {
+		factor = 200
+		modifier = {
+			factor = 0.5
+			num_owned_planets > 6
+		}
+		modifier = {
+			factor = 0.2
+			num_owned_planets > 10
+		}
+		modifier = {
+			factor = 0.1
+			num_owned_planets > 20
+		}
+	}
+}
+
+ap_extreme_industry = {
+	on_enabled = {
+		add_research_option = tech_extreme_industry
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_3"
+			num_ascension_perks > 2
+		}
+	}
+	ai_weight = {
+		factor = 200
+		modifier = {
+			factor = 0.5
+			num_owned_planets > 6
+		}
+		modifier = {
+			factor = 0.2
+			num_owned_planets > 10
+		}
+		modifier = {
+			factor = 0.1
+			num_owned_planets > 20
+		}
+	}
+}
+
+ap_universalition = {
+	on_enabled = {
+		add_research_option = tech_universalition
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_3"
+			num_ascension_perks > 2
+		}
+	}
+	ai_weight = {
+		factor = 200
+		modifier = {
+			factor = 0.5
+			num_owned_planets > 6
+		}
+		modifier = {
+			factor = 0.2
+			num_owned_planets > 10
+		}
+		modifier = {
+			factor = 0.1
+			num_owned_planets > 20
+		}
+	}
+}
+
+ap_world_ascension = {
+	potential = {
+		has_ascension_perk = ap_world_shaper
+	}
+	ai_weight = {
+		factor = 5
+	}
+}
+
+ap_planetary_boundarys = {
+	potential = { has_ascension_perk = ap_mastery_of_nature }
+	ai_weight = {
+		factor = 200
+		modifier = {
+			factor = 0.5
+			num_owned_planets > 6
+		}
+		modifier = {
+			factor = 0.2
+			num_owned_planets > 10
+		}
+		modifier = {
+			factor = 0.1
+			num_owned_planets > 20
+		}
+	}
+}
+
+ap_endless_worlds = {
+	potential = {
+		has_ascension_perk = ap_planetary_boundarys
+	}
+	ai_weight = {
+		factor = 200
+		modifier = {
+			factor = 0.5
+			num_owned_planets > 6
+		}
+		modifier = {
+			factor = 0.2
+			num_owned_planets > 10
+		}
+		modifier = {
+			factor = 0.1
+			num_owned_planets > 20
+		}
+	}
+}

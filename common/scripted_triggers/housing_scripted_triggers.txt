@@ -1,0 +1,273 @@
+### Vanilla
+
+has_district_city =
+{
+		NOT = { is_planet_class = pc_ocean }
+		NOT = { is_planet_class = pc_habitat }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_habitable_asteroid }
+		NOT = { is_planet_class = pc_asteriud_base }
+		NOT = { is_planet_class = pc_moon_base }
+		NOT = { is_planet_class = pc_ecocity }
+		NOT = { is_planet_class = pc_archive }
+		NOT = { is_planet_class = pc_mem_vazuran_habitat }
+		NOT = { is_planet_class = pc_golden_world_habitable }
+		NOT = { is_planet_class = pc_omega_ringworld_habitable }
+		NOT = { is_planet_class = pc_giga_planetary_computer }
+		NOT = { is_planet_class = pc_city_ringworld_habitable }
+		NOT = { is_planet_class = pc_habitable_gas_giant }
+		NOT = { is_planet_class = pc_gigaorbital_ring }
+		NOT = { is_planet_class = pc_interstellar_habitat }
+		NOT = { is_planet_class = pc_dyson_swarm }
+		NOT = { is_planet_class = pc_outpost }
+		NOT = { is_planet_class = pc_planetary_ringworld_city }
+		NOT = { is_planet_class = pc_molten_habitable }
+		NOT = { is_planet_class = pc_primordial }
+		NOT = { is_planet_class = pc_desolate }
+		NOT = { is_planet_class = pc_underground_rocky }
+		NOT = { is_planet_class = pc_underground_icy }
+		NOT = { has_modifier = stpg_planetary_habitat}
+		NOT = { has_modifier = ancient_cities }
+		NOT = { has_modifier = ancient_world }
+		NOT = { has_modifier = volcanic_world }
+		NOT = { has_modifier = underground_world }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		### AlphaMod
+		NOT = { 
+			AND = {
+				has_global_flag = gf_alphamod_activated
+				not_hostile_planet = no
+			}
+		}
+		NOT = { has_planet_flag = mega_cities }
+		### ImprovedMegastructures
+		NOT = {
+			AND = {
+				has_global_flag = pjs_improved_megastructures_global
+				OR = {
+					is_planet_class = pc_ringworld_habitable
+					has_modifier = asteroid_base
+					has_modifier = moon_base
+				}
+			}
+		}
+		### True Ring World
+		NOT = { is_planet_class = pc_ringworld_city }
+		NOT = { is_planet_class = pc_ringworld_forge }
+		### Other Mods
+		NOT = { is_planet_class = pc_matryoshka }
+		NOT = { is_planet_class = pc_hollow }
+}
+
+has_district_hive =
+{
+		NOT = { is_planet_class = pc_ocean }
+		NOT = { is_planet_class = pc_habitat }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_habitable_asteroid }
+		NOT = { is_planet_class = pc_asteriud_base }
+		NOT = { is_planet_class = pc_moon_base }
+		NOT = { is_planet_class = pc_ecocity }
+		NOT = { is_planet_class = pc_archive }
+		NOT = { is_planet_class = pc_mem_vazuran_habitat }
+		NOT = { is_planet_class = pc_golden_world_habitable }
+		NOT = { is_planet_class = pc_omega_ringworld_habitable }
+		NOT = { is_planet_class = pc_giga_planetary_computer }
+		NOT = { is_planet_class = pc_city_ringworld_habitable }
+		NOT = { is_planet_class = pc_habitable_gas_giant }
+		NOT = { is_planet_class = pc_gigaorbital_ring }
+		NOT = { is_planet_class = pc_interstellar_habitat }
+		NOT = { is_planet_class = pc_dyson_swarm }
+		NOT = { is_planet_class = pc_outpost }
+		NOT = { is_planet_class = pc_planetary_ringworld_city }
+		NOT = { is_planet_class = pc_molten_habitable }
+		NOT = { is_planet_class = pc_primordial }
+		NOT = { is_planet_class = pc_desolate }
+		NOT = { is_planet_class = pc_underground_rocky }
+		NOT = { is_planet_class = pc_underground_icy }
+		NOT = { has_modifier = stpg_planetary_habitat}
+		NOT = { has_modifier = ancient_cities }
+		NOT = { has_modifier = ancient_world }
+		NOT = { has_modifier = volcanic_world }
+		NOT = { has_modifier = underground_world }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		### AlphaMod
+		NOT = { 
+			AND = {
+				has_global_flag = gf_alphamod_activated
+				not_hostile_planet = no
+			}
+		}
+		NOT = { has_planet_flag = mega_cities }
+		### ImprovedMegastructures
+		NOT = {
+			AND = {
+				has_global_flag = pjs_improved_megastructures_global
+				OR = {
+					is_planet_class = pc_ringworld_habitable
+					has_modifier = asteroid_base
+					has_modifier = moon_base
+				}
+			}
+		}
+		### True Ring World
+		NOT = { is_planet_class = pc_ringworld_city }
+		NOT = { is_planet_class = pc_ringworld_forge }
+		### Other Mods
+		NOT = { is_planet_class = pc_matryoshka }
+		NOT = { is_planet_class = pc_hollow }
+		NOT = { is_planet_class = pc_bioform }
+}
+
+has_district_nexus =
+{
+		NOT = { is_planet_class = pc_ocean }
+		NOT = { is_planet_class = pc_habitat }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_habitable_asteroid }
+		NOT = { is_planet_class = pc_asteriud_base }
+		NOT = { is_planet_class = pc_moon_base }
+		NOT = { is_planet_class = pc_ecocity }
+		NOT = { is_planet_class = pc_archive }
+		NOT = { is_planet_class = pc_mem_vazuran_habitat }
+		NOT = { is_planet_class = pc_golden_world_habitable }
+		NOT = { is_planet_class = pc_omega_ringworld_habitable }
+		NOT = { is_planet_class = pc_giga_planetary_computer }
+		NOT = { is_planet_class = pc_city_ringworld_habitable }
+		NOT = { is_planet_class = pc_habitable_gas_giant }
+		NOT = { is_planet_class = pc_gigaorbital_ring }
+		NOT = { is_planet_class = pc_interstellar_habitat }
+		NOT = { is_planet_class = pc_dyson_swarm }
+		NOT = { is_planet_class = pc_outpost }
+		NOT = { is_planet_class = pc_planetary_ringworld_city }
+		NOT = { is_planet_class = pc_molten_habitable }
+		NOT = { is_planet_class = pc_primordial }
+		NOT = { is_planet_class = pc_desolate }
+		NOT = { is_planet_class = pc_underground_rocky }
+		NOT = { is_planet_class = pc_underground_icy }
+		NOT = { has_modifier = stpg_planetary_habitat}
+		NOT = { has_modifier = ancient_cities }
+		NOT = { has_modifier = ancient_world }
+		NOT = { has_modifier = volcanic_world }
+		NOT = { has_modifier = underground_world }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		### AlphaMod
+		NOT = { has_planet_flag = mega_cities }
+		### ImprovedMegastructures
+		NOT = {
+			AND = {
+				has_global_flag = pjs_improved_megastructures_global
+				OR = {
+					is_planet_class = pc_ringworld_habitable
+					has_modifier = asteroid_base
+					has_modifier = moon_base
+				}
+			}
+		}
+		### True Ring World
+		NOT = { is_planet_class = pc_ringworld_city }
+		NOT = { is_planet_class = pc_ringworld_forge }
+		### Other Mods
+		NOT = { is_planet_class = pc_matryoshka }
+		NOT = { is_planet_class = pc_hollow }
+}
+
+has_district_arcology_housing =
+{
+		OR = {	
+			is_planet_class = pc_city
+			is_planet_class = pc_ecocity
+			is_planet_class = pc_coruscant
+			is_planet_class = pc_planetary_ringworld_city
+			has_modifier = dd_home_evolved_regular
+			has_modifier = dd_home_evolved_machine
+			has_modifier = dd_home_evolved_hive
+		}
+		NOT = { has_modifier = ancient_cities }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_ascended_machine }
+}
+
+has_district_hab_housing =
+{
+		OR = {	
+			is_planet_class = pc_habitat
+			is_planet_class = pc_habitable_gas_giant
+			is_planet_class = pc_gigaorbital_ring
+			is_planet_class = pc_interstellar_habitat
+			is_planet_class = pc_kuat_ring
+			AND = {
+				has_global_flag = gf_alphamod_activated
+				OR = {
+					is_planet_class = pc_asteroid_habitable
+					is_planet_class = pc_ice_asteroid_habitable
+				}
+			}
+		}
+		NOT = { 
+			AND = {
+				is_planet_class = pc_habitat
+				has_global_flag = LivingSpace_active
+			}
+		}
+}
+
+### DistrictOverhaul
+
+has_district_ocean_housing =
+{
+		is_planet_class = pc_ocean
+		has_limiting_modifier = no
+}
+
+has_district_ascended_housing =
+{
+		OR = {
+			is_planet_class = pc_giga_planetary_computer
+			has_modifier = ancient_cities
+			has_modifier = ancient_world
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_ascended_machine
+			has_modifier = dd_home_ascended_hive
+		}
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+}
+
+has_district_shelters =
+{
+		OR = {
+			has_modifier = volcanic_world
+			is_planet_class = pc_molten_habitable
+			is_planet_class = pc_primordial
+			is_planet_class = pc_desolate
+		}
+		has_limiting_modifier = no
+		### AlphaMod
+		NOT = { 
+			AND = {
+				has_global_flag = gf_alphamod_activated
+				is_hostile_planet_ia = yes
+			}
+		}
+}
+
+has_district_underground_city =
+{
+		OR = {
+			has_modifier = underground_world
+			is_planet_class = pc_underground_rocky
+			is_planet_class = pc_underground_icy
+		}
+		has_limiting_modifier = no
+}

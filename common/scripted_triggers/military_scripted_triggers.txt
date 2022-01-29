@@ -1,0 +1,129 @@
+### DistrictOverhaul
+
+has_district_spaceport =
+{
+		OR = {
+			is_planet_class = pc_continental
+			is_planet_class = pc_gaia
+			is_planet_class = pc_cybrex
+			is_planet_class = pc_ringworld_habitable
+			is_planet_class = pc_city
+			is_planet_class = pc_barren_cold_habitable
+			is_planet_class = pc_asteroid_base
+			is_planet_class = pc_ecocity
+			is_planet_class = pc_frozen_desert
+			is_planet_class = pc_mangrove
+			has_modifier = pm_Utopian_Paradise
+			is_planet_class = pc_golden_world_habitable
+			is_planet_class = pc_omega_ringworld_habitable
+			is_planet_class = pc_habitable_gas_giant
+			is_planet_class = pc_interstellar_habitat
+			is_planet_class = pc_primordial
+			is_planet_class = pc_kuat_ring
+			has_modifier = do_space_harbour
+		}
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_planet
+				NOT = { has_modififer = do_space_harbour }
+			}
+		}
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_evolved_regular
+				NOT = { has_modififer = do_space_harbour }
+			}
+		}
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_evolved_machine
+				NOT = { has_modififer = do_space_harbour }
+			}
+		}
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_evolved_hive
+				NOT = { has_modififer = do_space_harbour }
+			}
+		}
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_ascended_regular
+				NOT = { has_modififer = do_space_harbour }
+			}
+		}
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_ascended_machine
+				NOT = { has_modififer = do_space_harbour }
+			}
+		}
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_ascended_hive
+				NOT = { has_modififer = do_space_harbour }
+			}
+		}
+}
+
+has_district_academy =
+{
+		OR = {
+			has_modifier = exotic_world
+			is_planet_class = pc_geothermal
+			is_planet_class = pc_sandsea
+			is_planet_class = pc_swamp
+			is_planet_class = pc_mesa
+			is_planet_class = mem_pc_death
+			is_planet_class = pc_virtual_world
+			is_planet_class = pc_kuat_ring
+			is_planet_class = pc_centax
+			has_modifier = dust_world
+			has_modifier = death_world
+			has_modifier = temperate_zone
+			has_modifier = do_grand_academy
+		}
+		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_planet
+				NOT = { has_modififer = do_grand_academy }
+			}
+		}
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_evolved_regular
+				NOT = { has_modififer = do_grand_academy }
+			}
+		}
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_evolved_machine
+				NOT = { has_modififer = do_grand_academy }
+			}
+		}
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_evolved_hive
+				NOT = { has_modififer = do_grand_academy }
+			}
+		}
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_ascended_regular
+				NOT = { has_modififer = do_grand_academy }
+			}
+		}
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_ascended_machine
+				NOT = { has_modififer = do_grand_academy }
+			}
+		}
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_ascended_hive
+				NOT = { has_modififer = do_grand_academy }
+			}
+		}
+}

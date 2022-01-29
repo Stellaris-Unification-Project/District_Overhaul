@@ -1,0 +1,153 @@
+#########################
+### District Overhaul ###
+#########################
+
+district_machine_production_line = {
+	base_buildtime = 360
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		from = { is_machine_empire = yes }
+		has_district_machine_production_line = yes
+	}
+	
+	potential = {
+		owner = {
+			exists = owner
+			is_machine_empire = yes
+		}
+		has_district_machine_production_line = yes
+	}
+		
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 3
+		}		
+	}	
+		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_fabricator_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_machine_servitor }
+		}
+		modifier = {
+			job_fabricator_add = -2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_machine_servitor }
+		}
+		modifier = {
+			job_artisan_drone_add = 3
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = job_fabricator_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { has_valid_civic = civic_machine_servitor }
+		}
+		text = job_artisan_drone_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 2
+		modifier = {
+			factor = 5
+			owner = {
+				has_monthly_income = {
+					resource = alloys
+					value < 5
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				has_monthly_income = {
+					resource = minerals
+					value < 5
+				}
+			}
+		}		
+		modifier = {
+			factor = 2
+			owner = {
+				has_monthly_income = {
+					resource = minerals
+					value > 20
+				}
+			}
+		}		
+		modifier = {
+			factor = 2
+			owner = {
+				has_monthly_income = {
+					resource = alloys
+					value < 15
+				}
+			}
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 10000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 3
+			owner = {
+				has_monthly_income = {
+					resource = alloys
+					value < 100
+				}
+				has_monthly_income = {
+					resource = minerals
+					value > 15
+				}
+			}
+		}
+		modifier = {
+			weight = 300000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 3
+			owner = {
+				has_monthly_income = {
+					resource = alloys
+					value < 100
+				}
+				has_monthly_income = {
+					resource = minerals
+					value > 30
+				}
+			}
+		}
+	}
+}

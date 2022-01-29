@@ -1,0 +1,1640 @@
+#########################
+### District Overhaul ###
+#########################
+
+district_criminal_mining = {
+	base_buildtime = 60
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		has_district_criminal_mining = yes
+	}
+	potential = {
+		has_district_criminal_mining = yes
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_mining
+		district_mining_uncapped
+		district_secure_mining
+		district_surface_mining
+		district_asteroid_belt_mining
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 100
+		}
+		upkeep = {
+			energy = 1
+		}
+		upkeep = {
+		  	trigger = { 
+				owner = { or = { has_valid_civic = civic_socialistic	}	}
+			}
+			energy = 0.15
+		}
+		upkeep = {
+		  	trigger = { 
+				owner = { or = { has_valid_civic = civic_mining_guilds	}	}
+			}
+			energy = 0.15
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 1
+	}
+
+### Plentiful Traditions
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_plentiful_industry_3 }
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_mining_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_plentiful_industry_3 }
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_mining_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_plentiful_industry_3 }
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_miner_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_plentiful_industry_3 }
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_fe_acolyte_mine_add = 1
+		}
+	}
+
+###
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_valid_civic = civic_mining_guilds
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_miner_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_keepers_harmony }
+		}
+		modifier = { planet_amenities_add = -1}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_agrarian_idyll 
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 4
+			job_corrupt_drone = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 3
+			job_deviant_drone = 1
+		}
+	}	
+		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_miner_add = 3
+			job_criminal_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+			   	OR = {
+			       		has_valid_civic = civic_labour_unions
+				   	has_valid_civic = civic_socialistic
+				}
+			}
+		}
+		modifier = { job_miner_add = 1 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_fe_acolyte_mine_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_1
+				  is_gestalt = yes }
+		}
+		modifier = { job_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_2
+				  is_gestalt = yes }
+		}
+		modifier = { job_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_3
+				  is_gestalt = yes }
+		}
+		modifier = { job_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_4
+				  is_gestalt = yes }
+		}
+		modifier = { job_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_5
+				  is_gestalt = yes }
+		}
+		modifier = { job_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_1
+				  is_gestalt = no }
+		}
+		modifier = { job_miner_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_2
+				  is_gestalt = no }
+		}
+		modifier = { job_miner_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_3
+				  is_gestalt = no }
+		}
+		modifier = { job_miner_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_4
+				  is_gestalt = no }
+		}
+		modifier = { job_miner_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_5
+				  is_gestalt = no }
+		}
+		modifier = { job_miner_add = 1 }
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_mining_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_miner_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_criminal_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_mine_effect_desc
+	}
+	
+	prerequisites = {
+		tech_mechanized_mining
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = 
+		{
+			factor = 3
+			owner = { 
+				has_monthly_income = {
+					resource = minerals
+					value < 0
+				}
+			}
+		}
+
+		modifier = {
+			factor = 2
+			free_housing < 0
+		}
+
+		modifier = {
+			factor = 3
+			any_owned_pop = { 
+				OR = { 
+					is_unemployed = yes 
+					has_job = servant 
+				}
+			}
+		}
+
+		# No one to work it anyway
+		modifier = {
+			factor = 0
+			free_housing > 0
+			NOT = {
+				any_owned_pop = { 
+					OR = { 
+						is_unemployed = yes 
+						has_job = servant 
+					}
+				}
+			}
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+
+			weight = 500
+
+			has_global_flag = gai_enabled_flag
+			NOT = { has_planet_flag = gai_arc }
+
+		}
+
+		modifier = {
+
+			factor = 1.75
+			
+			has_global_flag = gai_enabled_flag
+			OR = {
+
+				gai_work_minerals = yes
+
+				gai_work_minerals_goods = yes
+
+			}
+
+		}
+
+		modifier = {
+
+			weight = 250000
+
+			has_global_flag = gai_enabled_flag
+			NOT = { has_planet_flag = gai_arc }
+
+			OR = {
+
+				free_jobs = 0
+
+				any_owned_pop = {
+
+					is_unemployed = yes
+
+					NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+
+					NOR = {
+
+						is_pop_category = specialist
+
+						is_pop_category = ruler
+
+					}
+
+				}
+
+			}
+
+		}
+	}
+
+	ai_resource_production = {
+		minerals = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+district_secure_mining = {
+	base_buildtime = 360
+	
+	min_for_deposits_on_planet = 1
+	max_for_deposits_on_planet = 10
+
+	show_on_uncolonized = {
+		has_district_secure_mining = yes
+	}
+	potential = {
+		has_district_secure_mining = yes
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_mining
+		district_mining_uncapped
+		district_criminal_mining
+		district_surface_mining
+		district_asteroid_belt_mining
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 400
+		}
+		upkeep = {
+			energy = 3
+		}
+		upkeep = {
+		  	trigger = { 
+				owner = { or = { has_valid_civic = civic_socialistic	}	}
+			}
+			energy = 0.5
+		}
+		upkeep = {
+		  	trigger = { 
+				owner = { or = { has_valid_civic = civic_mining_guilds	}	}
+			}
+			energy = 0.5
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 3
+	}
+
+### Plentiful Traditions
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_plentiful_industry_3 }
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_mining_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_plentiful_industry_3 }
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_mining_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_plentiful_industry_3 }
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_miner_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_plentiful_industry_3 }
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_fe_acolyte_mine_add = 1
+		}
+	}
+
+###
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_valid_civic = civic_mining_guilds
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_miner_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_keepers_harmony }
+		}
+		modifier = { planet_amenities_add = -1}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_agrarian_idyll 
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 2
+		}
+	}	
+		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_miner_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+			   	OR = {
+			       		has_valid_civic = civic_labour_unions
+				   	has_valid_civic = civic_socialistic
+				}
+			}
+		}
+		modifier = { job_miner_add = 1 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_fe_acolyte_mine_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_1
+				  is_gestalt = yes }
+		}
+		modifier = { job_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_2
+				  is_gestalt = yes }
+		}
+		modifier = { job_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_3
+				  is_gestalt = yes }
+		}
+		modifier = { job_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_4
+				  is_gestalt = yes }
+		}
+		modifier = { job_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_5
+				  is_gestalt = yes }
+		}
+		modifier = { job_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_1
+				  is_gestalt = no }
+		}
+		modifier = { job_miner_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_2
+				  is_gestalt = no }
+		}
+		modifier = { job_miner_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_3
+				  is_gestalt = no }
+		}
+		modifier = { job_miner_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_4
+				  is_gestalt = no }
+		}
+		modifier = { job_miner_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_5
+				  is_gestalt = no }
+		}
+		modifier = { job_miner_add = 1 }
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_mining_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_miner_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_mine_effect_desc
+	}
+	
+	prerequisites = {
+		tech_mechanized_mining
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = 
+		{
+			factor = 3
+			owner = { 
+				has_monthly_income = {
+					resource = minerals
+					value < 0
+				}
+			}
+		}
+
+		modifier = {
+			factor = 2
+			free_housing < 0
+		}
+
+		modifier = {
+			factor = 3
+			any_owned_pop = { 
+				OR = { 
+					is_unemployed = yes 
+					has_job = servant 
+				}
+			}
+		}
+
+		# No one to work it anyway
+		modifier = {
+			factor = 0
+			free_housing > 0
+			NOT = {
+				any_owned_pop = { 
+					OR = { 
+						is_unemployed = yes 
+						has_job = servant 
+					}
+				}
+			}
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+
+			weight = 500
+
+			has_global_flag = gai_enabled_flag
+			NOT = { has_planet_flag = gai_arc }
+
+		}
+
+		modifier = {
+
+			factor = 1.75
+			
+			has_global_flag = gai_enabled_flag
+			OR = {
+
+				gai_work_minerals = yes
+
+				gai_work_minerals_goods = yes
+
+			}
+
+		}
+
+		modifier = {
+
+			weight = 250000
+
+			has_global_flag = gai_enabled_flag
+			NOT = { has_planet_flag = gai_arc }
+
+			OR = {
+
+				free_jobs = 0
+
+				any_owned_pop = {
+
+					is_unemployed = yes
+
+					NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+
+					NOR = {
+
+						is_pop_category = specialist
+
+						is_pop_category = ruler
+
+					}
+
+				}
+
+			}
+
+		}
+	}
+
+	ai_resource_production = {
+		minerals = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+district_surface_mining = {
+	base_buildtime = 120
+	
+	min_for_deposits_on_planet = 1
+	max_for_deposits_on_planet = 10
+
+	show_on_uncolonized = {
+		has_district_surface_mining = yes
+	}
+	potential = {
+		has_district_surface_mining = yes
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_mining
+		district_mining_uncapped
+		district_criminal_mining
+		district_secure_mining
+		district_asteroid_belt_mining
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 100
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+
+### Plentiful Traditions
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_plentiful_industry_3 }
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_mining_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_plentiful_industry_3 }
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_mining_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_plentiful_industry_3 }
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_miner_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_plentiful_industry_3 }
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_fe_acolyte_mine_add = 1
+		}
+	}
+
+###
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_valid_civic = civic_mining_guilds
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_miner_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_keepers_harmony }
+		}
+		modifier = { planet_amenities_add = -1}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_agrarian_idyll 
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 2
+		}
+	}	
+		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_miner_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+			   	OR = {
+			       		has_valid_civic = civic_labour_unions
+				   	has_valid_civic = civic_socialistic
+				}
+			}
+		}
+		modifier = { job_miner_add = 1 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_fe_acolyte_mine_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_1
+				  is_gestalt = yes }
+		}
+		modifier = { job_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_2
+				  is_gestalt = yes }
+		}
+		modifier = { job_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_3
+				  is_gestalt = yes }
+		}
+		modifier = { job_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_4
+				  is_gestalt = yes }
+		}
+		modifier = { job_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_5
+				  is_gestalt = yes }
+		}
+		modifier = { job_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_1
+				  is_gestalt = no }
+		}
+		modifier = { job_miner_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_2
+				  is_gestalt = no }
+		}
+		modifier = { job_miner_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_3
+				  is_gestalt = no }
+		}
+		modifier = { job_miner_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_4
+				  is_gestalt = no }
+		}
+		modifier = { job_miner_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_5
+				  is_gestalt = no }
+		}
+		modifier = { job_miner_add = 1 }
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_mining_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_miner_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_mine_effect_desc
+	}
+	
+	prerequisites = {
+		tech_mechanized_mining
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = 
+		{
+			factor = 3
+			owner = { 
+				has_monthly_income = {
+					resource = minerals
+					value < 0
+				}
+			}
+		}
+
+		modifier = {
+			factor = 2
+			free_housing < 0
+		}
+
+		modifier = {
+			factor = 3
+			any_owned_pop = { 
+				OR = { 
+					is_unemployed = yes 
+					has_job = servant 
+				}
+			}
+		}
+
+		# No one to work it anyway
+		modifier = {
+			factor = 0
+			free_housing > 0
+			NOT = {
+				any_owned_pop = { 
+					OR = { 
+						is_unemployed = yes 
+						has_job = servant 
+					}
+				}
+			}
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+
+			weight = 500
+
+			has_global_flag = gai_enabled_flag
+			NOT = { has_planet_flag = gai_arc }
+
+		}
+
+		modifier = {
+
+			factor = 1.75
+			
+			has_global_flag = gai_enabled_flag
+			OR = {
+
+				gai_work_minerals = yes
+
+				gai_work_minerals_goods = yes
+
+			}
+
+		}
+
+		modifier = {
+
+			weight = 250000
+
+			has_global_flag = gai_enabled_flag
+			NOT = { has_planet_flag = gai_arc }
+
+			OR = {
+
+				free_jobs = 0
+
+				any_owned_pop = {
+
+					is_unemployed = yes
+
+					NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+
+					NOR = {
+
+						is_pop_category = specialist
+
+						is_pop_category = ruler
+
+					}
+
+				}
+
+			}
+
+		}
+	}
+
+	ai_resource_production = {
+		minerals = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+district_asteroid_belt_mining = {
+	base_buildtime = 240
+
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		has_district_asteroid_belt_mining = yes
+	}
+	potential = {
+		has_district_asteroid_belt_mining = yes
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_mining
+		district_mining_uncapped
+		district_criminal_mining
+		district_secure_mining
+		district_surface_mining
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			alloys = 200
+		}
+		upkeep = {
+			energy = 10
+		}
+		upkeep = {
+		  	trigger = { 
+				owner = { or = { has_valid_civic = civic_socialistic	}	}
+			}
+			energy = 3
+		}
+		upkeep = {
+		  	trigger = { 
+				owner = { or = { has_valid_civic = civic_mining_guilds	}	}
+			}
+			energy = 3
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+
+### Plentiful Traditions
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_plentiful_industry_3 }
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_asteroid_belt_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_plentiful_industry_3 }
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_asteroid_belt_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_plentiful_industry_3 }
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_asteroid_belt_miner_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_plentiful_industry_3 }
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_asteroid_belt_miner_add = 1
+		}
+	}
+
+###
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_valid_civic = civic_mining_guilds
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_asteroid_belt_miner_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_keepers_harmony }
+		}
+		modifier = { planet_amenities_add = -1}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_agrarian_idyll 
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_asteroid_belt_drone_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_asteroid_belt_miner_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_fe_acolyte_mine_add = 10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_1
+				  is_gestalt = yes }
+		}
+		modifier = { job_asteroid_belt_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_3
+				  is_gestalt = yes }
+		}
+		modifier = { job_asteroid_belt_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_5
+				  is_gestalt = yes }
+		}
+		modifier = { job_asteroid_belt_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_1
+				  is_gestalt = no }
+		}
+		modifier = { job_asteroid_belt_miner_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_3
+				  is_gestalt = no }
+		}
+		modifier = { job_asteroid_belt_miner_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_mining_5
+				  is_gestalt = no }
+		}
+		modifier = { job_asteroid_belt_miner_add = 1 }
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_asteroid_belt_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_asteroid_belt_miner_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_mine_effect_desc
+	}
+
+	prerequisites = {
+	}
+	
+	ai_weight = {
+		weight = 1
+		modifier = 
+		{
+			factor = 3
+			owner = { 
+				has_monthly_income = {
+					resource = minerals
+					value < 0
+				}
+			}
+		}
+
+		modifier = {
+			factor = 2
+			free_housing < 0
+		}
+
+		modifier = {
+			factor = 3
+			any_owned_pop = { 
+				OR = { 
+					is_unemployed = yes 
+					has_job = servant 
+				}
+			}
+		}
+
+		# No one to work it anyway
+		modifier = {
+			factor = 0
+			free_housing > 0
+			NOT = {
+				any_owned_pop = { 
+					OR = { 
+						is_unemployed = yes 
+						has_job = servant 
+					}
+				}
+			}
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+
+			weight = 500
+
+			has_global_flag = gai_enabled_flag
+			NOT = { has_planet_flag = gai_arc }
+
+		}
+
+		modifier = {
+
+			factor = 1.75
+			
+			has_global_flag = gai_enabled_flag
+			OR = {
+
+				gai_work_minerals = yes
+
+				gai_work_minerals_goods = yes
+
+			}
+
+		}
+
+		modifier = {
+
+			weight = 250000
+
+			has_global_flag = gai_enabled_flag
+			NOT = { has_planet_flag = gai_arc }
+
+			OR = {
+
+				free_jobs = 0
+
+				any_owned_pop = {
+
+					is_unemployed = yes
+
+					NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+
+					NOR = {
+
+						is_pop_category = specialist
+
+						is_pop_category = ruler
+
+					}
+
+				}
+
+			}
+
+		}
+	}
+}

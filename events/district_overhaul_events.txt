@@ -1,0 +1,81 @@
+namespace = DistrictOverhaul
+
+planet_event = {
+	id = DistrictOverhaul.0
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+}
+
+planet_event = {
+	id = DistrictOverhaul.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_planet_flag = trw_start }
+		NOT = { is_planet_class = pc_ringworld_habitable }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+	}
+	immediate = {
+		add_modifier = {
+			modifier = "dd_home_planet"
+			days = -1
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	immediate = {
+		remove_district = district_farming
+		remove_district = district_farming
+		remove_district = district_mining
+		remove_district = district_mining
+		remove_district = district_generator
+		remove_district = district_generator
+		add_district = district_farming
+		add_district = district_farming
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_generator
+		add_district = district_generator
+	}
+}
+
+#########################################################################################
+
+planet_event = {
+	id = DistrictOverhaul.2
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		effect = {
+			while = { count = 2 do_add_random_deposit = yes }
+		}
+	}
+}
+
+planet_event = {
+	id = DistrictOverhaul.3
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		effect = { do_add_d_stormy_highlands = yes }
+		effect = { do_add_d_boiling_lake = yes }
+		effect = { do_add_d_open_space = yes }
+		effect = { do_add_d_stable_ground = yes }
+		effect = { do_add_d_small_rock_formation = yes }
+		effect = { do_add_d_interesting_wildlife = yes }
+		effect = { do_add_d_small_anomaly = yes }
+		effect = { do_add_d_relaxing_location = yes }
+		effect = { do_add_d_berries_hedge = yes }
+		effect = { do_add_d_carbon_compounds = yes }
+		effect = { do_add_d_bubbling_lake = yes }
+		effect = { do_add_d_luminescent_cave = yes }
+		effect = { do_add_d_empty_space = yes }
+		effect = { do_add_d_hot_springs = yes }
+		effect = { do_add_d_mineral_fields = yes }
+		effect = { do_add_d_bountiful_plains = yes }
+	}
+}

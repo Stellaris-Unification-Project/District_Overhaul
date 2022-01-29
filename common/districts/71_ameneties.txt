@@ -1,0 +1,927 @@
+################
+### The Belt ###
+################
+
+district_asteroid_cultural = {
+	base_buildtime = 180
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_habitable_asteroid
+		from = { is_gestalt = no }
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	potential = {
+		is_planet_class = pc_habitable_asteroid
+		owner = { is_gestalt = no }
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 300
+		}
+		upkeep = {
+			energy = 5
+		}		
+	}
+		
+	planet_modifier = {
+		job_entertainer_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_3 }
+		}
+		modifier = { job_entertainer_add = 1 }
+	}
+	
+	triggered_desc = {
+		text = job_entertainer_effect_desc
+	}	
+	
+	triggered_desc = {
+		text = job_culture_worker_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 1
+		modifier = 
+		{
+			factor = 5
+			free_amenities < 2
+		}
+		modifier = 
+		{
+			factor = 2
+			free_amenities < 5
+		}
+		modifier =
+		{
+			factor = 0
+			free_amenities > 15
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = 
+		{
+			weight = 10000
+			has_global_flag = gai_enabled_flag
+			free_amenities < 5
+		}
+		modifier = {
+			weight = 200000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 3
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 200
+				}
+				has_monthly_income = {
+					resource = alloys
+					value > 500
+				}
+			}
+		}
+		modifier = 
+		{
+			factor = 2
+			has_global_flag = gai_enabled_flag
+			free_amenities < 5
+		}
+		modifier =
+		{
+			factor = 0.1
+			has_global_flag = gai_enabled_flag
+			free_amenities > 15
+		}
+	}
+
+	ai_resource_production = {
+		unity = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+###########################
+### Planetary Diversity ###
+###########################
+
+district_ecoarcology_leisure = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_ecocity
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	potential = {
+		is_planet_class = pc_ecocity
+		owner = { 
+			exists = owner
+			is_regular_empire = yes
+		}
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_nexus
+		district_hive
+		district_arcology_housing
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+		}
+		upkeep = {
+			energy = 5
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_entertainer_add = 5
+			job_culture_worker_add = 5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_1 }
+		}
+		modifier = { job_entertainer_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_2 }
+		}
+		modifier = { job_culture_worker_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_3 }
+		}
+		modifier = { job_entertainer_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_4 }
+		}
+		modifier = { job_culture_worker_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_5 }
+		}
+		modifier = { job_culture_worker_add = 1 }
+	}
+
+	triggered_desc = {
+		text = job_entertainer_effect_desc
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = 
+		{
+			factor = 5
+			free_amenities < 2
+		}
+		modifier = 
+		{
+			factor = 2
+			free_amenities < 5
+		}
+		modifier =
+		{
+			factor = 0
+			free_amenities > 15
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = 
+		{
+			weight = 10000
+			has_global_flag = gai_enabled_flag
+			free_amenities < 5
+		}
+		modifier = {
+			weight = 200000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 3
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 200
+				}
+				has_monthly_income = {
+					resource = alloys
+					value > 500
+				}
+			}
+		}
+		modifier = 
+		{
+			factor = 2
+			has_global_flag = gai_enabled_flag
+			free_amenities < 5
+		}
+		modifier =
+		{
+			factor = 0.1
+			has_global_flag = gai_enabled_flag
+			free_amenities > 15
+		}
+	}
+}
+
+###########
+### MEM ###
+###########
+
+district_mem_vazuran_habitat_leisure = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_mem_vazuran_habitat
+		from = {
+			is_regular_empire = yes
+		}
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	potential = {
+		is_planet_class = pc_mem_vazuran_habitat
+		owner = { 
+			exists = owner
+			is_regular_empire = yes
+		}
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_nexus
+		district_hive
+		district_arcology_housing
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+		}
+		upkeep = {
+			energy = 5
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_entertainer_add = 5
+			job_culture_worker_add = 5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_1 }
+		}
+		modifier = { job_entertainer_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_2 }
+		}
+		modifier = { job_culture_worker_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_3 }
+		}
+		modifier = { job_entertainer_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_4 }
+		}
+		modifier = { job_culture_worker_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_5 }
+		}
+		modifier = { job_culture_worker_add = 1 }
+	}
+
+	triggered_desc = {
+		text = job_entertainer_effect_desc
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = 
+		{
+			factor = 5
+			free_amenities < 2
+		}
+		modifier = 
+		{
+			factor = 2
+			free_amenities < 5
+		}
+		modifier =
+		{
+			factor = 0
+			free_amenities > 15
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = 
+		{
+			weight = 10000
+			has_global_flag = gai_enabled_flag
+			free_amenities < 5
+		}
+		modifier = {
+			weight = 200000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 3
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 200
+				}
+				has_monthly_income = {
+					resource = alloys
+					value > 500
+				}
+			}
+		}
+		modifier = 
+		{
+			factor = 2
+			has_global_flag = gai_enabled_flag
+			free_amenities < 5
+		}
+		modifier =
+		{
+			factor = 0.1
+			has_global_flag = gai_enabled_flag
+			free_amenities > 15
+		}
+	}
+}
+
+####################################
+### The Zenith of Fallen Empires ###
+####################################
+
+district_utopian_leisure = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		has_modifier = pm_Utopian_Paradise
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+	}
+	
+	potential = {
+		has_modifier = pm_Utopian_Paradise
+		exists = owner
+		owner = { 
+			is_regular_empire = yes
+		}
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+		}	
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 5
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_entertainer_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_3 }
+		}
+		modifier = { job_entertainer_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_5 }
+		}
+		modifier = { job_entertainer_add = 1 }
+	}
+
+	triggered_desc = {
+		text = job_entertainer_effect_desc
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = 
+		{
+			factor = 5
+			free_amenities < 2
+		}
+		modifier = 
+		{
+			factor = 2
+			free_amenities < 5
+		}
+		modifier =
+		{
+			factor = 0
+			free_amenities > 15
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = 
+		{
+			weight = 10000
+			has_global_flag = gai_enabled_flag
+			free_amenities < 5
+		}
+		modifier = {
+			weight = 200000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 3
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 200
+				}
+				has_monthly_income = {
+					resource = alloys
+					value > 500
+				}
+			}
+		}
+		modifier = 
+		{
+			factor = 2
+			has_global_flag = gai_enabled_flag
+			free_amenities < 5
+		}
+		modifier =
+		{
+			factor = 0.1
+			has_global_flag = gai_enabled_flag
+			free_amenities > 15
+		}
+	}
+}
+
+##################################
+### Gigastructural Engineering ###
+##################################
+
+district_ringworld_arcology_leisure = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_city_ringworld_habitable
+		from = {
+			is_regular_empire = yes
+		}
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	potential = {
+		is_planet_class = pc_city_ringworld_habitable
+		owner = { 
+			exists = owner
+			is_regular_empire = yes
+		}
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_nexus
+		district_hive
+		district_arcology_housing
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+		}
+		upkeep = {
+			energy = 5
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 5
+		job_entertainer_add = 5
+		job_culture_worker_add = 5
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_1 }
+		}
+		modifier = { job_entertainer_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_2 }
+		}
+		modifier = { job_culture_worker_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_3 }
+		}
+		modifier = { job_entertainer_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_4 }
+		}
+		modifier = { job_culture_worker_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_5 }
+		}
+		modifier = { job_culture_worker_add = 1 }
+	}
+
+	triggered_desc = {
+		text = job_entertainer_effect_desc
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = 
+		{
+			factor = 5
+			free_amenities < 2
+		}
+		modifier = 
+		{
+			factor = 2
+			free_amenities < 5
+		}
+		modifier =
+		{
+			factor = 0
+			free_amenities > 15
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = 
+		{
+			weight = 10000
+			has_global_flag = gai_enabled_flag
+			free_amenities < 5
+		}
+		modifier = {
+			weight = 200000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 3
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 200
+				}
+				has_monthly_income = {
+					resource = alloys
+					value > 500
+				}
+			}
+		}
+		modifier = 
+		{
+			factor = 2
+			has_global_flag = gai_enabled_flag
+			free_amenities < 5
+		}
+		modifier =
+		{
+			factor = 0.1
+			has_global_flag = gai_enabled_flag
+			free_amenities > 15
+		}
+	}
+}
+
+district_elysium_leisure = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		OR = {
+			is_planet_class = pc_gigaorbital_ring
+			is_planet_class = pc_interstellar_habitat
+		}
+		from = {
+			is_regular_empire = yes
+		}
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	potential = {
+		OR = {
+			is_planet_class = pc_gigaorbital_ring
+			is_planet_class = pc_interstellar_habitat
+		}
+		owner = { 
+			exists = owner
+			is_regular_empire = yes
+		}
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_nexus
+		district_hive
+		district_arcology_housing
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 750
+		}
+		upkeep = {
+			energy = 5
+		}		
+	}
+	
+	planet_modifier = {
+		job_entertainer_add = 2
+		job_culture_worker_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_1 }
+		}
+		modifier = { job_culture_worker_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_2 }
+		}
+		modifier = { job_entertainer_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_3 }
+		}
+		modifier = { job_culture_worker_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_5 }
+		}
+		modifier = { job_entertainer_add = 1 }
+	}
+
+	triggered_desc = {
+		text = job_entertainer_effect_desc
+	}
+	
+	triggered_desc = {
+		text = job_culture_worker_effect_desc
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = 
+		{
+			factor = 5
+			free_amenities < 2
+		}
+		modifier = 
+		{
+			factor = 2
+			free_amenities < 5
+		}
+		modifier =
+		{
+			factor = 0
+			free_amenities > 15
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = 
+		{
+			weight = 10000
+			has_global_flag = gai_enabled_flag
+			free_amenities < 5
+		}
+		modifier = {
+			weight = 200000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 3
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 200
+				}
+				has_monthly_income = {
+					resource = alloys
+					value > 500
+				}
+			}
+		}
+		modifier = 
+		{
+			factor = 2
+			has_global_flag = gai_enabled_flag
+			free_amenities < 5
+		}
+		modifier =
+		{
+			factor = 0.1
+			has_global_flag = gai_enabled_flag
+			free_amenities > 15
+		}
+	}
+}

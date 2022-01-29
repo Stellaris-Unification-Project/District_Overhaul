@@ -1,0 +1,140 @@
+###################
+### Dyson Swarm ###
+###################
+
+dyson_swarm_market_stations = {
+	base_buildtime = 310
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_dyson_swarm
+		from = { is_gestalt = no }
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	potential = {
+		is_planet_class = pc_dyson_swarm
+		exists = owner
+		owner = { is_regular_empire = yes }
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		dyson_housing_gestalt
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 400
+		}
+		upkeep = {
+			energy = 1
+			minerals = 1
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 2
+		job_clerk_add = 3
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_trade_2 }
+		}
+		modifier = { job_clerk_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_trade_4 }
+		}
+		modifier = { job_clerk_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_trade_5 }
+		}
+		modifier = { job_clerk_add = 1 }
+	}
+	
+	triggered_desc = {
+		text = job_clerk_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 0
+		modifier = 
+		{
+			weight = 20
+			owner = { 
+				has_monthly_income = {
+					resource = energy
+					value < 10
+				}
+			}
+			free_amenities < 2
+		}
+		modifier =
+		{
+			factor = 3
+			owner = { is_megacorp = yes }
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 25000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 3
+			OR = {
+				owner = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value < 6
+					}
+				}
+				owner = {
+					has_monthly_income = {
+						resource = minerals
+						value < 50
+					}
+				}
+				owner = {
+					has_monthly_income = {
+						resource = energy
+						value < 50
+					}
+				}
+			}
+		}
+	}
+
+	ai_resource_production = {
+		consumer_goods = 1
+		trigger = {
+			always = yes
+		}
+	}
+}

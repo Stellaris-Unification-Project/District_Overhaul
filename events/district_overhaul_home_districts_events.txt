@@ -1,0 +1,171 @@
+###Not yet implemented
+###namespace = DistrictOverhaulHomeDistricts
+
+planet_event = {
+	id = DistrictOverhaulHomeDistricts.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_planet_flag = trw_start }
+		NOT = { is_planet_class = pc_ringworld_habitable }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		owner = { has_valid_civic = civic_machine_replication }
+	}
+	immediate = {
+		add_modifier = {
+			modifier = "do_machine_replication"
+			days = -1
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+}
+
+planet_event = {
+	id = DistrictOverhaulHomeDistricts.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_planet_flag = trw_start }
+		NOT = { is_planet_class = pc_ringworld_habitable }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		NOT = { owner = { has_valid_civic = civic_machine_replication } }
+		OR = {
+			owner = { has_ethic = ethic_spiritualist }
+			owner = { has_ethic = ethic_fanatic_spiritualist }
+		}
+	}
+	immediate = {
+		add_modifier = {
+			modifier = "do_spiritualist_heaven"
+			days = -1
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+}
+
+planet_event = {
+	id = DistrictOverhaulHomeDistricts.3
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_planet_flag = trw_start }
+		NOT = { is_planet_class = pc_ringworld_habitable }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		NOT = { owner = { has_valid_civic = civic_machine_replication } }
+		NOT = { owner = { has_ethic = ethic_spiritualist } }
+		NOT = { owner = { has_ethic = ethic_fanatic_spiritualist } }
+		OR = {
+			owner = { has_valid_civic = civic_naval_contractors }
+			owner = { has_valid_civic = civic_distinguished_admiralty }
+			owner = { has_valid_civic = civic_hive_subspace_ephapse }
+		}
+	}
+	immediate = {
+		add_modifier = {
+			modifier = "do_space_harbour"
+			days = -1
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+}
+
+planet_event = {
+	id = DistrictOverhaulHomeDistricts.4
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_planet_flag = trw_start }
+		NOT = { is_planet_class = pc_ringworld_habitable }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		NOT = { owner = { has_valid_civic = civic_machine_replication } }
+		NOT = { owner = { has_ethic = ethic_spiritualist } }
+		NOT = { owner = { has_ethic = ethic_fanatic_spiritualist } }
+		NOT = { owner = { has_valid_civic = civic_naval_contractors } }
+		NOT = { owner = { has_valid_civic = civic_distinguished_admiralty } }
+		NOT = { owner = { has_valid_civic = civic_hive_subspace_ephapse } }
+		OR = {
+			owner = { has_valid_civic = civic_private_military_companies }
+			owner = { has_valid_civic = civic_warrior_culture }
+			owner = { has_valid_civic = civic_hive_strength_of_legions }
+			owner = { has_valid_civic = civic_machine_warbots  }
+		}
+	}
+	immediate = {
+		add_modifier = {
+			modifier = "do_grand_academy"
+			days = -1
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+}
+
+planet_event = {
+	id = DistrictOverhaulHomeDistricts.5
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_planet_flag = trw_start }
+		NOT = { is_planet_class = pc_ringworld_habitable }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		NOT = { owner = { has_valid_civic = civic_machine_replication } }
+		NOT = { owner = { has_ethic = ethic_spiritualist } }
+		NOT = { owner = { has_ethic = ethic_fanatic_spiritualist } }
+		NOT = { owner = { has_valid_civic = civic_naval_contractors } }
+		NOT = { owner = { has_valid_civic = civic_distinguished_admiralty } }
+		NOT = { owner = { has_valid_civic = civic_hive_subspace_ephapse } }
+		NOT = { owner = { has_valid_civic = civic_private_military_companies } }
+		NOT = { owner = { has_valid_civic = civic_warrior_culture } }
+		NOT = { owner = { has_valid_civic = civic_hive_strength_of_legions } }
+		NOT = { owner = { has_valid_civic = civic_machine_warbots  } }
+		is_megacorp = yes
+	}
+	immediate = {
+		add_modifier = {
+			modifier = "do_trade_hub"
+			days = -1
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+}
+
+planet_event = {
+	id = DistrictOverhaulHomeDistricts.6
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_planet_flag = trw_start }
+		NOT = { is_planet_class = pc_ringworld_habitable }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		NOT = { owner = { has_valid_civic = civic_machine_replication } }
+		NOT = { owner = { has_ethic = ethic_spiritualist } }
+		NOT = { owner = { has_ethic = ethic_fanatic_spiritualist } }
+		NOT = { owner = { has_valid_civic = civic_naval_contractors } }
+		NOT = { owner = { has_valid_civic = civic_distinguished_admiralty } }
+		NOT = { owner = { has_valid_civic = civic_hive_subspace_ephapse } }
+		NOT = { owner = { has_valid_civic = civic_private_military_companies } }
+		NOT = { owner = { has_valid_civic = civic_warrior_culture } }
+		NOT = { owner = { has_valid_civic = civic_hive_strength_of_legions } }
+		NOT = { owner = { has_valid_civic = civic_machine_warbots  } }
+		NOT = { is_megacorp = yes }
+		owner = { has_valid_civic = civic_environmentalist }
+	}
+	immediate = {
+		add_modifier = {
+			modifier = "do_enviroment_friendly"
+			days = -1
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+}

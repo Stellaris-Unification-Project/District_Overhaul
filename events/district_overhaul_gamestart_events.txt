@@ -1,0 +1,13 @@
+namespace = DistrictOverhaulGameStart
+
+### Set the global Flag
+
+event = {
+    id = DistrictOverhaulGameStart.1
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = { NOT = { has_global_flag = DistrictOverhaul_active } }
+
+    immediate = { set_global_flag = DistrictOverhaul_active }
+}

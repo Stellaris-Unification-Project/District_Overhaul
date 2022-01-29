@@ -1,0 +1,18 @@
+﻿l_english:
+  decision_endless_planet:0 "Endless Planet Decision"
+  decision_endless_planet_desc:0 "You can always find more space to build. This decision will permanently increase the amount of possible districts by one."
+  decision_develope_planet:0 "Planetary Development"
+  decision_develope_planet_desc:0 "Scan your planet to find resources you didn't see in your last scan."
+  decision_evolve_home:0 "Evolving Planet"
+  decision_evolve_home_desc:0 "Evolving you planet will give you access to better districts and will make your world more powerful."
+  decision_ascend_regular:0 "Planetary Ascension"
+  decision_ascend_regular_desc:0 "An ascended planet will forever be a beacon in the galaxy."
+  decision_ascend_hive:0 "Planetary Ascension"
+  decision_ascend_hive_desc:0 "This will make sure that your hive will endure forever."
+  decision_ascend_machine:0 "Planetary Ascension"
+  decision_ascend_machine_desc:0 "Your planet will become one with the machine."
+  
+  decision_evolve_home_tooltip:0 "Evolving your home will give you access to uncapped districts and an aditional one."
+  decision_ascend_home_tooltip:0 "A planetary ascension will implement precurser technology into your planet."
+  
+  decision_develope_planet_effects:0 "A random deposit is added on your planet."

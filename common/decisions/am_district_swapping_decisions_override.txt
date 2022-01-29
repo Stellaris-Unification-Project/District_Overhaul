@@ -1,0 +1,817 @@
+decision_heavy_industrialisation = {
+	owned_planets_only = yes
+	enactment_time = 90
+	resources = {
+		category = decisions
+		cost = {
+			minerals = 500
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		exists = owner
+		owner = { 
+			is_gestalt = no
+			is_fallen_empire_spiritualist = no
+		}
+		habitable_structure = no
+		not = { has_planet_flag = heavy_industries }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_barren_habitable }
+		NOT = { is_planet_class = pc_molten_habitable }
+		NOT = { is_planet_class = pc_toxic_habitable }
+		NOT = { is_planet_class = pc_frozen_habitable }
+		### DistrictOverhaul
+		has_district_mining = yes
+		### Check AlphaMod enabled
+		has_global_flag = gf_alphamod_activated
+	}
+	
+	allow = {
+		num_districts = { type = district_mining value > 2 }
+	}
+	
+	effect = {
+		custom_tooltip = decision_heavy_industrialisation_custom
+		hidden_effect = {
+			remove_district = district_mining
+			remove_district = district_mining
+			remove_district = district_mining
+			set_planet_flag = heavy_industries
+			add_district = district_industrialised
+			add_district = district_industrialised
+			add_district = district_industrialised
+			validate_planet_buildings_and_districts = yes 
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			num_districts = { type = district_mining value > 2 }
+			num_districts = { type = district_mining value < 6 }
+			num_pops > 25
+			owner = {
+				has_monthly_income = {
+					resource = minerals
+					value > 250
+				}			
+			}
+			owner = {
+				has_monthly_income = {
+					resource = alloys
+					value < 50
+				}			
+			}
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value < 100
+				}			
+			}				
+		}
+		modifier = {
+			weight = 5
+			num_districts = { type = district_mining value < 4 }
+			num_districts = { type = district_farming value > 1 }
+			num_districts = { type = district_generator value > 1 }
+			num_pops > 50
+			owner = {
+				has_monthly_income = {
+					resource = minerals
+					value > 500
+				}			
+			}
+			owner = {
+				has_monthly_income = {
+					resource = alloys
+					value < 100
+				}			
+			}
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value < 200
+				}			
+			}				
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value < 1000
+				}
+			}
+		}
+	}
+}
+
+decision_megacities = {
+	owned_planets_only = yes
+	enactment_time = 360
+	resources = {
+		category = decisions
+		cost = {
+			minerals = 1000
+			sr_wealth = 250
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		exists = owner
+		owner = { 
+			is_gestalt = no
+			is_fallen_empire_spiritualist = no
+		}
+		habitable_structure = no
+		not = { has_planet_flag = mega_cities }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_barren_habitable }
+		NOT = { is_planet_class = pc_molten_habitable }
+		NOT = { is_planet_class = pc_toxic_habitable }
+		NOT = { is_planet_class = pc_frozen_habitable }
+		NOT = { is_planet_class = pc_ringworld_habitable }
+		### DistrictOverhaul
+		has_district_ascended_housing = no
+		### Check AlphaMod enabled
+		has_global_flag = gf_alphamod_activated
+	}
+	
+	allow = {
+		num_districts = { type = district_city value > 3 }
+	}
+	
+	effect = {
+		custom_tooltip = decision_megacities_custom
+		hidden_effect = {
+			remove_district = district_city
+			remove_district = district_city
+			remove_district = district_city
+			remove_district = district_city
+			set_planet_flag = mega_cities
+			add_district = district_megacity
+			add_district = district_megacity
+			validate_planet_buildings_and_districts = yes
+		}		
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			num_pops > 50
+			free_housing < 2		
+		}
+		modifier = {
+			weight = 2
+			num_pops > 75
+			free_housing < 5			
+		}
+		modifier = {
+			weight = 5
+			num_pops > 90
+			free_housing < 10			
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				resource_stockpile_compare = {
+					resource = sr_wealth
+					value < 500
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value < 2000
+				}
+			}
+		}
+	}
+}
+
+decision_parishes = {
+	owned_planets_only = yes
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		exists = owner
+		owner = { 
+			is_gestalt = no
+			is_fallen_empire_spiritualist = no
+			not = { has_ethic = ethic_fanatic_spiritualist }
+			not = { has_ethic = ethic_fanatic_militarist }
+			not = { has_ethic = ethic_fanatic_authoritarian }
+			not = { has_ethic = ethic_fanatic_pacifist }
+			not = { has_ethic = ethic_fanatic_xenophobe }
+			has_ethic = ethic_spiritualist
+		}
+		habitable_structure = no
+		not = { has_planet_flag = pf_securityzones }
+		not = { has_planet_flag = pf_warriorhouses }
+		not = { has_planet_flag = pf_parishes }
+		not = { has_planet_flag = pf_labour_camps }
+		not = { has_planet_flag = pf_markettowns }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_barren_habitable }
+		NOT = { is_planet_class = pc_molten_habitable }
+		NOT = { is_planet_class = pc_toxic_habitable }
+		NOT = { is_planet_class = pc_frozen_habitable }
+	}
+	
+	allow = {
+		num_districts = { type = district_community value > 1 }
+	}
+	
+	effect = {
+		custom_tooltip = decision_parishes_custom
+		hidden_effect = {
+			remove_district = district_community
+			remove_district = district_community
+			set_planet_flag = pf_parishes
+			add_district = district_parish
+			add_district = district_parish
+			validate_planet_buildings_and_districts = yes 
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			num_districts = { type = district_community value > 1 }
+			num_districts = { type = district_community value < 6 }
+			num_pops > 25				
+		}
+		modifier = {
+			weight = 5
+			num_districts = { type = district_mining value < 4 }
+			num_districts = { type = district_farming value > 1 }
+			num_districts = { type = district_generator value > 1 }
+			num_pops > 50				
+		}
+		modifier = {
+			factor = 1.2
+			owner = {
+				has_ethic = ethic_spiritualist
+			}
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				resource_stockpile_compare = {
+					resource = influence
+					value < 300
+				}
+			}
+		}
+	}
+}
+
+decision_warriorhouses = {
+	owned_planets_only = yes
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		exists = owner
+		owner = { 
+			is_gestalt = no
+			is_fallen_empire_spiritualist = no
+			not = { has_ethic = ethic_fanatic_spiritualist }
+			not = { has_ethic = ethic_fanatic_militarist }
+			not = { has_ethic = ethic_fanatic_authoritarian }
+			not = { has_ethic = ethic_fanatic_pacifist }
+			not = { has_ethic = ethic_fanatic_xenophobe }
+			has_ethic = ethic_militarist
+		}
+		habitable_structure = no
+		not = { has_planet_flag = pf_securityzones }
+		not = { has_planet_flag = pf_warriorhouses }
+		not = { has_planet_flag = pf_parishes }
+		not = { has_planet_flag = pf_labour_camps }
+		not = { has_planet_flag = pf_markettowns }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_barren_habitable }
+		NOT = { is_planet_class = pc_molten_habitable }
+		NOT = { is_planet_class = pc_toxic_habitable }
+		NOT = { is_planet_class = pc_frozen_habitable }
+	}
+	
+	allow = {
+		num_districts = { type = district_community value > 1 }
+	}
+	
+	effect = {
+		custom_tooltip = decision_warriorhouses_custom
+		hidden_effect = {
+			remove_district = district_community
+			remove_district = district_community
+			set_planet_flag = pf_warriorhouses
+			add_district = district_warrior_house
+			add_district = district_warrior_house
+			validate_planet_buildings_and_districts = yes 
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			num_districts = { type = district_community value > 1 }
+			num_districts = { type = district_community value < 6 }
+			num_pops > 25				
+		}
+		modifier = {
+			weight = 7
+			num_districts = { type = district_mining value < 4 }
+			num_districts = { type = district_farming value > 1 }
+			num_districts = { type = district_generator value > 1 }
+			num_pops > 50				
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				has_ethic = ethic_militarist
+			}
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				resource_stockpile_compare = {
+					resource = influence
+					value < 300
+				}
+			}
+		}
+	}
+}
+
+decision_labourcamps = {
+	owned_planets_only = yes
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		exists = owner
+		owner = { 
+			is_gestalt = no
+			is_fallen_empire_spiritualist = no
+			not = { has_ethic = ethic_fanatic_spiritualist }
+			not = { has_ethic = ethic_fanatic_militarist }
+			not = { has_ethic = ethic_fanatic_authoritarian }
+			not = { has_ethic = ethic_fanatic_pacifist }
+			not = { has_ethic = ethic_fanatic_xenophobe }
+			has_ethic = ethic_authoritarian
+		}
+		habitable_structure = no
+		not = { has_planet_flag = pf_securityzones }
+		not = { has_planet_flag = pf_warriorhouses }
+		not = { has_planet_flag = pf_parishes }
+		not = { has_planet_flag = pf_labour_camps }
+		not = { has_planet_flag = pf_markettowns }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_barren_habitable }
+		NOT = { is_planet_class = pc_molten_habitable }
+		NOT = { is_planet_class = pc_toxic_habitable }
+		NOT = { is_planet_class = pc_frozen_habitable }
+	}
+	
+	allow = {
+		num_districts = { type = district_community value > 1 }
+	}
+	
+	effect = {
+		custom_tooltip = decision_labourcamps_custom
+		hidden_effect = {
+			remove_district = district_community
+			remove_district = district_community
+			set_planet_flag = pf_labour_camps
+			add_district = district_labour_camp
+			add_district = district_labour_camp
+			validate_planet_buildings_and_districts = yes 
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 3
+			num_districts = { type = district_community value > 1 }
+			num_districts = { type = district_community value < 6 }
+			num_pops > 25				
+		}
+		modifier = {
+			weight = 8
+			num_districts = { type = district_mining value < 4 }
+			num_districts = { type = district_farming value > 1 }
+			num_districts = { type = district_generator value > 1 }
+			num_pops > 50				
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				has_ethic = ethic_authoritarian
+			}
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				resource_stockpile_compare = {
+					resource = influence
+					value < 300
+				}
+			}
+		}
+	}
+}
+
+decision_securityzones = {
+	owned_planets_only = yes
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		exists = owner
+		owner = { 
+			is_gestalt = no
+			is_fallen_empire_spiritualist = no
+			not = { has_ethic = ethic_fanatic_spiritualist }
+			not = { has_ethic = ethic_fanatic_militarist }
+			not = { has_ethic = ethic_fanatic_authoritarian }
+			not = { has_ethic = ethic_fanatic_pacifist }
+			not = { has_ethic = ethic_fanatic_xenophobe }
+			has_ethic = ethic_xenophobe
+		}
+		habitable_structure = no
+		not = { has_planet_flag = pf_securityzones }
+		not = { has_planet_flag = pf_warriorhouses }
+		not = { has_planet_flag = pf_parishes }
+		not = { has_planet_flag = pf_labour_camps }
+		not = { has_planet_flag = pf_markettowns }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_barren_habitable }
+		NOT = { is_planet_class = pc_molten_habitable }
+		NOT = { is_planet_class = pc_toxic_habitable }
+		NOT = { is_planet_class = pc_frozen_habitable }
+	}
+	
+	allow = {
+		num_districts = { type = district_community value > 1 }
+	}
+	
+	effect = {
+		custom_tooltip = decision_securityzones_custom
+		hidden_effect = {
+			remove_district = district_community
+			remove_district = district_community
+			set_planet_flag = pf_securityzones
+			add_district = district_securityzone
+			add_district = district_securityzone
+			validate_planet_buildings_and_districts = yes 
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			num_districts = { type = district_community value > 1 }
+			num_districts = { type = district_community value < 6 }
+			num_pops > 20				
+		}
+		modifier = {
+			weight = 10
+			num_districts = { type = district_mining value < 4 }
+			num_districts = { type = district_farming value > 1 }
+			num_districts = { type = district_generator value > 1 }
+			num_pops > 50				
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				has_ethic = ethic_xenophobe
+			}
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				resource_stockpile_compare = {
+					resource = influence
+					value < 300
+				}
+			}
+		}
+	}
+}
+
+decision_markettowns = {
+	owned_planets_only = yes
+	resources = {
+		category = decisions
+		cost = {
+			sr_wealth = 250
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		exists = owner
+		owner = { 
+			is_gestalt = no
+			is_fallen_empire_spiritualist = no
+			not = { has_ethic = ethic_fanatic_spiritualist }
+			not = { has_ethic = ethic_fanatic_militarist }
+			not = { has_ethic = ethic_fanatic_authoritarian }
+			not = { has_ethic = ethic_fanatic_pacifist }
+			not = { has_ethic = ethic_fanatic_xenophobe }
+			or = {
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_egalitarian
+				has_ethic = ethic_fanatic_egalitarian
+			}
+		}
+		habitable_structure = no
+		not = { has_planet_flag = pf_securityzones }
+		not = { has_planet_flag = pf_warriorhouses }
+		not = { has_planet_flag = pf_parishes }
+		not = { has_planet_flag = pf_labour_camps }
+		not = { has_planet_flag = pf_markettowns }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_barren_habitable }
+		NOT = { is_planet_class = pc_molten_habitable }
+		NOT = { is_planet_class = pc_toxic_habitable }
+		NOT = { is_planet_class = pc_frozen_habitable }
+	}
+	
+	allow = {
+		num_districts = { type = district_community value > 1 }
+	}
+	
+	effect = {
+		custom_tooltip = decision_markettowns_custom
+		hidden_effect = {
+			remove_district = district_community
+			remove_district = district_community
+			set_planet_flag = pf_markettowns
+			add_district = district_markettowns
+			add_district = district_markettowns
+			validate_planet_buildings_and_districts = yes 
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 3
+			num_districts = { type = district_community value > 1 }
+			num_districts = { type = district_community value < 6 }
+			num_pops > 25				
+		}
+		modifier = {
+			weight = 8
+			num_districts = { type = district_mining value < 4 }
+			num_districts = { type = district_farming value > 1 }
+			num_districts = { type = district_generator value > 1 }
+			num_pops > 50				
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				has_ethic = ethic_pacifist
+			}
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				resource_stockpile_compare = {
+					resource = sr_wealth
+					value < 500
+				}
+			}
+		}
+	}
+}
+
+decision_return_to_farming = {
+	owned_planets_only = yes
+	resources = {
+		category = decisions
+		cost = {
+			energy = 100
+		}
+	}
+	
+	potential = {
+		not = { is_planet_class = pc_ringworld_habitable }
+		not = { has_planet_flag = pf_filter_vanilla }
+		exists = owner
+		owner = { 
+			nor = {
+				has_ethic = ethic_egalitarian
+				has_ethic = ethic_fanatic_egalitarian
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_fanatic_xenophile
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		or = {
+			has_planet_flag = biomass_cultivation
+			has_planet_flag = nature_reserves
+		}
+	}
+	
+	allow = {
+		num_districts = { type = district_biomass_cultivation value < 1 }
+		num_districts = { type = district_nature_reserve value < 1 }
+	}
+	
+	effect = {
+		custom_tooltip = decision_return_to_farming_custom
+		hidden_effect = {
+			remove_planet_flag = biomass_cultivation
+			remove_planet_flag = nature_reserves
+			validate_planet_buildings_and_districts = yes 
+		}
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+decision_nature_reserves = {
+	owned_planets_only = yes
+	resources = {
+		category = decisions
+		cost = {
+			sr_wealth = 200
+			minerals = 200
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		exists = owner
+		owner = { 
+			is_gestalt = no
+			is_fallen_empire_spiritualist = no
+			or = {
+				has_ethic = ethic_egalitarian
+				has_ethic = ethic_fanatic_egalitarian
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_fanatic_xenophile
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_fanatic_pacifist
+			}
+		}
+		habitable_structure = no
+		not = { has_planet_flag = biomass_cultivation }
+		not = { has_planet_flag = nature_reserves }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_barren_habitable }
+		NOT = { is_planet_class = pc_molten_habitable }
+		NOT = { is_planet_class = pc_toxic_habitable }
+		NOT = { is_planet_class = pc_frozen_habitable }
+		NOT = { is_planet_class = pc_ringworld_habitable }
+		planet_has_reserves_deposit = yes
+	}
+	
+	allow = {
+		num_districts = { type = district_farming value < 1 }
+		not = { has_planet_flag = intensive_irrigation }
+		not = { has_planet_flag = preserving_biomass }
+		not = { has_planet_flag = recycling_biomass }
+	}
+	
+	effect = {
+		custom_tooltip = decision_nature_reserves_custom
+		hidden_effect = {
+			set_planet_flag = nature_reserves
+			validate_planet_buildings_and_districts = yes 
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_biomass_cultivation = {
+	owned_planets_only = yes
+	resources = {
+		category = decisions
+		cost = {
+			sr_wealth = 200
+			minerals = 200
+		}
+		cost = {
+			trigger = {
+				is_planet_class = pc_ringworld_habitable
+			}
+			sr_wealth = 400
+			minerals = 400
+		}
+	}
+	
+	potential = {
+		not = { has_planet_flag = pf_filter_vanilla }
+		exists = owner
+		owner = { 
+			is_fallen_empire_spiritualist = no
+			or = {
+				is_gestalt = yes
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		not = { has_planet_flag = biomass_cultivation }
+		not = { has_planet_flag = nature_reserves }
+		NOT = { is_planet_class = pc_habitat }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { is_planet_class = pc_hive }
+		NOT = { is_planet_class = pc_city }
+		NOT = { is_planet_class = pc_barren_habitable }
+		NOT = { is_planet_class = pc_molten_habitable }
+		NOT = { is_planet_class = pc_toxic_habitable }
+		NOT = { is_planet_class = pc_frozen_habitable }
+		planet_has_biomass_deposit = yes
+	}
+	
+	allow = {
+		num_districts = { type = district_farming value < 1 }
+		num_districts = { type = district_farming_uncapped value < 1 }
+		not = { has_planet_flag = intensive_irrigation }
+		not = { has_planet_flag = preserving_biomass }
+		not = { has_planet_flag = recycling_biomass }
+	}
+	
+	effect = {
+		custom_tooltip = decision_biomass_cultivation_custom
+		hidden_effect = {
+			if = {
+				limit = {
+					is_planet_class =  pc_ringworld_habitable
+				}
+				add_deposit = d_ringworld_biomass
+			}
+			set_planet_flag = biomass_cultivation
+			validate_planet_buildings_and_districts = yes
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}

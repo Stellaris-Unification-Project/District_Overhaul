@@ -1,0 +1,150 @@
+do_add_random_deposit = 
+{
+	random_list = 
+	{
+		25 = { modifier = { factor = 0 NOR = { has_district_wind_turbines = yes } } add_deposit = d_stormy_highlands }
+		25 = { modifier = { factor = 0 NOR = { has_district_geothermal_generator = yes } } add_deposit = d_boiling_lake }
+		25 = { modifier = { factor = 0 NOR = { has_district_solar_generator = yes } } add_deposit = d_open_space }
+		25 = { modifier = { factor = 0 NOR = { has_district_secure_mining = yes } } add_deposit = d_stable_ground }
+		25 = { modifier = { factor = 0 NOR = { has_district_surface_mining = yes } } add_deposit = d_small_rock_formation }
+		25 = { modifier = { factor = 0 NOR = { has_district_nature_reserve = yes } } add_deposit = d_interesting_wildlife }
+		25 = { modifier = { factor = 0 NOR = { has_district_research_complex = yes } } add_deposit = d_small_anomaly }
+		25 = { modifier = { factor = 0 NOR = { has_district_tourism = yes } } add_deposit = d_relaxing_location }
+		25 = { modifier = { factor = 0 NOR = { has_district_nature_farms = yes } } add_deposit = d_berries_hedge }
+		10 = { modifier = { factor = 0 NOR = { has_district_chemistry_industry = yes } } add_deposit = d_carbon_compounds }
+		10 = { modifier = { factor = 0 NOR = { has_district_gas_refinery = yes } } add_deposit = d_bubbling_lake }
+		10 = { modifier = { factor = 0 NOR = { has_district_crystal_mines = yes } } add_deposit = d_luminescent_cave }
+		10 = { modifier = { factor = 0 NOR = { has_empty_space = yes } } add_deposit = d_empty_space }
+		15 = { modifier = { factor = 0 NOR = { has_district_generator = yes } } add_deposit = d_hot_springs }
+		15 = { modifier = { factor = 0 NOR = { has_district_mining = yes } } add_deposit = d_mineral_fields }
+		15 = { modifier = { factor = 0 NOR = { has_district_farming = yes } } add_deposit = d_bountiful_plains }
+	}
+}
+
+do_add_d_stormy_highlands =
+{
+	random_list =
+	{
+		25 = { modifier = { factor = 0 NOR = { has_district_wind_turbines = yes } } add_deposit = d_stormy_highlands }
+	}
+}
+
+do_add_d_boiling_lake =
+{
+	random_list =
+	{
+		25 = { modifier = { factor = 0 NOR = { has_district_geothermal_generator = yes } } add_deposit = d_boiling_lake }
+	}
+}
+
+do_add_d_open_space =
+{
+	random_list =
+	{
+		25 = { modifier = { factor = 0 NOR = { has_district_solar_generator = yes } } add_deposit = d_open_space }
+	}
+}
+
+do_add_d_stable_ground =
+{
+	random_list =
+	{
+		25 = { modifier = { factor = 0 NOR = { has_district_secure_mining = yes } } add_deposit = d_stable_ground }
+	}
+}
+
+do_add_d_small_rock_formation =
+{
+	random_list =
+	{
+		25 = { modifier = { factor = 0 NOR = { has_district_surface_mining = yes } } add_deposit = d_small_rock_formation }
+	}
+}
+
+do_add_d_interesting_wildlife =
+{
+	random_list =
+	{
+		25 = { modifier = { factor = 0 NOR = { has_district_nature_reserve = yes } } add_deposit = d_interesting_wildlife }
+	}
+}
+
+do_add_d_small_anomaly =
+{
+	random_list =
+	{
+		25 = { modifier = { factor = 0 NOR = { has_district_research_complex = yes } } add_deposit = d_small_anomaly }
+	}
+}
+
+do_add_d_relaxing_location =
+{
+	random_list =
+	{
+		25 = { modifier = { factor = 0 NOR = { has_district_tourism = yes } } add_deposit = d_relaxing_location }
+	}
+}
+
+do_add_d_berries_hedge =
+{
+	random_list =
+	{
+		25 = { modifier = { factor = 0 NOR = { has_district_nature_farms = yes } } add_deposit = d_berries_hedge }
+	}
+}
+
+do_add_d_carbon_compounds =
+{
+	random_list =
+	{
+		10 = { modifier = { factor = 0 NOR = { has_district_chemistry_industry = yes } } add_deposit = d_carbon_compounds }
+	}
+}
+
+do_add_d_bubbling_lake =
+{
+	random_list =
+	{
+		10 = { modifier = { factor = 0 NOR = { has_district_gas_refinery = yes } } add_deposit = d_bubbling_lake }
+	}
+}
+
+do_add_d_luminescent_cave =
+{
+	random_list =
+	{
+		10 = { modifier = { factor = 0 NOR = { has_district_crystal_mines = yes } } add_deposit = d_luminescent_cave }
+	}
+}
+
+do_add_d_empty_space =
+{
+	random_list =
+	{
+		10 = { modifier = { factor = 0 NOR = { has_empty_space = yes } } add_deposit = d_empty_space }
+	}
+}
+
+do_add_d_hot_springs =
+{
+	random_list =
+	{
+		15 = { modifier = { factor = 0 NOR = { has_district_generator = yes } } add_deposit = d_hot_springs }
+	}
+}
+
+do_add_d_mineral_fields =
+{
+	random_list =
+	{
+		15 = { modifier = { factor = 0 NOR = { has_district_mining = yes } } add_deposit = d_mineral_fields }
+	}
+}
+
+do_add_d_bountiful_plains =
+{
+	random_list =
+	{
+		15 = { modifier = { factor = 0 NOR = { has_district_farming = yes } } add_deposit = d_bountiful_plains }
+	}
+}

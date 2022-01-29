@@ -1,0 +1,490 @@
+# Engineering - voidcraft, materials, propulsion, industry
+# Physics - computing, particles, field_manipulation
+# Society - military_theory, statecraft, biology, new_worlds, psionics
+
+### Localisation and Graphics missing
+
+### Productivity AP
+tech_extreme_productivity = {
+	area = engineering
+	category = { materials }
+	tier = 1
+	cost = 5000
+	is_rare = yes
+	weight = 250
+
+	potential = {
+		has_ascension_perk = ap_extreme_productivity
+	}
+
+	modifier = {
+		planet_jobs_minerals_produces_mult = 0.2
+		planet_technician_energy_produces_mult = 0.2
+		planet_farmers_food_produces_mult = 0.2
+	}
+
+	ai_weight = { factor = 1000 }
+}
+
+###
+
+tech_do_mining_1 = {
+	area = engineering
+	category = { materials }
+	tier = 3
+	cost = 5000
+	prerequisites = { "tech_extreme_productivity" }
+	weight = 50
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_mining_2 = {
+	area = engineering
+	category = { materials }
+	tier = 4
+	cost = 10000
+	prerequisites = { "tech_do_mining_1" }
+	weight = 30
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_mining_3 = {
+	area = engineering
+	category = { materials }
+	tier = 5
+	cost = 20000
+	prerequisites = { "tech_do_mining_2" }
+	weight = 15
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_mining_4 = {
+	area = engineering
+	category = { materials }
+	tier = 5
+	cost = 50000
+	prerequisites = { "tech_do_mining_3" }
+	weight = 6
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_mining_5 = {
+	area = engineering
+	category = { materials }
+	tier = 5
+	cost = 100000
+	prerequisites = { "tech_do_mining_4" }
+	weight = 1
+	
+	ai_weight = { factor = 10 }
+}
+
+###
+
+tech_do_farming_1 = {
+	area = society
+	category = { biology }
+	tier = 3
+	cost = 5000
+	prerequisites = { "tech_extreme_productivity" }
+	weight = 50
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_farming_2 = {
+	area = society
+	category = { biology }
+	tier = 4
+	cost = 10000
+	prerequisites = { "tech_do_farming_1" }
+	weight = 30
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_farming_3 = {
+	area = society
+	category = { biology }
+	tier = 5
+	cost = 20000
+	prerequisites = { "tech_do_farming_2" }
+	weight = 15
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_farming_4 = {
+	area = society
+	category = { biology }
+	tier = 5
+	cost = 50000
+	prerequisites = { "tech_do_farming_3" }
+	weight = 6
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_farming_5 = {
+	area = society
+	category = { biology }
+	tier = 5
+	cost = 100000
+	prerequisites = { "tech_do_farming_4" }
+	weight = 1
+	
+	ai_weight = { factor = 10 }
+}
+
+###
+
+tech_do_energy_1 = {
+	area = physics
+	category = { particles }
+	tier = 3
+	cost = 5000
+	prerequisites = { "tech_extreme_productivity" }
+	weight = 50
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_energy_2 = {
+	area = physics
+	category = { particles }
+	tier = 4
+	cost = 10000
+	prerequisites = { "tech_do_energy_1" }
+	weight = 30
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_energy_3 = {
+	area = physics
+	category = { particles }
+	tier = 5
+	cost = 20000
+	prerequisites = { "tech_do_energy_2" }
+	weight = 15
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_energy_4 = {
+	area = physics
+	category = { particles }
+	tier = 5
+	cost = 50000
+	prerequisites = { "tech_do_energy_3" }
+	weight = 6
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_energy_5 = {
+	area = physics
+	category = { particles }
+	tier = 5
+	cost = 100000
+	prerequisites = { "tech_do_energy_4" }
+	weight = 1
+	
+	ai_weight = { factor = 10 }
+}
+
+### Industry AP
+tech_extreme_industry = {
+	area = engineering
+	category = { industry }
+	tier = 1
+	cost = 5000
+	is_rare = yes
+	weight = 250
+
+	potential = {
+		has_ascension_perk = ap_extreme_industry
+	}
+
+	ai_weight = { factor = 1000 }
+}
+
+###
+
+tech_do_housing_1 = {
+	area = engineering
+	category = { materials }
+	tier = 3
+	cost = 5000
+	prerequisites = { "tech_extreme_industry" }
+	weight = 50
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_housing_2 = {
+	area = engineering
+	category = { materials }
+	tier = 4
+	cost = 10000
+	prerequisites = { "tech_do_housing_1" }
+	weight = 30
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_housing_3 = {
+	area = engineering
+	category = { materials }
+	tier = 5
+	cost = 20000
+	prerequisites = { "tech_do_housing_2" }
+	weight = 15
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_housing_4 = {
+	area = engineering
+	category = { materials }
+	tier = 5
+	cost = 50000
+	prerequisites = { "tech_do_housing_3" }
+	weight = 6
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_housing_5 = {
+	area = engineering
+	category = { materials }
+	tier = 5
+	cost = 100000
+	prerequisites = { "tech_do_housing_4" }
+	weight = 1
+	
+	ai_weight = { factor = 10 }
+}
+
+###
+
+tech_do_production_1 = {
+	area = engineering
+	category = { industry }
+	tier = 3
+	cost = 5000
+	prerequisites = { "tech_extreme_industry" }
+	weight = 50
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_production_2 = {
+	area = engineering
+	category = { industry }
+	tier = 4
+	cost = 10000
+	prerequisites = { "tech_do_production_1" }
+	weight = 30
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_production_3 = {
+	area = engineering
+	category = { industry }
+	tier = 5
+	cost = 20000
+	prerequisites = { "tech_do_production_2" }
+	weight = 15
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_production_4 = {
+	area = engineering
+	category = { industry }
+	tier = 5
+	cost = 50000
+	prerequisites = { "tech_do_production_3" }
+	weight = 6
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_production_5 = {
+	area = engineering
+	category = { industry }
+	tier = 5
+	cost = 100000
+	prerequisites = { "tech_do_production_4" }
+	weight = 1
+	
+	ai_weight = { factor = 10 }
+}
+
+### Universalition AP
+tech_universalition = {
+	area = physics
+	category = { computing }
+	tier = 1
+	cost = 5000
+	is_rare = yes
+	weight = 250
+
+	potential = {
+		has_ascension_perk = ap_universalition
+	}
+
+	ai_weight = { factor = 1000 }
+}
+
+###
+
+tech_do_research_1 = {
+	area = physics
+	category = { particles }
+	tier = 3
+	cost = 5000
+	prerequisites = { "tech_universalition" }
+	weight = 50
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_research_2 = {
+	area = society
+	category = { new_worlds }
+	tier = 4
+	cost = 10000
+	prerequisites = { "tech_do_research_1" }
+	weight = 30
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_research_3 = {
+	area = physics
+	category = { computing }
+	tier = 5
+	cost = 20000
+	prerequisites = { "tech_do_research_2" }
+	weight = 15
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_research_4 = {
+	area = engineering
+	category = { voidcraft }
+	tier = 5
+	cost = 50000
+	prerequisites = { "tech_do_research_3" }
+	weight = 6
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_research_5 = {
+	area = physics
+	category = { field_manipulation }
+	tier = 5
+	cost = 100000
+	prerequisites = { "tech_do_research_4" }
+	weight = 1
+	
+	ai_weight = { factor = 10 }
+}
+
+###
+
+tech_do_trade_1 = {
+	area = society
+	category = { statecraft }
+	tier = 3
+	cost = 5000
+	prerequisites = { "tech_extreme_universalition" }
+	weight = 50
+
+	potential = {
+		is_regular_empire = yes
+	}
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_trade_2 = {
+	area = society
+	category = { statecraft }
+	tier = 4
+	cost = 10000
+	prerequisites = { "tech_do_trade_1" }
+	weight = 30
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_trade_3 = {
+	area = society
+	category = { statecraft }
+	tier = 5
+	cost = 20000
+	prerequisites = { "tech_do_trade_2" }
+	weight = 15
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_trade_4 = {
+	area = society
+	category = { statecraft }
+	tier = 5
+	cost = 50000
+	prerequisites = { "tech_do_trade_3" }
+	weight = 6
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_trade_5 = {
+	area = society
+	category = { statecraft }
+	tier = 5
+	cost = 100000
+	prerequisites = { "tech_do_trade_4" }
+	weight = 1
+	
+	ai_weight = { factor = 10 }
+}
+
+###
+
+tech_do_ameneties_1 = {
+	area = society
+	category = { biology }
+	tier = 3
+	cost = 5000
+	weight = 50
+
+	potential = {
+		is_regular_empire = yes
+	}
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_ameneties_2 = {
+	area = society
+	category = { biology }
+	tier = 4
+	cost = 10000
+	prerequisites = { "tech_do_ameneties_1" }
+	weight = 30
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_ameneties_3 = {
+	area = society
+	category = { biology }
+	tier = 5
+	cost = 20000
+	prerequisites = { "tech_do_ameneties_2" }
+	weight = 15
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_ameneties_4 = {
+	area = society
+	category = { biology }
+	tier = 5
+	cost = 50000
+	prerequisites = { "tech_do_ameneties_3" }
+	weight = 6
+	
+	ai_weight = { factor = 10 }
+}
+tech_do_ameneties_5 = {
+	area = society
+	category = { biology }
+	tier = 5
+	cost = 100000
+	prerequisites = { "tech_do_ameneties_4" }
+	weight = 1
+	
+	ai_weight = { factor = 10 }
+}

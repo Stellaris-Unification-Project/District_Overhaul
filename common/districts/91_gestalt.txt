@@ -1,0 +1,479 @@
+#########################
+### District Overhaul ###
+#########################
+
+district_drone_research_complex = {
+	base_buildtime = 480
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		from = { is_gestalt = yes }
+		has_district_drone_research_complex = yes
+	}
+	
+	potential = {
+		owner = {
+			exists = owner
+			is_gestalt = yes
+		}
+		has_district_drone_research_complex = yes
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 750
+		}
+		upkeep = {
+			energy = 5
+		}		
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_calculator_add = 3
+		}
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_hive_empire = yes } 
+		}
+		text = job_brain_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_machine_empire = yes } 
+		}
+		text = job_calculator_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 5
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 10
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value < 6
+				}
+			}
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 10000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 3
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 15
+				}
+				has_monthly_income = {
+					resource = energy
+					value > 10
+				}
+			}
+		}
+		modifier = {
+			weight = 300000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 3
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 80
+				}
+				has_monthly_income = {
+					resource = energy
+					value > 30
+				}
+			}
+		}
+	}
+}
+
+district_drone_recycling_center = {
+	base_buildtime = 480
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		from = { is_gestalt = yes }
+		has_district_drone_recycling_center = yes
+	}
+	
+	potential = {
+		owner = {
+			exists = owner
+			is_gestalt = yes
+		}
+		has_district_drone_recycling_center = yes
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 5
+		}		
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_recycling_drone_add = 3
+		}
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes } 
+		}
+		text = job_recycling_drone_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 2
+		modifier = {
+			factor = 0
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value < 18
+				}
+			}
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 25000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 3
+			OR = {
+				owner = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value < 6
+					}
+				}
+				owner = {
+					has_monthly_income = {
+						resource = minerals
+						value < 50
+					}
+				}
+				owner = {
+					has_monthly_income = {
+						resource = energy
+						value < 50
+					}
+				}
+			}
+		}
+	}
+}
+
+district_drone_waste_inceneration = {
+	base_buildtime = 480
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		from = { is_gestalt = yes }
+		has_district_drone_waste_inceneration = yes
+	}
+	
+	potential = {
+		owner = {
+			exists = owner
+			is_gestalt = yes
+		}
+		has_district_drone_waste_inceneration = yes
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 5
+		}		
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_inceneration_drone_add = 3
+		}
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes } 
+		}
+		text = job_inceneration_drone_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 2
+		modifier = {
+			factor = 0
+			owner = {
+				has_monthly_income = {
+					resource = alloys
+					value < 5
+				}
+			}
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 25000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 3
+			OR = {
+				owner = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value < 6
+					}
+				}
+				owner = {
+					has_monthly_income = {
+						resource = minerals
+						value < 50
+					}
+				}
+				owner = {
+					has_monthly_income = {
+						resource = energy
+						value < 50
+					}
+				}
+			}
+		}
+	}
+}
+
+district_drone_production_line = {
+	base_buildtime = 480
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		from = { is_gestalt = yes }
+		has_district_drone_production_line = yes
+	}
+	
+	potential = {
+		owner = {
+			exists = owner
+			is_gestalt = yes
+		}
+		has_district_drone_production_line = yes
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 5
+		}		
+	}
+
+### ImprovedMegastructures
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			AND = {
+				has_global_flag = pjs_improved_megastructures_global
+				is_planet_class = pc_ringworld_habitable
+			}
+		}
+		modifier = {
+			job_fabricator_add = 6
+			planet_housing_add = 10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			AND = {
+				has_global_flag = pjs_improved_megastructures_global
+				is_planet_class = pc_ringworld_habitable
+			}
+		}
+		modifier = {
+			job_alloy_drone_add = 6
+			planet_housing_add = 10
+		}
+	}
+
+###
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_fabricator_add = 4
+		}
+	}	
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_alloy_drone_add = 4
+		}
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		text = job_alloy_drone_effect_desc
+	}		
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = job_fabricator_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 2
+		modifier = {
+			factor = 5
+			owner = {
+				has_monthly_income = {
+					resource = alloys
+					value < 5
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				has_monthly_income = {
+					resource = minerals
+					value < 5
+				}
+			}
+		}		
+		modifier = {
+			factor = 2
+			owner = {
+				has_monthly_income = {
+					resource = minerals
+					value > 20
+				}
+			}
+		}		
+		modifier = {
+			factor = 2
+			owner = {
+				has_monthly_income = {
+					resource = alloys
+					value < 15
+				}
+			}
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 10000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 3
+			owner = {
+				has_monthly_income = {
+					resource = alloys
+					value < 100
+				}
+				has_monthly_income = {
+					resource = minerals
+					value > 15
+				}
+			}
+		}
+		modifier = {
+			weight = 300000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 3
+			owner = {
+				has_monthly_income = {
+					resource = alloys
+					value < 100
+				}
+				has_monthly_income = {
+					resource = minerals
+					value > 30
+				}
+			}
+		}
+	}
+}

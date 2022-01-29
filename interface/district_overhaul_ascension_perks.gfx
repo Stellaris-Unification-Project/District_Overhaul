@@ -1,0 +1,47 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_ap_extreme_productivity"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_extreme_productivity.dds"
+		alwaystransparent = yes
+	}
+}
+
+spriteTypes = {
+	spriteType = {
+		name = "GFX_ap_extreme_industry"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_extreme_industry.dds"
+		alwaystransparent = yes
+	}
+}
+
+spriteTypes = {
+	spriteType = {
+		name = "GFX_ap_universalition"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_universalition.dds"
+		alwaystransparent = yes
+	}
+}
+
+spriteTypes = {
+	spriteType = {
+		name = "GFX_ap_world_ascension"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_world_ascension.dds"
+		alwaystransparent = yes
+	}
+}
+
+spriteTypes = {
+	spriteType = {
+		name = "GFX_ap_planetary_boundarys"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_planetary_boundarys.dds"
+		alwaystransparent = yes
+	}
+}
+
+spriteTypes = {
+	spriteType = {
+		name = "GFX_ap_endless_worlds"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_endless_worlds.dds"
+		alwaystransparent = yes
+	}
+}

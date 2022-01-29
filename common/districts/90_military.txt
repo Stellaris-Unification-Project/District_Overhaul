@@ -1,0 +1,389 @@
+#########################
+### District Overhaul ###
+#########################
+
+district_dyson_spaceport = {
+	base_buildtime = 480
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		OR = {
+			is_planet_class = pc_dyson_swarm
+		}
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	potential = {
+		OR = {
+			is_planet_class = pc_dyson_swarm
+		}
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			alloys = 500
+		}
+		upkeep = {
+			energy = 2
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = no }
+		}
+		modifier = {
+			job_pilot_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_pilot_drone_add = 3
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_pilot_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_pilot_drone_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 5
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value > 10
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value < 6
+				}
+			}
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 10000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 3
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value < 150
+				}
+				has_monthly_income = {
+					resource = energy
+					value > 10
+				}
+			}
+		}
+		modifier =
+		{
+			factor = 3
+			has_global_flag = gai_enabled_flag
+			owner = { is_megacorp = yes }
+		}
+	}
+}
+
+district_spaceport = {
+	base_buildtime = 480
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		has_district_spaceport = yes
+	}
+	
+	potential = {
+		has_district_spaceport = yes
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 750
+		}
+		upkeep = {
+			energy = 5
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 3
+	}
+
+### ImprovedMegastructures
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+			AND = {
+				has_global_flag = pjs_improved_megastructures_global
+				is_planet_class = pc_ringworld_habitable
+			}
+		}
+		modifier = {
+			job_pilot_add = 6
+			planet_housing_add = 10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			AND = {
+				has_global_flag = pjs_improved_megastructures_global
+				is_planet_class = pc_ringworld_habitable
+			}
+		}
+		modifier = {
+			job_pilot_drone_add = 6
+			planet_housing_add = 10
+		}
+	}
+
+###
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_pilot_add = 4
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_pilot_drone_add = 4
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_pilot_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_pilot_drone_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value < 10
+				}
+			}
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 10000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 3
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value > 10
+				}
+			}
+		}
+		modifier =
+		{
+			factor = 3
+			has_global_flag = gai_enabled_flag
+			owner = { is_megacorp = yes }
+		}
+	}
+}
+
+district_academy = {
+	base_buildtime = 480
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		has_district_academy = yes
+	}
+	
+	potential = {
+		has_district_academy = yes
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 5
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_officer_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_officer_drone_add = 2
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_officer_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_officer_drone_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value > 10
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value < 6
+				}
+			}
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 10000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 3
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 15
+				}
+				has_monthly_income = {
+					resource = energy
+					value > 10
+				}
+			}
+		}
+		modifier = {
+			weight = 300000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 3
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 80
+				}
+				has_monthly_income = {
+					resource = energy
+					value > 30
+				}
+			}
+		}
+	}
+}

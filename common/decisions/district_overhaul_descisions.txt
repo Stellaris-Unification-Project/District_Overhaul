@@ -1,0 +1,219 @@
+### decision_develope_planet not finished yet
+
+### Endless Planets
+decision_endless_planet = {
+	owned_planets_only = yes
+	icon = icon_decision_endless_planet
+	enactment_time = 360
+	resources = {
+		category = decisions
+		cost = {
+			influence = 250
+			energy = 5000
+		}
+	}	
+	potential = {
+		habitable_structure = no
+		owner = {
+			has_ascension_perk = ap_endless_worlds
+		}
+	}	
+	effect = {
+		add_deposit = d_additional_district
+	}	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 0
+			free_district_slots > 0
+		}
+	}
+}
+
+decision_develope_planet = {
+	owned_planets_only = yes
+	icon = icon_decision_develope_planet
+
+	enactment_time = 360
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = 250
+			energy = 5000
+		}
+	}
+
+	potential = {
+		habitable_structure = no
+		owner = {
+			has_ascension_perk = ap_planetary_boundarys
+		}
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+	}
+
+	effect = {
+		custom_tooltip = decision_develope_planet_effects
+		hidden_effect = {
+			planet_event = { id = DistrictOverhaul.2 }
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 0
+			free_district_slots > 0
+		}
+	}
+}
+
+decision_evolve_home = {
+	owned_planets_only = yes
+	icon = icon_decision_evolve_home
+	enactment_time = 1800
+	resources = {
+		category = decisions
+		cost = {
+			influence = 500
+			minerals = 15000
+			energy = 15000
+			alloys = 5000
+		}
+	}
+	potential = {
+		has_modifier = dd_home_planet
+	}
+	effect = {
+		remove_modifier = dd_home_planet
+		custom_tooltip = decision_evolve_home_tooltip
+		change_pc = pc_gaia
+		if = {
+			limit = {
+				owner = { is_regular_empire = yes }
+			}
+			add_modifier = {
+				modifier = "dd_home_evolved_regular"
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				owner = { is_hive_empire = yes }
+			}
+			add_modifier = {
+				modifier = "dd_home_evolved_hive"
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				owner = { is_machine_empire = yes }
+			}
+			add_modifier = {
+				modifier = "dd_home_evolved_machine"
+				days = -1
+			}
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+}
+
+decision_ascend_regular = {
+	owned_planets_only = yes
+	icon = icon_decision_ascend_home
+	enactment_time = 3600
+	resources = {
+		category = decisions
+		cost = {
+			influence = 750
+			minerals = 30000
+			energy = 30000
+			alloys = 10000
+		}
+	}
+	potential = {
+		habitable_structure = no
+		owner = {
+			has_ascension_perk = ap_world_ascension
+		}
+		has_modifier = dd_home_evolved_regular
+	}
+	effect = {
+		remove_modifier = dd_home_evolved_regular
+		custom_tooltip = decision_ascend_home_tooltip
+		add_modifier = {
+			modifier = "dd_home_ascended_regular"
+			days = -1
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+}
+
+decision_ascend_hive = {
+	owned_planets_only = yes
+	icon = icon_decision_ascend_home
+	enactment_time = 3600
+	resources = {
+		category = decisions
+		cost = {
+			influence = 750
+			minerals = 30000
+			energy = 30000
+			alloys = 10000
+		}
+	}
+	potential = {
+		habitable_structure = no
+		owner = {
+			has_ascension_perk = ap_world_ascension
+		}
+		has_modifier = dd_home_evolved_hive
+	}
+	effect = {
+		remove_modifier = dd_home_evolved_hive
+		custom_tooltip = decision_ascend_home_tooltip
+		add_modifier = {
+			modifier = "dd_home_ascended_hive"
+			days = -1
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+}
+
+decision_ascend_machine = {
+	owned_planets_only = yes
+	icon = icon_decision_ascend_home
+	enactment_time = 3600
+	resources = {
+		category = decisions
+		cost = {
+			influence = 750
+			minerals = 30000
+			energy = 30000
+			alloys = 10000
+		}
+	}
+	potential = {
+		habitable_structure = no
+		owner = {
+			has_ascension_perk = ap_world_ascension
+		}
+		has_modifier = dd_home_evolved_machine
+	}
+	effect = {
+		remove_modifier = dd_home_evolved_machine
+		custom_tooltip = decision_ascend_home_tooltip
+		add_modifier = {
+			modifier = "dd_home_ascended_machine"
+			days = -1
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+}

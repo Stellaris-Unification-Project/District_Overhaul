@@ -1,0 +1,168 @@
+### Vanilla
+
+has_district_arcology_arms_industry =
+{
+		OR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_coruscant
+		}
+		NOT = { has_modifier = dd_home_planet}
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_regular}
+		NOT = { has_modifier = dd_home_ascended_machine}
+		NOT = { has_modifier = dd_home_ascended_hive}
+		NOT = { has_modifier = pm_Utopian_Paradise }
+}
+
+has_district_arcology_civilian_industry =
+{
+		OR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_coruscant
+		}
+		NOT = { has_modifier = dd_home_planet}
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_regular}
+		NOT = { has_modifier = dd_home_ascended_machine}
+		NOT = { has_modifier = dd_home_ascended_hive}
+		NOT = { has_modifier = pm_Utopian_Paradise }
+}
+
+### DistrictOverhaul
+
+has_district_local_industry =
+{
+		OR = {	
+			is_planet_class = pc_savannah
+			is_planet_class = pc_ocean
+			is_planet_class = pc_alpine
+			is_planet_class = pc_nuked
+			is_planet_class = pc_hive
+			is_planet_class = pc_habitat
+			is_planet_class = pc_luna
+			is_planet_class = pc_subarctic
+			is_planet_class = pc_graveyard
+			is_planet_class = pc_giga_ringworld_habitable
+			is_planet_class = pc_interstellar_habitat
+			is_planet_class = pc_planetary_ringworld
+			is_planet_class = pc_irradiated_marginal
+			is_planet_class = pc_underground_icy
+			is_planet_class = pc_planetary_ringworld_hive
+			is_planet_class = pc_planetary_ringworld_city
+		}
+		NOT = { has_modifier = steppe_world }
+		NOT = { has_modifier = atoll_world }
+		NOT = { has_modifier = algic_seas }
+		NOT = { has_modifier = dd_home_planet}
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_regular}
+		NOT = { has_modifier = dd_home_ascended_machine}
+		NOT = { has_modifier = dd_home_ascended_hive}
+		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOT = { 
+			AND = {
+				is_planet_class = pc_habitat
+				has_global_flag = LivingSpace_active
+			}
+		}
+}
+
+has_district_production_hub =
+{
+		OR = {	
+			is_planet_class = pc_habitat
+			is_planet_class = pc_boreal
+			is_planet_class = pc_graveyard
+			is_planet_class = pc_interstellar_ringworld_habitable
+		}
+		NOT = { has_modifier = dd_home_planet}
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_regular}
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = dd_home_ascended_hive}
+		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOT = { 
+			AND = {
+				is_planet_class = pc_habitat
+				has_global_flag = LivingSpace_active
+			}
+		}
+}
+
+has_district_chemistry_industry =
+{
+		OR = {	
+			has_modifier = swamp_world
+			has_modifier = exotic_world
+			is_planet_class = pc_molten_habitable
+			is_planet_class = pc_methane
+			is_planet_class = pc_ammonia
+			is_planet_class = pc_marginal_warm
+		}
+		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		### AlphaMod
+		NOT = { 
+			AND = {
+				has_global_flag = gf_alphamod_activated
+				is_hostile_planet_ia = yes
+			}
+		}
+}
+
+has_district_gas_refinery =
+{
+		OR = {	
+			has_modifier = dune_world
+			has_modifier = fog_world
+			has_modifier = exotic_world
+			is_planet_class = pc_methane
+			is_planet_class = pc_ammonia
+			is_planet_class = pc_swamp
+			is_planet_class = pc_primordial
+		}
+		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_ascended_machine }
+}
+
+has_district_crystal_mines =
+{
+		OR = {	
+			is_planet_class = pc_habitable_asteroid
+			is_planet_class = pc_asteroid_base
+			is_planet_class = pc_superhabitable
+			is_planet_class = pc_glacial
+			is_planet_class = pc_biolumen
+			is_planet_class = pc_crystal
+			is_planet_class = pc_underground_icy
+			has_modifier = death_world
+		}
+		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_ascended_machine }
+}

@@ -1,0 +1,298 @@
+###############
+### Vanilla ###
+###############
+
+district_arcology_leisure = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		from = {
+			is_regular_empire = yes
+		}
+		has_district_arcology_leisure = yes
+	}
+	
+	potential = {
+		owner = { 
+			exists = owner
+			is_regular_empire = yes
+		}
+		has_district_arcology_leisure = yes
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_nexus
+		district_hive
+		district_arcology_housing
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+		}
+		upkeep = {
+			energy = 5
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_entertainer_add = 5
+			job_culture_worker_add = 5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = gf_alphamod_activated
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_entertainer_add = -1
+			job_healthcare_add = 2
+			job_culture_worker_add = -1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			AND = {
+				has_global_flag = gf_alphamod_activated
+				is_planet_class = pc_ringworld_habitable
+			}
+		}
+		modifier = {
+			pop_amenities_usage_mult = -0.1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_2 }
+		}
+		modifier = { job_culture_worker_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_5 }
+		}
+		modifier = { job_entertainer_add = 1 }
+	}
+
+	triggered_desc = {
+		text = job_entertainer_effect_desc
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = 
+		{
+			factor = 5
+			free_amenities < 2
+		}
+		modifier = 
+		{
+			factor = 2
+			free_amenities < 5
+		}
+		modifier =
+		{
+			factor = 0
+			free_amenities > 15
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = 
+		{
+			weight = 10000
+			has_global_flag = gai_enabled_flag
+			free_amenities < 5
+		}
+		modifier = {
+			weight = 200000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 6
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 200
+				}
+				has_monthly_income = {
+					resource = alloys
+					value > 500
+				}
+			}
+		}
+		modifier = 
+		{
+			factor = 2
+			has_global_flag = gai_enabled_flag
+			free_amenities < 5
+		}
+		modifier =
+		{
+			factor = 0.1
+			has_global_flag = gai_enabled_flag
+			free_amenities > 15
+		}
+	}
+}
+
+@hab_cost = 500
+@hab_maintenance = 2
+
+district_hab_cultural = {
+	base_buildtime = 240
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		has_district_hab_cultural = yes
+		from = { is_gestalt = no }
+	}
+	
+	potential = {
+		has_district_hab_cultural = yes
+		owner = { is_gestalt = no }
+	}
+	
+	convert_to = {
+		district_hab_energy
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @hab_cost
+		}
+		upkeep = {
+			energy = @hab_maintenance
+		}		
+	}
+		
+	planet_modifier = {
+		job_entertainer_add = 2
+		job_culture_worker_add = 1
+	}
+
+### AlphaMod
+
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = gf_alphamod_activated
+		}
+		modifier = { 
+			job_healthcare_add = 1 
+			job_culture_worker_add = 1
+			planet_housing_add = 5
+		}
+	}
+
+###
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_1 }
+		}
+		modifier = { job_entertainer_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_ameneties_4 }
+		}
+		modifier = { job_culture_worker_add = 1 }
+	}
+	
+	triggered_desc = {
+		text = job_entertainer_effect_desc
+	}	
+	
+	triggered_desc = {
+		text = job_culture_worker_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 1
+		modifier = 
+		{
+			factor = 5
+			free_amenities < 2
+		}
+		modifier = 
+		{
+			factor = 2
+			free_amenities < 5
+		}
+		modifier =
+		{
+			factor = 0
+			free_amenities > 15
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = 
+		{
+			weight = 10000
+			has_global_flag = gai_enabled_flag
+			free_amenities < 5
+		}
+		modifier = {
+			weight = 200000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 3
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 200
+				}
+				has_monthly_income = {
+					resource = alloys
+					value > 500
+				}
+			}
+		}
+		modifier = 
+		{
+			factor = 2
+			has_global_flag = gai_enabled_flag
+			free_amenities < 5
+		}
+		modifier =
+		{
+			factor = 0.1
+			has_global_flag = gai_enabled_flag
+			free_amenities > 15
+		}
+	}
+
+	ai_resource_production = {
+		unity = 1
+		trigger = {
+			always = yes
+		}
+	}
+}

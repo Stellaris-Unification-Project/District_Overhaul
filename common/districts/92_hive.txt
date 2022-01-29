@@ -1,0 +1,165 @@
+#########################
+### District Overhaul ###
+#########################
+
+district_food_production_line = {
+	base_buildtime = 360
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		from = { is_hive_empire = yes }
+		has_district_food_production_line = yes
+	}
+	
+	potential = {
+		owner = {
+			exists = owner
+			is_hive_empire = yes
+		}
+		has_district_food_production_line = yes
+	}
+		
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 3
+		}		
+	}	
+		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_agri_drone_add = 6
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		text = job_agri_drone_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 1
+		modifier = 
+		{
+			factor = 3
+			owner = { 
+				has_monthly_income = {
+					resource = food
+					value < 5
+				}
+			}
+		}
+
+		modifier = {
+			factor = 2
+			free_housing < 0
+		}
+
+		modifier = {
+			factor = 3
+			any_owned_pop = { 
+				OR = { 
+					is_unemployed = yes 
+					has_job = servant 
+				}
+			}
+		}
+
+		# No one to work it anyway
+		modifier = {
+			factor = 0
+			free_housing > 0
+			NOT = {
+				any_owned_pop = { 
+					OR = { 
+						is_unemployed = yes 
+						has_job = servant 
+					}
+				}
+			}
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+
+			weight = 500
+
+			has_global_flag = gai_enabled_flag
+			NOT = { has_planet_flag = gai_arc }
+
+		}
+
+		modifier = {
+
+			factor = 2
+
+			has_global_flag = gai_enabled_flag
+			owner = {
+
+				has_monthly_income = {
+
+					resource = food
+	
+					value < 30
+
+				}
+
+			}
+
+		}
+
+		modifier = {
+
+			weight = 250000
+
+			has_global_flag = gai_enabled_flag
+			num_free_districts = { type = district_mining value = 0 }
+
+			num_free_districts = { type = district_generator value = 0 }
+
+			OR = {
+
+				free_jobs = 0
+
+				any_owned_pop = {
+
+					is_unemployed = yes
+
+					NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+
+					NOR = {
+
+						is_pop_category = specialist
+
+						is_pop_category = ruler
+	
+					}
+
+				}
+
+			}
+
+		}
+	}
+
+	ai_resource_production = {
+		food = 1
+		trigger = {
+			always = yes
+		}
+	}
+}

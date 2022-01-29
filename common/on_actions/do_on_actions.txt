@@ -1,0 +1,36 @@
+### NOT SURE WETHER REQUIERD
+# These might be requierd for the mod
+
+on_planet_defenders_lose = {
+	events = {
+		DistrictOverhaul.0
+	}
+}
+
+on_terraforming_complete = {
+	events = {
+		DistrictOverhaul.0
+	}
+}
+
+empire_init_capital_planet =
+{
+	events = 
+	{
+		DistrictOverhaul.1
+		DistrictOverhaulHomeDistricts.1
+		DistrictOverhaulHomeDistricts.2
+		DistrictOverhaulHomeDistricts.3
+		DistrictOverhaulHomeDistricts.4
+		DistrictOverhaulHomeDistricts.5
+		DistrictOverhaulHomeDistricts.6
+	}
+}
+
+on_game_start = 
+{
+	events = 
+    	{
+		DistrictOverhaulGameStart.1
+	}
+}

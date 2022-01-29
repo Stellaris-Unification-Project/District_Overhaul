@@ -1,0 +1,1309 @@
+@base_cost = 300
+@city_cost = 500
+
+district_city = {
+	base_buildtime = 480
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		from = { is_regular_empire = yes }
+		has_district_city = yes
+	}
+	
+	potential = {
+		exists = owner
+		owner = { is_regular_empire = yes }
+		has_district_city = yes
+	}
+	
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	conversion_ratio = 0.5
+	convert_to = {
+		district_hive
+		district_nexus
+		district_arcology_housing
+		district_hab_housing
+		district_asteroid_housing
+		district_archive_housing
+		district_base_housing
+		district_mem_vazuran_habitat_housing
+		district_utopian_city
+		district_sofe_omega_city
+		district_ringworld_arcology_housing
+		dyson_housing_gestalt
+		district_ocean_housing
+		district_ascended_housing
+		district_megacity
+		district_habitation_dome
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @city_cost
+		}
+		upkeep = {
+			energy = 2
+		}	
+		upkeep = {
+			trigger = {
+				AND = {
+					has_global_flag = gf_alphamod_activated
+					is_planet_class = pc_ringworld_habitable
+				}
+			}
+			energy = 4
+		}	
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 5
+	}
+
+### Master Computer Mod
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_master_computer_urban_planner
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+
+### AlphaMod
+
+	triggered_planet_modifier = {
+		potential = {
+			AND = {
+				has_global_flag = gf_alphamod_activated
+				is_planet_class = pc_ringworld_habitable
+			}
+		}
+		modifier = {
+			planet_housing_add = 10
+			pop_growth_speed = 0.1
+			pop_amenities_usage_mult = 0.25
+			planet_jobs_produces_mult = 0.25
+			planet_pops_upkeep_mult = 0.25
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			AND = {
+				has_global_flag = gf_alphamod_activated
+				is_planet_class = pc_ringworld_habitable
+			}
+			exists = owner
+			owner = { 
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = {
+			planet_housing_add = -2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			AND = {
+				has_global_flag = gf_alphamod_activated
+				is_planet_class = pc_ringworld_habitable
+			}
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_1 
+			}
+		}
+		modifier = {
+			planet_housing_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			AND = {
+				has_global_flag = gf_alphamod_activated
+				is_planet_class = pc_ringworld_habitable
+			}
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_2 
+				NOT = { has_valid_civic = civic_agrarian_idyll }
+			}
+		}
+		modifier = {
+			planet_housing_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				OR = { has_valid_civic = civic_master_engineer }
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			planet_amenities_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				OR = { has_tradition = tradition_harmony_simple_beauty }
+			}
+		}
+		modifier = {
+			planet_housing_add = -1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = {
+			planet_housing_add = -1
+		}
+	}	
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_regular_empire = yes
+				is_fallen_empire = no
+			}
+		}
+		modifier = {
+			job_clerk_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_regular_empire = yes
+				is_fallen_empire = no
+			}
+		}
+		modifier = {
+			job_waste_handler_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_non_swapped_tradition = tr_prosperity_public_works }
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_1 
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_2 
+				NOT = { has_valid_civic = civic_agrarian_idyll }
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_non_swapped_tradition = tr_prosperity_interstellar_franchising }
+		}
+		modifier = {
+			job_clerk_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_1 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_2 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_3 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_4 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_5 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_clerk_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 5
+			free_housing < 3
+		}
+		modifier = 
+		{
+			factor = 0.5
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value < 0
+				}
+			}
+		}
+
+		# Let's not go full spam on this.
+		modifier = {
+			factor = 0
+			free_housing > 2
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 1000000
+			has_global_flag = gai_enabled_flag
+			planet = {
+				planet_devastation < 1
+				years_passed > 10
+				count_pops > 11
+				free_housing < 4
+			}
+			owner = {
+				has_resource = { 
+					type = minerals 
+					amount > 500 
+				}
+			}
+		}
+		modifier = {
+			weight = 1000000
+			has_global_flag = gai_enabled_flag
+			planet = {
+				planet_devastation < 1
+				years_passed > 11
+				NOT = { has_planet_flag = gai_fleet_planet}
+				gai_focus_world = yes
+				free_housing < 10
+				free_amenities > 2
+			}
+			owner = {
+				has_resource = { 
+					type = minerals 
+					amount > 500 
+				}
+			}
+		}#Focus worlds need more housing
+		modifier = {
+			weight = 25000
+			has_planet_flag = gai_arc
+		}
+		modifier = {
+			weight = 1000000
+			has_global_flag = gai_enabled_flag
+			num_free_districts = { type = district_mining value = 0 }
+			OR = {
+				num_free_districts = { type = district_generator value = 0 }
+				owner = {
+					has_monthly_income = {
+						resource = energy
+						value > 150
+					}
+				}
+			}
+			OR = {
+				owner = {
+					has_monthly_income = {
+						resource = food
+						value > 150
+					}
+				}
+				num_free_districts = { type = district_farming value = 0 }
+				owner = { gai_uses_food = no }
+			}
+		}
+	}
+
+	ai_resource_production = {
+		consumer_goods = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+district_hive = {
+	base_buildtime = 480
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		from = { is_hive_empire = yes }
+		has_district_hive = yes
+	}
+	
+	potential = {
+		exists = owner
+		owner = { is_hive_empire = yes }
+		has_district_hive = yes
+	}
+	
+	allow = {
+		NOT = { has_modifier = resort_colony }
+	}	
+	
+	conversion_ratio = 0.5
+	convert_to = {
+		district_city
+		district_nexus
+		district_arcology_housing
+		district_hab_housing
+		district_asteroid_housing
+		district_archive_housing
+		district_base_housing
+		district_mem_vazuran_habitat_housing
+		district_utopian_city
+		district_sofe_omega_city
+		district_ringworld_arcology_housing
+		dyson_housing_gestalt
+		district_ocean_housing
+		district_ascended_housing
+		district_megacity
+		district_habitation_dome
+	}	
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @city_cost
+		}
+		upkeep = {
+			energy = 2
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 6
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_hive_empire = yes
+			}
+		}
+		modifier = {
+			job_waste_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_housing_1 }
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_housing_2 }
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_swapped_tradition = tr_prosperity_extended_hives }
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_1 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_2 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_3 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_4 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_5 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 5
+			free_housing < 3
+		}
+
+		# Let's not go full spam on this.
+		modifier = {
+			factor = 0
+			free_housing > 3
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 1000000
+			has_global_flag = gai_enabled_flag
+			planet = {
+				planet_devastation < 1
+				years_passed > 10
+				count_pops > 11
+				free_housing < 4
+			}
+			owner = {
+				has_resource = { 
+					type = minerals 
+					amount > 500 
+				}
+			}
+		}
+		modifier = {
+			weight = 1000000
+			has_global_flag = gai_enabled_flag
+			planet = {
+				planet_devastation < 1
+				years_passed > 11
+				NOT = { has_planet_flag = gai_fleet_planet}
+				gai_focus_world = yes
+				free_housing < 10
+				free_amenities > 2
+			}
+			owner = {
+				has_resource = { 
+					type = minerals 
+					amount > 500 
+				}
+			}
+		}#Focus worlds need more housing
+		modifier = {
+			weight = 1000000
+			has_global_flag = gai_enabled_flag
+			num_free_districts = { type = district_mining value = 0 }
+			NOT = { is_planet_class = pc_hive }
+			OR = {
+				num_free_districts = { type = district_generator value = 0 }
+				owner = {
+					has_monthly_income = {
+						resource = energy
+						value > 150
+					}
+				}
+			}
+			OR = {
+				owner = {
+					has_monthly_income = {
+						resource = food
+						value > 150
+					}
+				}
+				num_free_districts = { type = district_farming value = 0 }
+			}
+		}
+	}
+}
+
+district_nexus = {
+	base_buildtime = 480
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		from = { is_machine_empire = yes }
+		has_district_nexus = yes
+	}
+	
+	potential = {
+		exists = owner
+		owner = { is_machine_empire = yes }
+		has_district_nexus = yes
+	}
+	
+	allow = {
+		NOT = { has_modifier = resort_colony }
+	}	
+
+	conversion_ratio = 0.5
+	convert_to = {
+		district_hive
+		district_city
+		district_arcology_housing
+		district_hab_housing
+		district_asteroid_housing
+		district_archive_housing
+		district_base_housing
+		district_mem_vazuran_habitat_housing
+		district_utopian_city
+		district_sofe_omega_city
+		district_ringworld_arcology_housing
+		dyson_housing_gestalt
+		district_ocean_housing
+		district_ascended_housing
+		district_megacity
+		district_habitation_dome
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @city_cost
+		}
+		upkeep = {
+			energy = 2
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 5
+		job_maintenance_drone_add = 1
+		job_technician_drone_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_machine_empire = yes
+			}
+		}
+		modifier = {
+			job_waste_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_housing_1 }
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_housing_2 }
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_swapped_tradition = tr_prosperity_optimized_nexus }
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_1 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_2 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_3 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_4 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_5 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 5
+			free_housing < 3
+		}
+
+		# Let's not go full spam on this.
+		modifier = {
+			factor = 0
+			free_housing > 3
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 1000000
+			has_global_flag = gai_enabled_flag
+			planet = {
+				planet_devastation < 1
+				years_passed > 10
+				count_pops > 11
+				free_housing < 4
+			}
+			owner = {
+				has_resource = { 
+					type = minerals 
+					amount > 500 
+				}
+			}
+		}
+		modifier = {
+			weight = 1000000
+			has_global_flag = gai_enabled_flag
+			planet = {
+				planet_devastation < 1
+				years_passed > 11
+				NOT = { has_planet_flag = gai_fleet_planet}
+				gai_focus_world = yes
+				free_housing < 10
+				free_amenities > 2
+			}
+			owner = {
+				has_resource = { 
+					type = minerals 
+					amount > 500 
+				}
+			}
+		}#Focus worlds need more housing
+		modifier = {
+			weight = 1000000
+			has_global_flag = gai_enabled_flag
+			NOT = { is_planet_class = pc_machine }
+			num_free_districts = { type = district_mining value = 0 }
+			OR = {
+				num_free_districts = { type = district_generator value = 0 }
+				owner = {
+					has_monthly_income = {
+						resource = energy
+						value > 150
+					}
+				}
+			}
+			OR = {
+				owner = {
+					has_monthly_income = {
+						resource = food
+						value > 150
+					}
+				}
+				owner = {
+					has_monthly_income = {
+						resource = food
+						value > 20
+					}
+					has_country_flag = gai_machines_have_organics
+				}
+				owner = { 
+					gai_uses_food = no
+					NOT = { has_country_flag = gai_machines_have_organics }
+				}
+				num_free_districts = { type = district_farming value = 0 }
+			}
+		}
+	}
+}
+
+district_arcology_housing = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		has_district_arcology_housing = yes
+	}
+	
+	potential = {
+		has_district_arcology_housing = yes
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_hive
+		district_nexus
+		district_hab_housing
+		district_asteroid_housing
+		district_archive_housing
+		district_base_housing
+		district_mem_vazuran_habitat_housing
+		district_utopian_city
+		district_sofe_omega_city
+		district_ringworld_arcology_housing
+		dyson_housing_gestalt
+		district_ocean_housing
+		district_ascended_housing
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+		}
+		upkeep = {
+			energy = 5
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 15
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_waste_drone_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_fallen_empire = no
+				is_regular_empire = yes 
+			}
+		}
+		modifier = {
+			job_waste_handler_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_efficient_housing }
+		}
+		modifier = { planet_housing_add = 5 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_1 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_2 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_3 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_4 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_5 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_maintenance_drone_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_fallen_empire = no
+				is_regular_empire = yes 
+			}
+		}
+		modifier = {
+			job_clerk_add = 5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_regular_empire = yes
+				is_fallen_empire = no
+				or = {
+					has_policy_flag = state_education_preadult
+					has_policy_flag = state_education_postadult
+				}
+			}
+		}
+		modifier = {
+			job_teacher_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_regular_empire = yes
+				is_fallen_empire = no
+				has_policy_flag = alp_private_businesses_prohibited
+			}
+		}
+		modifier = {
+			job_labourer_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_regular_empire = yes
+				is_fallen_empire = no
+				has_policy_flag = alp_private_businesses_regulated
+			}
+		}
+		modifier = {
+			job_service_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_regular_empire = yes
+				is_fallen_empire = no
+				has_policy_flag = alp_private_businesses_freedom
+			}
+		}
+		modifier = {
+			job_retailer_add = 1
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_fallen_empire = no
+				is_regular_empire = yes 
+			}
+		}
+		text = job_clerk_effect_desc
+	}	
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_maintenance_drone_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 5
+			free_housing < 5
+		}
+		modifier = {
+			weight = 20
+			free_housing < 0
+		}
+		modifier = 
+		{
+			factor = 2
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 0
+				}
+			}
+		}
+
+		# Let's not go full spam on this.
+		modifier = {
+			factor = 0
+			free_housing > 5
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 500000
+			has_global_flag = gai_enabled_flag
+			free_housing < 10
+		}
+	}
+}
+
+@hab_cost = 500
+@hab_maintenance = 2
+
+district_hab_housing = {
+	base_buildtime = 240
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		has_district_hab_housing = yes
+	}
+	
+	potential = {
+		has_district_hab_housing = yes
+	}
+
+	conversion_ratio = 0.5
+	convert_to = {
+		district_city
+		district_hive
+		district_nexus
+		district_arcology_housing
+		district_asteroid_housing
+		district_archive_housing
+		district_base_housing
+		district_mem_vazuran_habitat_housing
+		district_utopian_city
+		district_sofe_omega_city
+		district_ringworld_arcology_housing
+		dyson_housing_gestalt
+		district_ocean_housing
+		district_ascended_housing
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = gf_alphamod_activated
+		}
+		modifier = {
+			planet_housing_add = -5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			AND = {
+				has_global_flag = gf_alphamod_activated
+				is_planet_class = pc_habitat
+			}
+		}
+		modifier = {
+			planet_housing_add = 15
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			AND = {
+				has_global_flag = gf_alphamod_activated
+				NOT = { is_planet_class = pc_habitat }
+			}
+		}
+		modifier = {
+			job_maintenance_drone_add = -2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+			AND = {
+				has_global_flag = gf_alphamod_activated
+				is_planet_class = pc_habitat
+			}
+		}
+		modifier = {
+			job_healthcare_add = 2
+			job_administrator_add = 1
+			job_farmer_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			or = {
+				is_planet_class = pc_asteroid_habitable
+				is_planet_class = pc_ice_asteroid_habitable
+			}
+		}
+		modifier = {
+			pop_environment_tolerance = 0.05
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_efficient_housing }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_1 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_2 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_3 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_4 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_5 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_maintenance_drone_add = 2
+		}
+	}
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_maintenance_drone_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			free_housing < 4
+		}
+		modifier = {
+			weight = 4
+			free_housing < 2
+		}
+		modifier = {
+			weight = 12
+			free_housing < 0
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 90000
+			has_global_flag = gai_enabled_flag
+			planet = {
+				owner = { is_regular_empire = no }
+				num_districts = { type = district_hab_housing value < 2 }
+			}
+		}
+		modifier = {
+			weight = 90000
+			has_global_flag = gai_enabled_flag
+			planet = {
+				owner = { is_regular_empire = yes }
+				num_districts = { type = district_hab_housing value < 2 }
+			}
+		}
+		modifier = {
+			weight = 90000
+			has_global_flag = gai_enabled_flag
+			planet = {
+				owner = { 
+					is_regular_empire = yes
+					has_ascension_perk = ap_master_builders
+				}
+				num_districts = { type = district_hab_housing value < 3 }
+			}
+		}
+		modifier = {
+			factor = 0
+			has_global_flag = gai_enabled_flag
+			planet = {
+				owner = { is_regular_empire = yes }
+				not = { has_district = district_hab_cultural } 
+			}
+		}
+	}
+}

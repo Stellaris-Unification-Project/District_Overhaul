@@ -1,0 +1,1328 @@
+################
+### The Belt ###
+################
+
+district_asteroid_housing = {
+	base_buildtime = 180
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_habitable_asteroid
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = ancient_cities }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	potential = {
+		is_planet_class = pc_habitable_asteroid
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = ancient_cities }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+
+	conversion_ratio = 0.5
+	convert_to = {
+		district_city
+		district_hive
+		district_nexus
+		district_arcology_housing
+		district_hab_housing
+		district_archive_housing
+		district_base_housing
+		district_mem_vazuran_habitat_housing
+		district_utopian_city
+		district_sofe_omega_city
+		district_ringworld_arcology_housing
+		dyson_housing_gestalt
+		district_ocean_housing
+		district_ascended_housing
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 250
+		}
+		upkeep = {
+			energy = 3
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 12
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				OR = { has_valid_civic = civic_master_engineer }
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			planet_amenities_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				OR = { has_tradition = tradition_harmony_simple_beauty }
+			}
+		}
+		modifier = {
+			planet_housing_add = -1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_efficient_housing }
+		}
+		modifier = { planet_housing_add = 3 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_1 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_2 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_3 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_4 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_5 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_maintenance_drone_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_fallen_empire = no
+				is_regular_empire = yes 
+			}
+		}
+		modifier = {
+			job_clerk_add = 1
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_fallen_empire = no
+				is_regular_empire = yes 
+			}
+		}
+		text = job_clerk_effect_desc
+	}	
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_maintenance_drone_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 5
+			free_housing < 0
+		}
+		modifier = {
+			weight = 2
+			free_housing < 3
+		}
+		modifier = 
+		{
+			factor = 2
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 0
+				}
+			}
+		}
+
+		# Let's not go full spam on this.
+		modifier = {
+			factor = 0
+			free_housing > 3
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 500000
+			has_global_flag = gai_enabled_flag
+			free_housing < 3
+		}
+	}
+}
+
+###########################
+### Planetary Diversity ###
+###########################
+
+@archive_cost = 500
+@archive_maintenance = 2
+
+district_archive_housing = {
+	base_buildtime = 240
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_archive
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = ancient_cities }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	potential = {
+		is_planet_class = pc_archive
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = ancient_cities }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+
+	conversion_ratio = 0.5
+	convert_to = {
+		district_city
+		district_hive
+		district_nexus
+		district_arcology_housing
+		district_hab_housing
+		district_asteroid_housing
+		district_base_housing
+		district_mem_vazuran_habitat_housing
+		district_utopian_city
+		district_sofe_omega_city
+		district_ringworld_arcology_housing
+		dyson_housing_gestalt
+		district_ocean_housing
+		district_ascended_housing
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				OR = { has_valid_civic = civic_master_engineer }
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			planet_amenities_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				OR = { has_tradition = tradition_harmony_simple_beauty }
+			}
+		}
+		modifier = {
+			planet_housing_add = -1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_efficient_housing }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_1 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_2 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_3 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_4 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_5 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_maintenance_drone_add = 2
+		}
+	}
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_maintenance_drone_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 15
+			free_housing < 0
+		}
+		modifier = {
+			weight = 3
+			free_housing < 3
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 500000
+			has_global_flag = gai_enabled_flag
+			free_housing < 3
+		}
+	}
+}
+
+######################
+### PJ's Beltalowa ###
+######################
+
+district_base_housing = {
+	base_buildtime = 240
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+	    OR = {
+		    is_planet_class = pc_asteroid_base
+		    is_planet_class = pc_moon_base
+        	}
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = ancient_cities }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	potential = {
+	    OR = {
+		    is_planet_class = pc_asteroid_base
+		    is_planet_class = pc_moon_base
+        	}
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = ancient_cities }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	conversion_ratio = 0.5
+	convert_to = {
+		district_city
+		district_hive
+		district_nexus
+		district_arcology_housing
+		district_hab_housing
+		district_asteroid_housing
+		district_archive_housing
+		district_mem_vazuran_habitat_housing
+		district_utopian_city
+		district_sofe_omega_city
+		district_ringworld_arcology_housing
+		dyson_housing_gestalt
+		district_ocean_housing
+		district_ascended_housing
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 400
+		}
+		upkeep = {
+			energy = 2
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				OR = { has_valid_civic = civic_master_engineer }
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			planet_amenities_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				OR = { has_tradition = tradition_harmony_simple_beauty }
+			}
+		}
+		modifier = {
+			planet_housing_add = -1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_efficient_housing }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_1 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_2 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_3 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_4 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_5 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_maintenance_drone_add = 2
+		}
+	}
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_maintenance_drone_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 4
+			free_housing < 0
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 500000
+			has_global_flag = gai_enabled_flag
+			free_housing < 3
+		}
+	}
+}
+
+###########
+### MEM ###
+###########
+
+district_mem_vazuran_habitat_housing = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_mem_vazuran_habitat
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = ancient_cities }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	potential = {
+		is_planet_class = pc_mem_vazuran_habitat
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = ancient_cities }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	conversion_ratio = 0.5
+	convert_to = {
+		district_city
+		district_hive
+		district_nexus
+		district_arcology_housing
+		district_hab_housing
+		district_asteroid_housing
+		district_archive_housing
+		district_base_housing
+		district_utopian_city
+		district_sofe_omega_city
+		district_ringworld_arcology_housing
+		dyson_housing_gestalt
+		district_ocean_housing
+		district_ascended_housing
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+		}
+		upkeep = {
+			energy = 5
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 15
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_efficient_housing }
+		}
+		modifier = { planet_housing_add = 5 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_1 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_2 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_3 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_4 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_5 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_maintenance_drone_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_fallen_empire = no
+				is_regular_empire = yes 
+			}
+		}
+		modifier = {
+			job_clerk_add = 5
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_fallen_empire = no
+				is_regular_empire = yes 
+			}
+		}
+		text = job_clerk_effect_desc
+	}	
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_maintenance_drone_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 4
+			free_housing < 0
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 500000
+			has_global_flag = gai_enabled_flag
+			free_housing < 3
+		}
+	}
+}
+
+####################################
+### The Zenith of Fallen Empires ###
+####################################
+
+district_utopian_city = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	show_on_uncolonized = { 
+		has_modifier = pm_Utopian_Paradise 
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = ancient_cities }
+		}
+	potential = {
+		exists = owner
+		owner = { is_regular_empire = yes }
+		has_modifier = pm_Utopian_Paradise
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = ancient_cities }
+	}
+	allow = { has_modifier = pm_Utopian_Paradise }	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_hive
+		district_nexus
+		district_arcology_housing
+		district_hab_housing
+		district_asteroid_housing
+		district_archive_housing
+		district_base_housing
+		district_mem_vazuran_habitat_housing
+		district_sofe_omega_city
+		district_ringworld_arcology_housing
+		dyson_housing_gestalt
+		district_ocean_housing
+		district_ascended_housing
+	}
+	resources = {
+		category = planet_districts
+		cost = { minerals = 1000 }	
+	}
+	planet_modifier = { planet_housing_add = 10 }
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_efficient_housing }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_1 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_2 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_3 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_4 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_5 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_regular_empire = yes
+				is_fallen_empire = no
+			}
+		}
+		modifier = { job_clerk_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_non_swapped_tradition = tr_prosperity_public_works }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_1 
+			}
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_2 
+				NOT = { has_valid_civic = civic_agrarian_idyll }
+			}
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_non_swapped_tradition = tr_prosperity_interstellar_franchising }
+		}
+		modifier = { job_clerk_add = 1 }
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_clerk_effect_desc
+	}	
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 5
+			free_housing < 2
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 500000
+			free_housing < 3
+		}
+	}
+}
+district_sofe_omega_city = {
+	base_buildtime = 50
+	is_capped_by_modifier = no
+	show_on_uncolonized = {
+		OR = {
+			is_planet_class = pc_golden_world
+			is_planet_class = pc_golden_world_habitable
+			is_planet_class = pc_omega_ringworld_habitable
+			is_planet_class = pc_omega_ringworld_tech		
+			is_planet_class = pc_omega_ringworld_seam		
+		}
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = ancient_cities }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	potential = {
+		OR = {
+			is_planet_class = pc_golden_world
+			is_planet_class = pc_golden_world_habitable
+			is_planet_class = pc_omega_ringworld_habitable
+			is_planet_class = pc_omega_ringworld_tech		
+			is_planet_class = pc_omega_ringworld_seam		
+		}
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = ancient_cities }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+		exists = owner
+	}
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_hive
+		district_nexus
+		district_arcology_housing
+		district_hab_housing
+		district_asteroid_housing
+		district_archive_housing
+		district_base_housing
+		district_mem_vazuran_habitat_housing
+		district_utopian_city
+		district_ringworld_arcology_housing
+		dyson_housing_gestalt
+		district_ocean_housing
+		district_ascended_housing
+	}	
+	resources = {
+		category = planet_districts
+		cost = {
+			unity = 50000
+			acot_sr_stellarite = 5000
+		}
+		upkeep = {
+			unity = 500
+			acot_sr_stellarite = 5
+		}
+		produces = { acot_sr_light_matter = 25 }
+	}
+	planet_modifier = { planet_housing_add = 50 }
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_efficient_housing }
+		}
+		modifier = { planet_housing_add = 10 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_1 }
+		}
+		modifier = { planet_housing_add = 8 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_2 }
+		}
+		modifier = { planet_housing_add = 8 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_3 }
+		}
+		modifier = { planet_housing_add = 8 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_4 }
+		}
+		modifier = { planet_housing_add = 8 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_5 }
+		}
+		modifier = { planet_housing_add = 8 }
+	}
+	ai_weight = {
+		weight = 20
+		modifier = {
+			factor = 5
+			free_housing < 5
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 500000
+			has_global_flag = gai_enabled_flag
+			free_housing < 3
+		}
+	}
+}
+
+##################################
+### Gigastructural Engineering ###
+##################################
+
+district_ringworld_arcology_housing = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_city_ringworld_habitable
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = ancient_cities }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	potential = {
+		is_planet_class = pc_city_ringworld_habitable
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = ancient_cities }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_hive
+		district_nexus
+		district_arcology_housing
+		district_hab_housing
+		district_asteroid_housing
+		district_archive_housing
+		district_base_housing
+		district_mem_vazuran_habitat_housing
+		district_utopian_city
+		district_sofe_omega_city
+		dyson_housing_gestalt
+		district_ocean_housing
+		district_ascended_housing
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+		}
+		upkeep = {
+			energy = 5
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 15
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_efficient_housing }
+		}
+		modifier = { planet_housing_add = 5 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_1 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_2 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_3 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_4 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_5 }
+		}
+		modifier = { planet_housing_add = 2 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_maintenance_drone_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_fallen_empire = no
+				is_regular_empire = yes 
+			}
+		}
+		modifier = {
+			job_clerk_add = 5
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_fallen_empire = no
+				is_regular_empire = yes 
+			}
+		}
+		text = job_clerk_effect_desc
+	}	
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_maintenance_drone_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 1
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 500000
+			has_global_flag = gai_enabled_flag
+			free_housing < 3
+		}
+	}
+}
+
+###################
+### Dyson Swarm ###
+###################
+
+dyson_housing_gestalt = {
+	base_buildtime = 240
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_dyson_swarm
+		from = { is_gestalt = yes }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = ancient_cities }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	potential = {
+		is_planet_class = pc_dyson_swarm
+		exists = owner
+		owner = { is_gestalt = yes }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = ancient_cities }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		dyson_swarm_market_stations
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 300
+		}
+		upkeep = {
+			energy = 1
+			minerals = 1
+		}		
+	}	
+	
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_dyson_maintenance_drone_add = 1
+		}
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 5
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_efficient_housing }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_1 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_2 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_3 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_4 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_housing_5 }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 10000
+			planet = {
+				planet_devastation < 1
+				count_pops > 6
+				free_housing < 4
+				NOT = {
+					any_owned_pop = {
+						OR = {
+							is_unemployed = yes
+							has_job = servant
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			weight = 80
+			planet = {
+				planet_devastation < 1
+				has_modifier = living_sea 
+				free_housing < 5
+			}
+		}
+	}
+}

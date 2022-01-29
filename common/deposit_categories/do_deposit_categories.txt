@@ -1,0 +1,10 @@
+deposit_cat_wind = {}
+deposit_cat_geothermal = {}
+deposit_cat_solar = {}
+deposit_cat_surface_mining = {}
+deposit_cat_secure_mining = {}
+deposit_cat_nature_reserve = {}
+deposit_cat_tourism = {}
+deposit_cat_nature_farms = {}
+deposit_cat_research_complex = {}
+deposit_cat_empty = {}

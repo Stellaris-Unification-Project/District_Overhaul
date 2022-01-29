@@ -1,0 +1,106 @@
+### DistrictOverhaul
+
+has_district_robot_assembly =
+{
+		OR = {
+			is_planet_class = pc_machine
+			is_planet_class = pc_habitat
+			is_planet_class = pc_technoorganic
+			is_planet_class = pc_archive
+			is_planet_class = pc_mem_vazuran_habitat
+			is_planet_class = pc_gigaorbital_ring
+			is_planet_class = pc_planetary_ringworld_machine
+			is_planet_class = pc_centax
+			has_modifier = dd_home_ascended_machine
+			has_modifier = do_machine_replication
+		}
+		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_planet
+				NOT = { has_modififer = do_machine_replication }
+			}
+		}
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_evolved_regular
+				NOT = { has_modififer = do_machine_replication }
+			}
+		}
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_evolved_machine
+				NOT = { has_modififer = do_machine_replication }
+			}
+		}
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_evolved_hive
+				NOT = { has_modififer = do_machine_replication }
+			}
+		}
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_ascended_regular
+				NOT = { has_modififer = do_machine_replication }
+			}
+		}
+		NOT = { 
+			AND = {
+				has_modifier = dd_home_ascended_hive
+				NOT = { has_modififer = do_machine_replication }
+			}
+		}
+		NOT = { 
+			AND = {
+				is_planet_class = pc_habitat
+				has_global_flag = LivingSpace_active
+			}
+		}
+}
+
+has_district_drone_lab =
+{
+		OR = {
+			is_planet_class = pc_hive
+			is_planet_class = pc_habitat
+			is_planet_class = pc_graveyard
+			is_planet_class = pc_technoorganic
+			is_planet_class = pc_archive
+			is_planet_class = pc_mem_vazuran_habitat
+			is_planet_class = pc_gigaorbital_ring
+			is_planet_class = pc_centax
+			is_planet_class = pc_ringworld_hive
+			has_modifier = dd_home_ascended_hive
+		}
+		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { 
+			AND = {
+				is_planet_class = pc_habitat
+				has_global_flag = LivingSpace_active
+			}
+		}
+}
+
+has_district_cloning_facility =
+{
+		OR = {
+			is_planet_class = pc_technoorganic
+			is_planet_class = pc_mem_vazuran_habitat
+			is_planet_class = pc_centax
+			has_modifier = dd_home_ascended_regular
+		}
+		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_evolved_hive }
+		NOT = { has_modifier = dd_home_ascended_hive }
+		NOT = { has_modifier = dd_home_ascended_machine }
+}

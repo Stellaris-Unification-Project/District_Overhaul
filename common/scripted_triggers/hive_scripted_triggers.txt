@@ -1,0 +1,26 @@
+### DistrictOverhaul
+
+has_district_food_production_line =
+{
+		OR = {	
+			is_planet_class = pc_habitat
+			is_planet_class = pc_ecocity
+			is_plaent_class = pc_boreal
+			is_planet_class = pc_mem_vazuran_habitat
+			is_planet_class = pc_city_ringworld_habitable
+			is_planet_class = pc_interstellar_ringworld_habitable
+			is_planet_class = pc_coruscant
+		}
+		NOT = { has_modifier = dd_home_planet }
+		NOT = { has_modifier = dd_home_evolved_regular }
+		NOT = { has_modifier = dd_home_evolved_machine }
+		NOT = { has_modifier = dd_home_evolved_hive
+		NOT = { has_modifier = dd_home_ascended_regular }
+		NOT = { has_modifier = dd_home_ascended_machine }
+		NOT = { has_modifier = dd_home_ascended_hive }
+			AND = {
+				is_planet_class = pc_habitat
+				has_global_flag = LivingSpace_active
+			}
+		}
+}

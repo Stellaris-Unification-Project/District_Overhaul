@@ -1,0 +1,40 @@
+##### Check wether localisation and graphics are requierd
+
+### District Overhaul Planet Modifiers
+
+### Home Planet
+
+pm_dd_home_planet = {
+	spawn_chance = { modifier = { add = 0 } }
+	modifier = "dd_home_planet"
+}
+
+pm_dd_home_evolved_regular = {
+	spawn_chance = { modifier = { add = 0 } }
+	modifier = "dd_home_evolved_regular"
+}
+
+pm_dd_home_evolved_machine = {
+	spawn_chance = { modifier = { add = 0 } }
+	modifier = "dd_home_evolved_machine"
+}
+
+pm_dd_home_evolved_hive = {
+	spawn_chance = { modifier = { add = 0 } }
+	modifier = "dd_home_evolved_hive"
+}
+
+pm_dd_home_ascended_regular = {
+	spawn_chance = { modifier = { add = 0 } }
+	modifier = "dd_home_ascended_regular"
+}
+
+pm_dd_home_ascended_machine = {
+	spawn_chance = { modifier = { add = 0 } }
+	modifier = "dd_home_ascended_machine"
+}
+
+pm_dd_home_ascended_hive = {
+	spawn_chance = { modifier = { add = 0 } }
+	modifier = "dd_home_ascended_hive"
+}

@@ -1,0 +1,455 @@
+###############
+### Vanilla ###
+###############
+
+district_arcology_arms_industry = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {	
+		has_district_arcology_arms_industry = yes
+	}
+	
+	potential = {
+		has_district_arcology_arms_industry = yes
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_nexus
+		district_hive
+		district_ringworld_arcology_arms_industry
+		district_sofe_omega_logistics
+		district_local_industry
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+		}
+		upkeep = {
+			energy = 5
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_fabricator_add = 10
+		}
+	}	
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_alloy_drone_add = 10
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_foundry_add = 10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_1
+				  is_hive_empire = yes }
+		}
+		modifier = { job_alloy_drone_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_2
+				  is_hive_empire = yes }
+		}
+		modifier = { job_alloy_drone_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_3
+				  is_hive_empire = yes }
+		}
+		modifier = { job_alloy_drone_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_4
+				  is_hive_empire = yes }
+		}
+		modifier = { job_alloy_drone_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_5
+				  is_hive_empire = yes }
+		}
+		modifier = { job_alloy_drone_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_1
+				  is_gestalt = no }
+		}
+		modifier = { job_foundry_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_2
+				  is_gestalt = no }
+		}
+		modifier = { job_foundry_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_3
+				  is_gestalt = no }
+		}
+		modifier = { job_foundry_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_4
+				  is_gestalt = no }
+		}
+		modifier = { job_foundry_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_5
+				  is_gestalt = no }
+		}
+		modifier = { job_foundry_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_1
+				  is_machine_empire = yes }
+		}
+		modifier = { job_fabricator_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_2
+				  is_machine_empire = yes }
+		}
+		modifier = { job_fabricator_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_3
+				  is_machine_empire = yes }
+		}
+		modifier = { job_fabricator_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_4
+				  is_machine_empire = yes }
+		}
+		modifier = { job_fabricator_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_5
+				  is_machine_empire = yes }
+		}
+		modifier = { job_fabricator_add = 1 }
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_foundry_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		text = job_alloy_drone_effect_desc
+	}		
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = job_fabricator_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 6
+			owner = { 
+				has_monthly_income = {
+					resource = alloys
+					value < 15
+				}
+			}
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 650000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 6
+			owner = {
+				has_monthly_income = {
+					resource = alloys
+					value < 500
+				}
+				has_monthly_income = {
+					resource = minerals
+					value > 99
+				}
+			}
+		}
+	}
+}
+
+district_arcology_civilian_industry = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		has_district_arcology_civilian_industry = yes
+		from = {
+			OR = {
+				is_regular_empire = yes
+				is_machine_empire = yes
+			}
+		}
+	}
+	
+	potential = {
+		has_district_arcology_civilian_industry = yes
+		owner = {
+			exists = owner
+			OR = {
+				is_regular_empire = yes
+				is_machine_empire = yes
+			}
+		}
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_nexus
+		district_hive
+		district_ringworld_arcology_civilian_industry
+		district_sofe_omega_logistics
+		district_production_hub
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+		}
+		upkeep = {
+			energy = 5
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_artisan_drone_add = 10
+		}
+	}	
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_artisan_add = 10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_1
+				  is_gestalt = no }
+		}
+		modifier = { job_artisan_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_2
+				  is_gestalt = no }
+		}
+		modifier = { job_artisan_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_3
+				  is_gestalt = no }
+		}
+		modifier = { job_artisan_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_4
+				  is_gestalt = no }
+		}
+		modifier = { job_artisan_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_5
+				  is_gestalt = no }
+		}
+		modifier = { job_artisan_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_1
+				  is_machine_empire = yes }
+		}
+		modifier = { job_artisan_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_2
+				  is_machine_empire = yes }
+		}
+		modifier = { job_artisan_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_3
+				  is_machine_empire = yes }
+		}
+		modifier = { job_artisan_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_4
+				  is_machine_empire = yes }
+		}
+		modifier = { job_artisan_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_do_production_5
+				  is_machine_empire = yes }
+		}
+		modifier = { job_artisan_drone_add = 1 }
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_artisan_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_artisan_drone_effect_desc
+	}		
+
+	ai_weight = {
+		weight = 2
+		modifier = 
+		{
+			factor = 5
+			owner = { 
+				has_monthly_income = {
+					resource = consumer_goods
+					value < 5
+				}
+				has_monthly_income = {
+					resource = minerals
+					value > 6
+				}
+			}
+		}
+
+		### Glavius's Ultimate AI
+		modifier = {
+			weight = 0
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 650000
+			has_global_flag = gai_enabled_flag
+			free_jobs < 6
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value < 500
+				}
+				has_monthly_income = {
+					resource = minerals
+					value > 99
+				}
+			}
+		}
+	}
+}

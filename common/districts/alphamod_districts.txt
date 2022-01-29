@@ -1,0 +1,153 @@
+district_hab_infrastructure = {
+	base_buildtime = 720
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		AND = {
+			has_global_flag = gf_alphamod_activated
+			is_planet_class = pc_habitat
+		}
+	}
+	
+	potential = {
+		AND = {
+			has_global_flag = gf_alphamod_activated
+			is_planet_class = pc_habitat
+		}
+	}
+	
+	allow = {
+		#num_districts = { type = district_hab_infrastructure value < 6 }
+		not = {
+			check_variable = {
+				which = queued_infrastructure
+				value > 5
+			}
+		}
+	}
+	
+	on_queued = {
+		planet = { 
+			change_variable = {
+				which = "queued_infrastructure" 
+				value = 1
+			}
+		}	
+	}
+	
+	on_unqueued = {
+		planet = { 
+			change_variable = {
+				which = "queued_infrastructure" 
+				value = -1
+			}
+		}	
+	}
+	
+	on_built = {
+		planet = { 
+			change_variable = {
+				which = "built_infrastructure" 
+				value = 1
+			}
+			remove_modifier = hab_infrastructure_1
+			remove_modifier = hab_infrastructure_2
+			remove_modifier = hab_infrastructure_3
+			remove_modifier = hab_infrastructure_4
+			remove_modifier = hab_infrastructure_5
+			remove_modifier = hab_infrastructure_6
+			if = {
+				limit = {
+					check_variable = {
+						which = built_infrastructure
+						value = 1
+					}
+				}
+				add_modifier = {
+					modifier = hab_infrastructure_1
+					days = -1
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = built_infrastructure
+						value = 2
+					}
+				}
+				add_modifier = {
+					modifier = hab_infrastructure_2
+					days = -1
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = built_infrastructure
+						value = 3
+					}
+				}
+				add_modifier = {
+					modifier = hab_infrastructure_3
+					days = -1
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = built_infrastructure
+						value = 4
+					}
+				}
+				add_modifier = {
+					modifier = hab_infrastructure_4
+					days = -1
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = built_infrastructure
+						value = 5
+					}
+				}
+				add_modifier = {
+					modifier = hab_infrastructure_5
+					days = -1
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = built_infrastructure
+						value = 6
+					}
+				}
+				add_modifier = {
+					modifier = hab_infrastructure_6
+					days = -1
+				}
+			}
+			remove_district = district_hab_infrastructure
+		}
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 500
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 25
+			free_district_slots < 3
+		}
+		modifier = {
+			weight = 100
+			free_district_slots < 2
+		}
+	}
+}

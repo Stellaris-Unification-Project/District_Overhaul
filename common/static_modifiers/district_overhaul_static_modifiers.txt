@@ -1,0 +1,82 @@
+#############################
+### Home Planet Modifiers ###
+#############################
+
+dd_home_planet = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_dd_home_planet.dds"
+	icon_frame = 1
+}
+
+dd_home_evolved_regular = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_dd_home_evolved_regular.dds"
+	icon_frame = 1
+}
+
+dd_home_evolved_machine = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_dd_home_evolved_machine.dds"
+	icon_frame = 1
+}
+
+dd_home_evolved_hive = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_dd_home_evolved_hive.dds"
+	icon_frame = 1
+}
+
+dd_home_ascended_regular = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_dd_home_ascended_regular.dds"
+	icon_frame = 1
+}
+
+dd_home_ascended_machine = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_dd_home_ascended_machine.dds"
+	icon_frame = 1
+}
+
+dd_home_ascended_hive = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_dd_home_ascended_hive.dds"
+	icon_frame = 1
+}
+
+#############################
+### Home Planet Districts ###
+#############################
+
+do_spiritualist_heaven = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_dd_home_planet.dds"
+	icon_frame = 1
+}
+
+do_space_harbour = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_dd_home_planet.dds"
+	icon_frame = 1
+}
+
+do_grand_academy = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_dd_home_planet.dds"
+	icon_frame = 1
+}
+
+do_trade_hub = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_dd_home_planet.dds"
+	icon_frame = 1
+}
+
+do_enviroment_friendly = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_dd_home_planet.dds"
+	icon_frame = 1
+}
+
+do_machine_replication = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_dd_home_planet.dds"
+	icon_frame = 1
+}
+
+##########################
+### Increase Districts ###
+##########################
+
+#artificial_land = {
+#	icon = "gfx/interface/icons/planet_modifiers/pm_mastery_of_nature.dds"
+#	icon_frame = 1
+#	planet_max_districts_add = 1
+#}
