@@ -18,8 +18,8 @@ has_district_food_production_line =
 		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_ascended_machine
+			has_modifier = dd_home_ascended_hive
 		}
-		NOT = { has_modifier = dd_home_ascended_hive }
 			AND = {
 				is_planet_class = pc_habitat
 				has_global_flag = LivingSpace_active

@@ -229,16 +229,10 @@ district_archive_physics = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -249,16 +243,10 @@ district_archive_physics = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -452,16 +440,10 @@ district_archive_society = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -472,16 +454,10 @@ district_archive_society = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -675,16 +651,10 @@ district_archive_engineering = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -695,16 +665,10 @@ district_archive_engineering = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -898,16 +862,10 @@ district_arcology_research_complex = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -918,16 +876,10 @@ district_arcology_research_complex = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -1328,16 +1280,10 @@ dyson_swarm_zero_g_labs = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -1348,16 +1294,10 @@ dyson_swarm_zero_g_labs = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -1618,16 +1558,10 @@ district_planetary_computer = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -1638,16 +1572,10 @@ district_planetary_computer = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -2051,16 +1979,10 @@ district_interstellar_lab = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -2071,16 +1993,10 @@ district_interstellar_lab = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -2176,16 +2092,10 @@ district_gasgiant_lab = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -2196,16 +2106,10 @@ district_gasgiant_lab = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -2393,16 +2297,10 @@ district_elysium_preserve = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -2413,16 +2311,10 @@ district_elysium_preserve = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -2536,16 +2428,10 @@ district_interstellar_scavenger = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -2556,16 +2442,10 @@ district_interstellar_scavenger = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}

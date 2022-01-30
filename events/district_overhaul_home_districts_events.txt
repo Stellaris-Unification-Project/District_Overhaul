@@ -9,12 +9,10 @@ planet_event = {
 		NOR = {
 			has_planet_flag = trw_start
 			is_planet_class = pc_ringworld_habitable
-		}
-		NOR = {
 			is_planet_class = pc_city
 			is_planet_class = pc_machine
+			is_planet_class = pc_hive
 		}
-		NOT = { is_planet_class = pc_hive }
 		owner = { has_valid_civic = civic_machine_replication }
 	}
 	immediate = {
@@ -34,12 +32,10 @@ planet_event = {
 		NOR = {
 			has_planet_flag = trw_start
 			is_planet_class = pc_ringworld_habitable
-		}
-		NOR = {
 			is_planet_class = pc_city
 			is_planet_class = pc_machine
+			is_planet_class = pc_hive
 		}
-		NOT = { is_planet_class = pc_hive }
 		NOT = { owner = { has_valid_civic = civic_machine_replication } }
 		OR = {
 			owner = { has_ethic = ethic_spiritualist }
@@ -63,12 +59,10 @@ planet_event = {
 		NOR = {
 			has_planet_flag = trw_start
 			is_planet_class = pc_ringworld_habitable
-		}
-		NOR = {
 			is_planet_class = pc_city
 			is_planet_class = pc_machine
+			is_planet_class = pc_hive
 		}
-		NOT = { is_planet_class = pc_hive }
 		NOT = { owner = { has_valid_civic = civic_machine_replication } }
 		NOT = { owner = { has_ethic = ethic_spiritualist } }
 		NOT = { owner = { has_ethic = ethic_fanatic_spiritualist } }
@@ -95,12 +89,10 @@ planet_event = {
 		NOR = {
 			has_planet_flag = trw_start
 			is_planet_class = pc_ringworld_habitable
-		}
-		NOR = {
 			is_planet_class = pc_city
 			is_planet_class = pc_machine
+			is_planet_class = pc_hive
 		}
-		NOT = { is_planet_class = pc_hive }
 		NOT = { owner = { has_valid_civic = civic_machine_replication } }
 		NOT = { owner = { has_ethic = ethic_spiritualist } }
 		NOT = { owner = { has_ethic = ethic_fanatic_spiritualist } }
@@ -131,12 +123,10 @@ planet_event = {
 		NOR = {
 			has_planet_flag = trw_start
 			is_planet_class = pc_ringworld_habitable
-		}
-		NOR = {
 			is_planet_class = pc_city
 			is_planet_class = pc_machine
+			is_planet_class = pc_hive
 		}
-		NOT = { is_planet_class = pc_hive }
 		NOT = { owner = { has_valid_civic = civic_machine_replication } }
 		NOT = { owner = { has_ethic = ethic_spiritualist } }
 		NOT = { owner = { has_ethic = ethic_fanatic_spiritualist } }
@@ -166,12 +156,10 @@ planet_event = {
 		NOR = {
 			has_planet_flag = trw_start
 			is_planet_class = pc_ringworld_habitable
-		}
-		NOR = {
 			is_planet_class = pc_city
 			is_planet_class = pc_machine
+			is_planet_class = pc_hive
 		}
-		NOT = { is_planet_class = pc_hive }
 		NOT = { owner = { has_valid_civic = civic_machine_replication } }
 		NOT = { owner = { has_ethic = ethic_spiritualist } }
 		NOT = { owner = { has_ethic = ethic_fanatic_spiritualist } }

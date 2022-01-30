@@ -845,16 +845,10 @@ dyson_swarm_mining_bays = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -865,16 +859,10 @@ dyson_swarm_mining_bays = {
 		NOR = {
 			has_modifier = dd_home_planet
 			has_modifier = dd_home_evolved_regular
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_regular
 			has_modifier = dd_home_evolved_hive
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_hive
 			has_modifier = dd_home_evolved_machine
-		}
-		NOR = {
 			has_modifier = dd_home_ascended_machine
 			has_modifier = pm_Utopian_Paradise
 		}

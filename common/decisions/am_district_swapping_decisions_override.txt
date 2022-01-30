@@ -219,12 +219,10 @@ decision_parishes = {
 			NOR = {
 				has_ethic = ethic_fanatic_spiritualist
 				has_ethic = ethic_fanatic_militarist
-			}
-			NOR = {
 				has_ethic = ethic_fanatic_authoritarian
 				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_fanatic_xenophobe
 			}
-			not = { has_ethic = ethic_fanatic_xenophobe }
 			has_ethic = ethic_spiritualist
 		}
 		habitable_structure = no
@@ -309,12 +307,10 @@ decision_warriorhouses = {
 			NOR = {
 				has_ethic = ethic_fanatic_spiritualist
 				has_ethic = ethic_fanatic_militarist
-			}
-			NOR = {
 				has_ethic = ethic_fanatic_authoritarian
 				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_fanatic_xenophobe
 			}
-			not = { has_ethic = ethic_fanatic_xenophobe }
 			has_ethic = ethic_militarist
 		}
 		habitable_structure = no
@@ -399,12 +395,10 @@ decision_labourcamps = {
 			NOR = {
 				has_ethic = ethic_fanatic_spiritualist
 				has_ethic = ethic_fanatic_militarist
-			}
-			NOR = {
 				has_ethic = ethic_fanatic_authoritarian
 				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_fanatic_xenophobe
 			}
-			not = { has_ethic = ethic_fanatic_xenophobe }
 			has_ethic = ethic_authoritarian
 		}
 		habitable_structure = no
@@ -489,12 +483,10 @@ decision_securityzones = {
 			NOR = {
 				has_ethic = ethic_fanatic_spiritualist
 				has_ethic = ethic_fanatic_militarist
-			}
-			NOR = {
 				has_ethic = ethic_fanatic_authoritarian
 				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_fanatic_xenophobe
 			}
-			not = { has_ethic = ethic_fanatic_xenophobe }
 			has_ethic = ethic_xenophobe
 		}
 		habitable_structure = no
@@ -579,12 +571,10 @@ decision_markettowns = {
 			NOR = {
 				has_ethic = ethic_fanatic_spiritualist
 				has_ethic = ethic_fanatic_militarist
-			}
-			NOR = {
 				has_ethic = ethic_fanatic_authoritarian
 				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_fanatic_xenophobe
 			}
-			not = { has_ethic = ethic_fanatic_xenophobe }
 			or = {
 				has_ethic = ethic_pacifist
 				has_ethic = ethic_egalitarian

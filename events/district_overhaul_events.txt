@@ -17,12 +17,10 @@ planet_event = {
 		NOR = {
 			has_planet_flag = trw_start
 			is_planet_class = pc_ringworld_habitable
-		}
-		NOR = {
 			is_planet_class = pc_city
 			is_planet_class = pc_machine
+			is_planet_class = pc_hive
 		}
-		NOT = { is_planet_class = pc_hive }
 	}
 	immediate = {
 		add_modifier = {

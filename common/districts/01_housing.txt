@@ -11,16 +11,10 @@ district_asteroid_housing = {
 		NOR = {
 			has_modifier = dd_home_evolved_regular
 			has_modifier = dd_home_ascended_regular
-		}
-		NOR = {
 			has_modifier = dd_home_evolved_hive
 			has_modifier = dd_home_ascended_hive
-		}
-		NOR = {
 			has_modifier = dd_home_evolved_machine
 			has_modifier = dd_home_ascended_machine
-		}
-		NOR = {
 			has_modifier = ancient_cities
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -31,16 +25,10 @@ district_asteroid_housing = {
 		NOR = {
 			has_modifier = dd_home_evolved_regular
 			has_modifier = dd_home_ascended_regular
-		}
-		NOR = {
 			has_modifier = dd_home_evolved_hive
 			has_modifier = dd_home_ascended_hive
-		}
-		NOR = {
 			has_modifier = dd_home_evolved_machine
 			has_modifier = dd_home_ascended_machine
-		}
-		NOR = {
 			has_modifier = ancient_cities
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -244,16 +232,10 @@ district_archive_housing = {
 		NOR = {
 			has_modifier = dd_home_evolved_regular
 			has_modifier = dd_home_ascended_regular
-		}
-		NOR = {
 			has_modifier = dd_home_evolved_hive
 			has_modifier = dd_home_ascended_hive
-		}
-		NOR = {
 			has_modifier = dd_home_evolved_machine
 			has_modifier = dd_home_ascended_machine
-		}
-		NOR = {
 			has_modifier = ancient_cities
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -264,16 +246,10 @@ district_archive_housing = {
 		NOR = {
 			has_modifier = dd_home_evolved_regular
 			has_modifier = dd_home_ascended_regular
-		}
-		NOR = {
 			has_modifier = dd_home_evolved_hive
 			has_modifier = dd_home_ascended_hive
-		}
-		NOR = {
 			has_modifier = dd_home_evolved_machine
 			has_modifier = dd_home_ascended_machine
-		}
-		NOR = {
 			has_modifier = ancient_cities
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -610,16 +586,10 @@ district_mem_vazuran_habitat_housing = {
 		NOR = {
 			has_modifier = dd_home_evolved_regular
 			has_modifier = dd_home_ascended_regular
-		}
-		NOR = {
 			has_modifier = dd_home_evolved_hive
 			has_modifier = dd_home_ascended_hive
-		}
-		NOR = {
 			has_modifier = dd_home_evolved_machine
 			has_modifier = dd_home_ascended_machine
-		}
-		NOR = {
 			has_modifier = ancient_cities
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -630,16 +600,10 @@ district_mem_vazuran_habitat_housing = {
 		NOR = {
 			has_modifier = dd_home_evolved_regular
 			has_modifier = dd_home_ascended_regular
-		}
-		NOR = {
 			has_modifier = dd_home_evolved_hive
 			has_modifier = dd_home_ascended_hive
-		}
-		NOR = {
 			has_modifier = dd_home_evolved_machine
 			has_modifier = dd_home_ascended_machine
-		}
-		NOR = {
 			has_modifier = ancient_cities
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -794,16 +758,12 @@ district_utopian_city = {
 		NOR = {
 			has_modifier = dd_home_evolved_regular
 			has_modifier = dd_home_ascended_regular
-		}
-		NOR = {
 			has_modifier = dd_home_evolved_hive
 			has_modifier = dd_home_ascended_hive
-		}
-		NOR = {
 			has_modifier = dd_home_evolved_machine
 			has_modifier = dd_home_ascended_machine
+			has_modifier = ancient_cities
 		}
-		NOT = { has_modifier = ancient_cities }
 		}
 	potential = {
 		exists = owner
@@ -1093,16 +1053,10 @@ district_ringworld_arcology_housing = {
 		NOR = {
 			has_modifier = dd_home_evolved_regular
 			has_modifier = dd_home_ascended_regular
-		}
-		NOR = {
 			has_modifier = dd_home_evolved_hive
 			has_modifier = dd_home_ascended_hive
-		}
-		NOR = {
 			has_modifier = dd_home_evolved_machine
 			has_modifier = dd_home_ascended_machine
-		}
-		NOR = {
 			has_modifier = ancient_cities
 			has_modifier = pm_Utopian_Paradise
 		}
@@ -1113,16 +1067,10 @@ district_ringworld_arcology_housing = {
 		NOR = {
 			has_modifier = dd_home_evolved_regular
 			has_modifier = dd_home_ascended_regular
-		}
-		NOR = {
 			has_modifier = dd_home_evolved_hive
 			has_modifier = dd_home_ascended_hive
-		}
-		NOR = {
 			has_modifier = dd_home_evolved_machine
 			has_modifier = dd_home_ascended_machine
-		}
-		NOR = {
 			has_modifier = ancient_cities
 			has_modifier = pm_Utopian_Paradise
 		}
