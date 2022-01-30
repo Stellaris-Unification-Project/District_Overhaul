@@ -123,11 +123,9 @@ has_district_criminal_mining =
 		NOT = { has_modifier = dd_home_ascended_machine }
 		NOT = { has_modifier = pm_Utopian_Paradise }
 		### AlphaMod
-		NOT = { 
-			AND = {
-				has_global_flag = gf_alphamod_activated
-				is_hostile_planet_ia = yes
-			}
+		NAND = {
+			has_global_flag = gf_alphamod_activated
+			is_hostile_planet_ia = yes
 		}
 }
 
@@ -152,11 +150,9 @@ has_district_secure_mining =
 		NOT = { has_modifier = dd_home_ascended_machine }
 		NOT = { has_modifier = pm_Utopian_Paradise }
 		### AlphaMod
-		NOT = { 
-			AND = {
-				has_global_flag = gf_alphamod_activated
-				is_hostile_planet_ia = yes
-			}
+		NAND = {
+			has_global_flag = gf_alphamod_activated
+			is_hostile_planet_ia = yes
 		}
 }
 

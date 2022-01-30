@@ -32,11 +32,9 @@ has_district_hab_cultural =
 		NOT = { has_modifier = dd_home_ascended_regular}
 		NOT = { has_modifier = dd_home_ascended_machine}
 		NOT = { has_modifier = dd_home_ascended_hive}
-		NOT = { 
-			AND = {
-				is_planet_class = pc_habitat
-				has_global_flag = LivingSpace_active
-			}
+		NAND = {
+			is_planet_class = pc_habitat
+			has_global_flag = LivingSpace_active
 		}
 }
 

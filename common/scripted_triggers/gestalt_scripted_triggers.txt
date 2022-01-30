@@ -24,7 +24,7 @@ has_district_drone_research_complex =
 				has_modifier = dd_home_planet 
 				NOT = { from = { is_hive_empire = yes } }
 				NOT = { has_limiting_modifier = no }
-				NOT = { is_home_planet = yes }
+				is_home_planet = no
 			}
 		}
 		NOT = { has_modifier = dd_home_evolved_regular }
@@ -33,7 +33,7 @@ has_district_drone_research_complex =
 				has_modifier = dd_home_evolved_hive
 				NOT = { from = { is_hive_empire = yes } }
 				NOT = { has_limiting_modifier = no }
-				NOT = { is_home_planet = yes }
+				is_home_planet = no
 			}
 		}
 		NOT = { has_modifier = dd_home_evolved_machine }
@@ -43,7 +43,7 @@ has_district_drone_research_complex =
 				has_modifier = dd_home_ascended_hive 
 				NOT = { from = { is_hive_empire = yes } }
 				NOT = { has_limiting_modifier = no }
-				NOT = { is_home_planet = yes }
+				is_home_planet = no
 			}
 		}
 		NOT = { has_modifier = dd_home_ascended_machine }

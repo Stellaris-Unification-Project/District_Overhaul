@@ -295,9 +295,10 @@ nature_research_drone = {
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_research_lab_1
 	
+	possible_precalc = can_fill_drone_job
+	
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 
 	resources = {
 		category = planet_researchers
@@ -327,9 +328,10 @@ engineering_drone = {
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_research_lab_1
 	
+	possible_precalc = can_fill_drone_job
+	
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 
 	resources = {
 		category = planet_researchers
@@ -359,9 +361,10 @@ physics_drone = {
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_research_lab_1
 	
+	possible_precalc = can_fill_drone_job
+	
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 
 	resources = {
 		category = planet_researchers
@@ -395,9 +398,10 @@ nature_development_drone = {
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_research_lab_1
 	
+	possible_precalc = can_fill_drone_job
+	
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 
 	resources = {
 		category = planet_researchers
@@ -447,9 +451,10 @@ crafting_drone = {
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_research_lab_1
 	
+	possible_precalc = can_fill_drone_job
+	
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 
 	resources = {
 		category = planet_researchers
@@ -498,9 +503,10 @@ experimental_drone = {
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_research_lab_1
 	
+	possible_precalc = can_fill_drone_job
+	
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 
 	resources = {
 		category = planet_researchers

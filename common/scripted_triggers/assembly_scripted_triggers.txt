@@ -51,11 +51,9 @@ has_district_robot_assembly =
 				NOT = { has_modififer = do_machine_replication }
 			}
 		}
-		NOT = { 
-			AND = {
-				is_planet_class = pc_habitat
-				has_global_flag = LivingSpace_active
-			}
+		NAND = {
+			is_planet_class = pc_habitat
+			has_global_flag = LivingSpace_active
 		}
 }
 
@@ -80,11 +78,9 @@ has_district_drone_lab =
 		NOT = { has_modifier = dd_home_evolved_hive }
 		NOT = { has_modifier = dd_home_ascended_regular }
 		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { 
-			AND = {
-				is_planet_class = pc_habitat
-				has_global_flag = LivingSpace_active
-			}
+		NAND = {
+			is_planet_class = pc_habitat
+			has_global_flag = LivingSpace_active
 		}
 }
 

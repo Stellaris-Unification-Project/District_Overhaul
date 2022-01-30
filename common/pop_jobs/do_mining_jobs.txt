@@ -8,9 +8,9 @@ asteroid_belt_miner = {
 	building_icon = building_crystal_mines
 	clothes_texture_index = 2
 
+	possible_precalc = can_fill_worker_job
 	possible = {
 		hidden_trigger = { exists = owner }
-		worker_job_check_trigger = yes
 		owner = { 
 			is_gestalt = no
 			is_fallen_empire_spiritualist = no
@@ -97,9 +97,10 @@ asteroid_belt_drone = {
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_crystal_mines
 	
+	possible_precalc = can_fill_drone_job
+	
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 
 	resources = {
 		category = planet_miners

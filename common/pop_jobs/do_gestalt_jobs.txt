@@ -3,9 +3,10 @@ recycling_drone = {
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_foundry_1
 	
+	possible_precalc = can_fill_drone_job
+	
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 
 	resources = {
 		category = planet_metallurgists
@@ -28,9 +29,10 @@ inceneration_drone = {
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_foundry_1
 	
+	possible_precalc = can_fill_drone_job
+	
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 
 	resources = {
 		category = planet_metallurgists

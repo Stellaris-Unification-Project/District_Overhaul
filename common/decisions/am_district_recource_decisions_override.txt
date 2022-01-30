@@ -16,14 +16,14 @@ decision_generator_privatisation = {
 				is_ai = yes
 				and = {
 					is_ai = no
-					not = { has_policy_flag = alp_private_businesses_prohibited }
-					not = { has_policy_flag = alp_private_businesses_restricted }
+					NOR = {
+						has_policy_flag = alp_private_businesses_prohibited
+						has_policy_flag = alp_private_businesses_restricted
+					}
 					or = {
 						has_authority = auth_corporate
-						has_ethic = ethic_pacifist
-						has_ethic = ethic_fanatic_pacifist
-						has_ethic = ethic_egalitarian
-						has_ethic = ethic_fanatic_egalitarian
+						is_pacifist = yes
+						is_egalitarian = yes
 					}
 				}
 			}
@@ -124,7 +124,7 @@ decision_auto_generators = {
 			weight = 5
 			num_pops > 25
 			num_pops < 80
-			count_owned_pops = { 
+			count_owned_pop = { 
 				limit = { 
 					OR = { 
 						is_unemployed = yes 
@@ -162,7 +162,7 @@ decision_end_auto_generators = {
 		modifier = {
 			weight = 5
 			num_pops > 80
-			count_owned_pops = { 
+			count_owned_pop = { 
 				limit = { 
 					OR = { 
 						is_unemployed = yes 
@@ -215,7 +215,7 @@ decision_nuclear_generators = {
 			num_districts = { type = district_generator value > 2 }
 			num_districts = { type = district_generator value < 5 }
 			num_pops > 25
-			count_owned_pops = { 
+			count_owned_pop = { 
 				limit = { 
 					OR = { 
 						is_unemployed = yes 

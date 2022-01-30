@@ -8,9 +8,9 @@ nature_farmer = {
 	building_icon = building_food_processing_facility
 	clothes_texture_index = 2
 	
+	possible_precalc = can_fill_worker_job
 	possible = {
 		hidden_trigger = { exists = owner }
-		worker_job_check_trigger = yes
 		owner = { 
 			is_gestalt = no
 			is_fallen_empire_spiritualist = no
@@ -128,9 +128,9 @@ automatic_farmer = {
 	building_icon = building_food_processing_facility
 	clothes_texture_index = 2
 	
+	possible_precalc = can_fill_worker_job
 	possible = {
 		hidden_trigger = { exists = owner }
-		worker_job_check_trigger = yes
 		owner = { 
 			is_gestalt = no
 			is_fallen_empire_spiritualist = no
@@ -247,9 +247,9 @@ aquatic_farmer = {
 	building_icon = building_food_processing_facility
 	clothes_texture_index = 2
 	
+	possible_precalc = can_fill_worker_job
 	possible = {
 		hidden_trigger = { exists = owner }
-		worker_job_check_trigger = yes
 		owner = { 
 			is_gestalt = no
 			is_fallen_empire_spiritualist = no
@@ -370,9 +370,10 @@ automatic_agri_drone = {
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_food_processing_facility
 	
+	possible_precalc = can_fill_drone_job
+	
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 
 	resources = {
 		category = planet_farmers
@@ -432,9 +433,10 @@ aquatic_agri_drone = {
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_food_processing_facility
 	
+	possible_precalc = can_fill_drone_job
+	
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 
 	resources = {
 		category = planet_farmers

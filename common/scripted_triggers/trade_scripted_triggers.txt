@@ -18,11 +18,9 @@ has_district_hab_commercial =
 		NOT = { has_modifier = dd_home_evolved_machine }
 		NOT = { has_modifier = dd_home_ascended_machine }
 		NOT = { has_modifier = pm_Utopian_Paradise }
-		NOT = { 
-			AND = {
-				is_planet_class = pc_habitat
-				has_global_flag = LivingSpace_active
-			}
+		NAND = {
+			is_planet_class = pc_habitat
+			has_global_flag = LivingSpace_active
 		}
 }
 

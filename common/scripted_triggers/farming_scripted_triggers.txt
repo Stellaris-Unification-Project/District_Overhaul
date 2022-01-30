@@ -95,11 +95,9 @@ has_district_farming_uncapped =
 		### AlphaMod
 		not = { has_planet_flag = biomass_cultivation }
 		### ImprovedMegastructures
-		NOT = {
-			AND = {
-				has_global_flag = pjs_improved_megastructures_global
-				is_planet_class = pc_ringworld_habitable
-			}
+		NAND = {
+			has_global_flag = pjs_improved_megastructures_global
+			is_planet_class = pc_ringworld_habitable
 		}
 }
 

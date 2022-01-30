@@ -842,26 +842,42 @@ dyson_swarm_mining_bays = {
 	
 	show_on_uncolonized = {
 		is_planet_class = pc_dyson_swarm
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 	
 	potential = {
 		is_planet_class = pc_dyson_swarm
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 	
 	resources = {
@@ -1154,7 +1170,7 @@ dyson_swarm_mining_bays = {
 			weight = 900
 			factor = 1
 			gai_good_minerals = yes
-			planet = { count_pops = { limit = { is_sapient = yes } count > 3 } }
+			planet = { count_owned_pop = { limit = { is_sapient = yes } count > 3 } }
 		}
 		modifier = {
 			weight = 500

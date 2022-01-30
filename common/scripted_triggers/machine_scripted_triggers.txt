@@ -19,7 +19,7 @@ has_district_machine_production_line =
 				has_modifier = dd_home_planet 
 				NOT = { from = { is_machine_empire = yes } }
 				NOT = { has_limiting_modifier = no }
-				NOT = { is_home_planet = yes }
+				is_home_planet = no
 			}
 		}
 		NOT = { has_modifier = dd_home_evolved_regular }

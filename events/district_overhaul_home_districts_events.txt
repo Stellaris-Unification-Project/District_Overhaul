@@ -6,10 +6,14 @@ planet_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		NOT = { has_planet_flag = trw_start }
-		NOT = { is_planet_class = pc_ringworld_habitable }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_machine }
+		NOR = {
+			has_planet_flag = trw_start
+			is_planet_class = pc_ringworld_habitable
+		}
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_machine
+		}
 		NOT = { is_planet_class = pc_hive }
 		owner = { has_valid_civic = civic_machine_replication }
 	}
@@ -27,10 +31,14 @@ planet_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		NOT = { has_planet_flag = trw_start }
-		NOT = { is_planet_class = pc_ringworld_habitable }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_machine }
+		NOR = {
+			has_planet_flag = trw_start
+			is_planet_class = pc_ringworld_habitable
+		}
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_machine
+		}
 		NOT = { is_planet_class = pc_hive }
 		NOT = { owner = { has_valid_civic = civic_machine_replication } }
 		OR = {
@@ -52,10 +60,14 @@ planet_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		NOT = { has_planet_flag = trw_start }
-		NOT = { is_planet_class = pc_ringworld_habitable }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_machine }
+		NOR = {
+			has_planet_flag = trw_start
+			is_planet_class = pc_ringworld_habitable
+		}
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_machine
+		}
 		NOT = { is_planet_class = pc_hive }
 		NOT = { owner = { has_valid_civic = civic_machine_replication } }
 		NOT = { owner = { has_ethic = ethic_spiritualist } }
@@ -80,10 +92,14 @@ planet_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		NOT = { has_planet_flag = trw_start }
-		NOT = { is_planet_class = pc_ringworld_habitable }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_machine }
+		NOR = {
+			has_planet_flag = trw_start
+			is_planet_class = pc_ringworld_habitable
+		}
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_machine
+		}
 		NOT = { is_planet_class = pc_hive }
 		NOT = { owner = { has_valid_civic = civic_machine_replication } }
 		NOT = { owner = { has_ethic = ethic_spiritualist } }
@@ -112,10 +128,14 @@ planet_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		NOT = { has_planet_flag = trw_start }
-		NOT = { is_planet_class = pc_ringworld_habitable }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_machine }
+		NOR = {
+			has_planet_flag = trw_start
+			is_planet_class = pc_ringworld_habitable
+		}
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_machine
+		}
 		NOT = { is_planet_class = pc_hive }
 		NOT = { owner = { has_valid_civic = civic_machine_replication } }
 		NOT = { owner = { has_ethic = ethic_spiritualist } }
@@ -143,10 +163,14 @@ planet_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		NOT = { has_planet_flag = trw_start }
-		NOT = { is_planet_class = pc_ringworld_habitable }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_machine }
+		NOR = {
+			has_planet_flag = trw_start
+			is_planet_class = pc_ringworld_habitable
+		}
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_machine
+		}
 		NOT = { is_planet_class = pc_hive }
 		NOT = { owner = { has_valid_civic = civic_machine_replication } }
 		NOT = { owner = { has_ethic = ethic_spiritualist } }
@@ -158,7 +182,7 @@ planet_event = {
 		NOT = { owner = { has_valid_civic = civic_warrior_culture } }
 		NOT = { owner = { has_valid_civic = civic_hive_strength_of_legions } }
 		NOT = { owner = { has_valid_civic = civic_machine_warbots  } }
-		NOT = { is_megacorp = yes }
+		is_megacorp = no
 		owner = { has_valid_civic = civic_environmentalist }
 	}
 	immediate = {

@@ -26,11 +26,9 @@ has_district_hab_science =
 		NOT = { has_modifier = dd_home_evolved_machine }
 		NOT = { has_modifier = dd_home_ascended_machine }
 		NOT = { has_modifier = pm_Utopian_Paradise }
-		NOT = { 
-			AND = {
-				is_planet_class = pc_habitat
-				has_global_flag = LivingSpace_active
-			}
+		NAND = {
+			is_planet_class = pc_habitat
+			has_global_flag = LivingSpace_active
 		}
 }
 
@@ -100,11 +98,9 @@ has_district_workshops =
 		NOT = { has_modifier = dd_home_ascended_regular }
 		NOT = { has_modifier = pm_Utopian_Paradise }
 		### AlphaMod
-		NOT = { 
-			AND = {
-				has_global_flag = gf_alphamod_activated
-				is_hostile_planet_ia = yes
-			}
+		NAND = {
+			has_global_flag = gf_alphamod_activated
+			is_hostile_planet_ia = yes
 		}
 }
 
@@ -155,10 +151,8 @@ has_district_research_complex_uncapped =
 		NOT = { has_modifier = dd_home_ascended_regular }
 		NOT = { has_modifier = pm_Utopian_Paradise }
 		### ImprovedMegastructures
-		NOT = {
-			AND = {
-				has_global_flag = pjs_improved_megastructures_global
-				is_planet_class = pc_ringworld_habitable
-			}
+		NAND = {
+			has_global_flag = pjs_improved_megastructures_global
+			is_planet_class = pc_ringworld_habitable
 		}
 }

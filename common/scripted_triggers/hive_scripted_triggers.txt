@@ -15,8 +15,10 @@ has_district_food_production_line =
 		NOT = { has_modifier = dd_home_evolved_regular }
 		NOT = { has_modifier = dd_home_evolved_machine }
 		NOT = { has_modifier = dd_home_evolved_hive
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_ascended_machine }
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_ascended_machine
+		}
 		NOT = { has_modifier = dd_home_ascended_hive }
 			AND = {
 				is_planet_class = pc_habitat

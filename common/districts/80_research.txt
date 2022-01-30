@@ -221,8 +221,10 @@ district_hab_science = {
 			weight = 9000
 			has_global_flag = gai_enabled_flag
 			planet = {
-				NOT = { has_district = district_hab_energy }
-				NOT = { has_district = district_hab_cultural }
+				NOR = {
+					has_district = district_hab_energy
+					has_district = district_hab_cultural
+				}
 			}
 			owner = {
 				has_monthly_income = {

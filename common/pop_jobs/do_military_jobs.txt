@@ -30,9 +30,9 @@ pilot = {
 		}
 	}
 	
+	possible_precalc = can_fill_worker_job
 	possible = {
 		hidden_trigger = { exists = owner }
-		worker_job_check_trigger = yes
 		owner = { is_gestalt = no }
 	}
 	
@@ -110,9 +110,9 @@ officer = {
 		}
 	}
 	
+	possible_precalc = can_fill_worker_job
 	possible = {
 		hidden_trigger = { exists = owner }
-		worker_job_check_trigger = yes
 		owner = { is_gestalt = no }
 	}
 	
@@ -168,9 +168,10 @@ pilot_drone = {
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_stronghold
 	
+	possible_precalc = can_fill_drone_job
+	
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 	
 	resources = {
 		category = planet_jobs
@@ -204,9 +205,10 @@ officer_drone = {
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_stronghold
 	
+	possible_precalc = can_fill_drone_job
+	
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 	
 	resources = {
 		category = planet_jobs

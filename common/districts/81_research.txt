@@ -226,26 +226,42 @@ district_archive_physics = {
 	
 	show_on_uncolonized = {
 		is_planet_class = pc_archive
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 	
 	potential = {
 		is_planet_class = pc_archive
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 	
 	resources = {
@@ -433,26 +449,42 @@ district_archive_society = {
 	
 	show_on_uncolonized = {
 		is_planet_class = pc_archive
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 	
 	potential = {
 		is_planet_class = pc_archive
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 	
 	resources = {
@@ -640,26 +672,42 @@ district_archive_engineering = {
 	
 	show_on_uncolonized = {
 		is_planet_class = pc_archive
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 	
 	potential = {
 		is_planet_class = pc_archive
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 	
 	resources = {
@@ -847,26 +895,42 @@ district_arcology_research_complex = {
 	
 	show_on_uncolonized = {
 		is_planet_class = pc_ecocity
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 	
 	potential = {
 		is_planet_class = pc_ecocity
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 	
 	conversion_ratio = 1
@@ -1261,26 +1325,42 @@ dyson_swarm_zero_g_labs = {
 	
 	show_on_uncolonized = {
 		is_planet_class = pc_dyson_swarm
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 	
 	potential = {
 		is_planet_class = pc_dyson_swarm
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 	
 	resources = {
@@ -1535,26 +1615,42 @@ district_planetary_computer = {
 	
 	show_on_uncolonized = {
 		is_planet_class = pc_giga_planetary_computer
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 	
 	potential = {
 		is_planet_class = pc_giga_planetary_computer
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 		
 	resources = {
@@ -1952,26 +2048,42 @@ district_interstellar_lab = {
 	
 	show_on_uncolonized = {
 		is_planet_class = pc_interstellar_habitat
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 	
 	potential = {
 		is_planet_class = pc_interstellar_habitat
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 	
 	conversion_ratio = 1
@@ -2061,26 +2173,42 @@ district_gasgiant_lab = {
 	
 	show_on_uncolonized = {
 		is_planet_class = pc_habitable_gas_giant
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 	
 	potential = {
 		is_planet_class = pc_habitable_gas_giant
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 		
 	resources = {
@@ -2262,26 +2390,42 @@ district_elysium_preserve = {
 	
 	show_on_uncolonized = {
 		is_planet_class = pc_gigaorbital_ring
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 	
 	potential = {
 		is_planet_class = pc_gigaorbital_ring
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 	
 	conversion_ratio = 1
@@ -2389,26 +2533,42 @@ district_interstellar_scavenger = {
 	
 	show_on_uncolonized = {
 		is_planet_class = pc_interstellar_habitat
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 	
 	potential = {
 		is_planet_class = pc_interstellar_habitat
-		NOT = { has_modifier = dd_home_planet }
-		NOT = { has_modifier = dd_home_evolved_regular }
-		NOT = { has_modifier = dd_home_ascended_regular }
-		NOT = { has_modifier = dd_home_evolved_hive }
-		NOT = { has_modifier = dd_home_ascended_hive }
-		NOT = { has_modifier = dd_home_evolved_machine }
-		NOT = { has_modifier = dd_home_ascended_machine }
-		NOT = { has_modifier = pm_Utopian_Paradise }
+		NOR = {
+			has_modifier = dd_home_planet
+			has_modifier = dd_home_evolved_regular
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_regular
+			has_modifier = dd_home_evolved_hive
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_hive
+			has_modifier = dd_home_evolved_machine
+		}
+		NOR = {
+			has_modifier = dd_home_ascended_machine
+			has_modifier = pm_Utopian_Paradise
+		}
 	}
 	
 	conversion_ratio = 1

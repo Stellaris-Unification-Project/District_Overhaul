@@ -216,10 +216,14 @@ decision_parishes = {
 		owner = { 
 			is_gestalt = no
 			is_fallen_empire_spiritualist = no
-			not = { has_ethic = ethic_fanatic_spiritualist }
-			not = { has_ethic = ethic_fanatic_militarist }
-			not = { has_ethic = ethic_fanatic_authoritarian }
-			not = { has_ethic = ethic_fanatic_pacifist }
+			NOR = {
+				has_ethic = ethic_fanatic_spiritualist
+				has_ethic = ethic_fanatic_militarist
+			}
+			NOR = {
+				has_ethic = ethic_fanatic_authoritarian
+				has_ethic = ethic_fanatic_pacifist
+			}
 			not = { has_ethic = ethic_fanatic_xenophobe }
 			has_ethic = ethic_spiritualist
 		}
@@ -302,10 +306,14 @@ decision_warriorhouses = {
 		owner = { 
 			is_gestalt = no
 			is_fallen_empire_spiritualist = no
-			not = { has_ethic = ethic_fanatic_spiritualist }
-			not = { has_ethic = ethic_fanatic_militarist }
-			not = { has_ethic = ethic_fanatic_authoritarian }
-			not = { has_ethic = ethic_fanatic_pacifist }
+			NOR = {
+				has_ethic = ethic_fanatic_spiritualist
+				has_ethic = ethic_fanatic_militarist
+			}
+			NOR = {
+				has_ethic = ethic_fanatic_authoritarian
+				has_ethic = ethic_fanatic_pacifist
+			}
 			not = { has_ethic = ethic_fanatic_xenophobe }
 			has_ethic = ethic_militarist
 		}
@@ -388,10 +396,14 @@ decision_labourcamps = {
 		owner = { 
 			is_gestalt = no
 			is_fallen_empire_spiritualist = no
-			not = { has_ethic = ethic_fanatic_spiritualist }
-			not = { has_ethic = ethic_fanatic_militarist }
-			not = { has_ethic = ethic_fanatic_authoritarian }
-			not = { has_ethic = ethic_fanatic_pacifist }
+			NOR = {
+				has_ethic = ethic_fanatic_spiritualist
+				has_ethic = ethic_fanatic_militarist
+			}
+			NOR = {
+				has_ethic = ethic_fanatic_authoritarian
+				has_ethic = ethic_fanatic_pacifist
+			}
 			not = { has_ethic = ethic_fanatic_xenophobe }
 			has_ethic = ethic_authoritarian
 		}
@@ -474,10 +486,14 @@ decision_securityzones = {
 		owner = { 
 			is_gestalt = no
 			is_fallen_empire_spiritualist = no
-			not = { has_ethic = ethic_fanatic_spiritualist }
-			not = { has_ethic = ethic_fanatic_militarist }
-			not = { has_ethic = ethic_fanatic_authoritarian }
-			not = { has_ethic = ethic_fanatic_pacifist }
+			NOR = {
+				has_ethic = ethic_fanatic_spiritualist
+				has_ethic = ethic_fanatic_militarist
+			}
+			NOR = {
+				has_ethic = ethic_fanatic_authoritarian
+				has_ethic = ethic_fanatic_pacifist
+			}
 			not = { has_ethic = ethic_fanatic_xenophobe }
 			has_ethic = ethic_xenophobe
 		}
@@ -560,10 +576,14 @@ decision_markettowns = {
 		owner = { 
 			is_gestalt = no
 			is_fallen_empire_spiritualist = no
-			not = { has_ethic = ethic_fanatic_spiritualist }
-			not = { has_ethic = ethic_fanatic_militarist }
-			not = { has_ethic = ethic_fanatic_authoritarian }
-			not = { has_ethic = ethic_fanatic_pacifist }
+			NOR = {
+				has_ethic = ethic_fanatic_spiritualist
+				has_ethic = ethic_fanatic_militarist
+			}
+			NOR = {
+				has_ethic = ethic_fanatic_authoritarian
+				has_ethic = ethic_fanatic_pacifist
+			}
 			not = { has_ethic = ethic_fanatic_xenophobe }
 			or = {
 				has_ethic = ethic_pacifist
@@ -645,21 +665,18 @@ decision_return_to_farming = {
 	}
 	
 	potential = {
-		not = { is_planet_class = pc_ringworld_habitable }
-		not = { has_planet_flag = pf_filter_vanilla }
+		NOR = {
+			is_planet_class = pc_ringworld_habitable
+			has_planet_flag = pf_filter_vanilla
+		}
 		exists = owner
 		owner = { 
 			nor = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-				has_ethic = ethic_pacifist
-				has_ethic = ethic_fanatic_pacifist
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+				is_egalitarian = yes
+				is_xenophile = yes
+				is_pacifist = yes
+				is_xenophobe = yes
+				is_materialist = yes
 			}
 		}
 		or = {
@@ -704,12 +721,9 @@ decision_nature_reserves = {
 			is_gestalt = no
 			is_fallen_empire_spiritualist = no
 			or = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-				has_ethic = ethic_pacifist
-				has_ethic = ethic_fanatic_pacifist
+				is_egalitarian = yes
+				is_xenophile = yes
+				is_pacifist = yes
 			}
 		}
 		habitable_structure = no
@@ -770,10 +784,8 @@ decision_biomass_cultivation = {
 			is_fallen_empire_spiritualist = no
 			or = {
 				is_gestalt = yes
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+				is_xenophobe = yes
+				is_materialist = yes
 			}
 		}
 		not = { has_planet_flag = biomass_cultivation }
